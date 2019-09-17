@@ -7,17 +7,20 @@ var gulp = require('gulp'),
     touch = require('gulp-touch-cmd'),
     plugin = require('gulp-load-plugins')();
 
+const dotenv = require('dotenv').config();
 
 // GULP VARIABLES
 // Modify these variables to match your project needs
 
 // Set local URL if using Browser-Sync
-const LOCAL_URL = 'http://cdhi.local/';
+const LOCAL_URL = process.env.LOCAL_URL;
 
 const SOURCE = {
     scripts: [
         // Place custom JS here, files will be concantonated, minified if ran with --production
         'assets/js/**/*.js',
+        '!assets/js/scripts.js',
+        '!assets/js/scripts.js.map',
     ],
     // Scss files will be concantonated, minified if ran with --production
     styles: 'assets/scss/**/*.scss',
@@ -119,9 +122,9 @@ gulp.task('browsersync', function () {
         proxy: LOCAL_URL,
     });
 
-    gulp.watch(SOURCE.styles, gulp.parallel('styles'));
+    gulp.watch(SOURCE.styles, gulp.parallel('styles')).on('change', browserSync.reload);;
     gulp.watch(SOURCE.scripts, gulp.parallel('scripts')).on('change', browserSync.reload);
-    gulp.watch(SOURCE.images, gulp.parallel('images'));
+    gulp.watch(SOURCE.images, gulp.parallel('images')).on('change', browserSync.reload);;
 
 });
 

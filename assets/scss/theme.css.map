@@ -1,1 +1,1 @@
-{"version":3,"sources":["theme.scss"],"names":[],"mappings":"AAAA,EACI,SAAS,AACT,SAAU,CACb","file":"theme.css","sourcesContent":["*{\n    margin: 0;\n    padding: 0;\n}"]}
+{"version":3,"sources":["theme.scss"],"names":[],"mappings":"AAAA,EACI,SAAS,AACT,UAAU,AACV,qBAAsB,CACzB","file":"theme.css","sourcesContent":["*{\n    margin: 0;\n    padding: 0;\n    box-sizing: border-box;\n}"]}

@@ -1,2 +1,2 @@
-"use strict";var main=document.querySelector("main");
+"use strict";
 //# sourceMappingURL=scripts.js.map

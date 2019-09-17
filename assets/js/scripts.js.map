@@ -1,1 +1,1 @@
-{"version":3,"sources":["scripts.js","theme.js"],"names":["main","document","querySelector"],"mappings":"AAAA,YCAA,IAAMA,MAAOC,SAASC,cAAc","file":"scripts.js","sourcesContent":["'use strict';var main=document.querySelector('main');","const main = document.querySelector('main');"]}
+{"version":3,"sources":["theme.js"],"names":[],"mappings":"AAAA","file":"scripts.js","sourcesContent":[""]}

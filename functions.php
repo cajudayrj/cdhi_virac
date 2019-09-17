@@ -166,3 +166,6 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  *  CUSTOM FUNCTIONS IMPORT STARTS HERE
  * =======================================
  */
+
+ //DISABLE GUTTENBERG
+ add_filter('use_block_editor_for_post', '__return_false');	
