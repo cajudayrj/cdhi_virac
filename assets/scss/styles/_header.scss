@@ -1,6 +1,46 @@
 header{
     #site-navigation{
         .primary-nav-container{
+            padding: 60px 0px 25px 0px;
+            .upper-header{
+                display: flex;
+                flex-direction: row;
+                margin-bottom: 25px;
+                align-items: center;
+                img{
+                    margin-right: 20px;
+                    width: auto;
+                    max-height: 114px;
+                }
+                .header-logo-text{
+                    color: #013578;
+                    display: flex;
+                    align-items: flex-start;
+                    justify-content: center;
+                    flex-direction: column;
+                    h1{
+                        font-family: 'MontserratBold', sans-serif;
+                        @include mini-desktop{
+                            font-size: 2.3rem;
+                        }
+                        @include desktop{
+                            font-size: 2.5rem;
+                        }
+                    }
+                    .cdhi-header-details{
+                        display: flex;
+                        flex-wrap: wrap;
+                        span{
+                            display: flex;
+                            flex-wrap: wrap;
+                            align-items: center;
+                            font-family: 'BarlowBold', sans-serif;
+                            margin-right: 20px;
+                        }
+                    }
+
+                }
+            }
 
             .green-line-gradient{
                 width: 100%;

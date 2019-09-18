@@ -1,0 +1,104 @@
+%svg-common {
+	background: url("svg/sprite.view.svg") no-repeat;
+}
+
+.svg-experiment-results {
+	@extend %svg-common;
+	background-position: 76.563609854574% 89.27436539683727%;
+}
+
+.svg-experiment-results-dims {
+	width: 368.55px;
+	height: 368.55px;
+}
+
+.svg-facebook {
+	@extend %svg-common;
+	background-position: 57.11892797319933% 0;
+}
+
+.svg-facebook-dims {
+	width: 512px;
+	height: 512px;
+}
+
+.svg-flask {
+	@extend %svg-common;
+	background-position: 0 57.11892797319933%;
+}
+
+.svg-flask-dims {
+	width: 512px;
+	height: 512px;
+}
+
+.svg-heart {
+	@extend %svg-common;
+	background-position: 42.88107202680067% 57.11892797319933%;
+}
+
+.svg-heart-dims {
+	width: 512px;
+	height: 512px;
+}
+
+.svg-instagram {
+	@extend %svg-common;
+	background-position: 100% 0;
+}
+
+.svg-instagram-dims {
+	width: 512px;
+	height: 512px;
+}
+
+.svg-intravenous {
+	@extend %svg-common;
+	background-position: 100% 42.88107202680067%;
+}
+
+.svg-intravenous-dims {
+	width: 512px;
+	height: 512px;
+}
+
+.svg-medical-result {
+	@extend %svg-common;
+	background-position: 71.53212954864065% 61.34748798811392%;
+}
+
+.svg-medical-result-dims {
+	width: 36.82px;
+	height: 36.82px;
+}
+
+.svg-messenger {
+	@extend %svg-common;
+	background-position: 0 0;
+}
+
+.svg-messenger-dims {
+	width: 682px;
+	height: 682px;
+}
+
+.svg-stretcher {
+	@extend %svg-common;
+	background-position: 0 100%;
+}
+
+.svg-stretcher-dims {
+	width: 512px;
+	height: 512px;
+}
+
+.svg-twitter {
+	@extend %svg-common;
+	background-position: 42.88107202680067% 100%;
+}
+
+.svg-twitter-dims {
+	width: 512px;
+	height: 512px;
+}
+

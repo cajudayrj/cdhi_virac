@@ -33,6 +33,32 @@
 			// ) );
 			?>
 			<div class="primary-nav-container container">
+				<div class="upper-header">
+					<img src="<?php echo get_template_directory_uri() ?>/assets/images/cdhi-logo.png" alt="" />
+					<div class="header-logo-text">
+						<h1>CATANDUANES DOCTORS HOSPITAL, INC.</h1>
+						<div class="cdhi-header-details">
+							<span>
+								<svg role="img" title="facebook" class="svg-icon">
+									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#facebook"/>
+								</svg>
+								BRGY. VALENCIA, VIRAC, CATANDUANES
+							</span>
+							<span>
+								<svg role="img" title="facebook" class="svg-icon">
+									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#messenger"/>
+								</svg>
+								(052) 740-5441
+							</span>
+							<span>
+								<svg role="img" title="facebook" class="svg-icon">
+									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#twitter"/>
+								</svg>
+								09770380379 / 09186183820
+							</span>
+						</div>
+					</div>
+				</div>
 				<div class="green-line-gradient"></div>
 				<div class="primary-nav">
 					<ul>
