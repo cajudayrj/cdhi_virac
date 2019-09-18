@@ -5,7 +5,8 @@ var gulp = require('gulp'),
     browserSync = require('browser-sync').create(),
     filter = require('gulp-filter'),
     touch = require('gulp-touch-cmd'),
-    plugin = require('gulp-load-plugins')();
+    plugin = require('gulp-load-plugins')(),
+    svgSprite = require('gulp-svg-sprite');
 
 const dotenv = require('dotenv').config();
 
@@ -25,7 +26,9 @@ const SOURCE = {
     // Scss files will be concantonated, minified if ran with --production
     styles: 'assets/scss/**/*.scss',
 
-    php: '**/*.php'
+    php: '**/*.php',
+
+    sprites: 'assets/svg/files/*.svg'
 };
 
 const ASSETS = {
@@ -45,6 +48,21 @@ const JSHINT_CONFIG = {
         "Foundation": true
     }
 };
+
+//GULP CONFIG FOR SVG SPRITES
+const svgConfig = {
+    mode: {
+        stack: {
+            bust: false
+        }
+    }
+};
+
+gulp.task('sprite', function () {
+    return gulp.src('**/*.svg', { cwd: './assets/svg/files' })
+        .pipe(svgSprite(svgConfig))
+        .pipe(gulp.dest('./assets/svg'));
+})
 
 // GULP FUNCTIONS
 // JSHint, concat, and minify JavaScript
@@ -112,8 +130,9 @@ gulp.task('browsersync', function () {
         proxy: LOCAL_URL,
     });
 
-    gulp.watch(SOURCE.styles, gulp.parallel('styles')).on('change', browserSync.reload);;
+    gulp.watch(SOURCE.styles, gulp.parallel('styles')).on('change', browserSync.reload);
     gulp.watch(SOURCE.scripts, gulp.parallel('scripts')).on('change', browserSync.reload);
+    gulp.watch(SOURCE.sprites, gulp.parallel('sprite')).on('change', browserSync.reload);
 
 });
 
@@ -126,7 +145,11 @@ gulp.task('watch', function () {
     // Watch scripts files
     gulp.watch(SOURCE.scripts, gulp.parallel('scripts'));
 
+    // Watch svg files
+    gulp.watch(SOURCE.sprites, gulp.parallel('sprite'));
+
+
 });
 
 // Run styles, scripts and foundation-js
-gulp.task('default', gulp.parallel('styles', 'scripts'));
+gulp.task('default', gulp.parallel('styles', 'scripts', 'sprite'));
