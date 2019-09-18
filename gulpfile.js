@@ -25,9 +25,6 @@ const SOURCE = {
     // Scss files will be concantonated, minified if ran with --production
     styles: 'assets/scss/**/*.scss',
 
-    // Images placed here will be optimized
-    images: 'assets/images/**/*',
-
     php: '**/*.php'
 };
 
@@ -103,13 +100,6 @@ gulp.task('styles', function () {
         }));
 });
 
-// Optimize images, move into assets directory
-gulp.task('images', function () {
-    return gulp.src(SOURCE.images)
-        .pipe(plugin.imagemin())
-        .pipe(gulp.dest(ASSETS.images))
-});
-
 // Browser-Sync watch files and inject changes
 gulp.task('browsersync', function () {
 
@@ -124,7 +114,6 @@ gulp.task('browsersync', function () {
 
     gulp.watch(SOURCE.styles, gulp.parallel('styles')).on('change', browserSync.reload);;
     gulp.watch(SOURCE.scripts, gulp.parallel('scripts')).on('change', browserSync.reload);
-    gulp.watch(SOURCE.images, gulp.parallel('images')).on('change', browserSync.reload);;
 
 });
 
@@ -137,10 +126,7 @@ gulp.task('watch', function () {
     // Watch scripts files
     gulp.watch(SOURCE.scripts, gulp.parallel('scripts'));
 
-    // Watch images files
-    gulp.watch(SOURCE.images, gulp.parallel('images'));
-
 });
 
 // Run styles, scripts and foundation-js
-gulp.task('default', gulp.parallel('styles', 'scripts', 'images'));
+gulp.task('default', gulp.parallel('styles', 'scripts'));

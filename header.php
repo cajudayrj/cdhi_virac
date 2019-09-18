@@ -25,34 +25,33 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'cdhi_theme' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<div class="site-branding">
-			<?php
-			the_custom_logo();
-			if ( is_front_page() && is_home() ) :
-				?>
-				<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-				<?php
-			else :
-				?>
-				<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-				<?php
-			endif;
-			$cdhi_theme_description = get_bloginfo( 'description', 'display' );
-			if ( $cdhi_theme_description || is_customize_preview() ) :
-				?>
-				<p class="site-description"><?php echo $cdhi_theme_description; /* WPCS: xss ok. */ ?></p>
-			<?php endif; ?>
-		</div><!-- .site-branding -->
-
 		<nav id="site-navigation" class="main-navigation">
-			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false"><?php esc_html_e( 'Primary Menu', 'cdhi_theme' ); ?></button>
 			<?php
-			wp_nav_menu( array(
-				'theme_location' => 'menu-1',
-				'menu_id'        => 'primary-menu',
-			) );
+			// wp_nav_menu( array(
+			// 	'theme_location' => 'menu-1',
+			// 	'menu_id'        => 'primary-nav',
+			// ) );
 			?>
+			<div class="primary-nav-container container">
+				<div class="green-line-gradient"></div>
+				<div class="primary-nav">
+					<ul>
+						<li class="menu-active"><a href="#" target="_blank">CDHI</a></li>
+						<li><a href="#" class="" target="_blank">OUR SERVICES</a></li>
+						<li><a href="#" class="" target="_blank">OUR DOCTORS</a></li>
+						<li><a href="#" class="" target="_blank">MAKE AN APPOINTMENT</a></li>
+						<li><a href="#" class="" target="_blank">NEWS & BLOG</a></li>
+						<li><a href="#" class="" target="_blank">CONTACT</a></li>
+						<li><a href="#" class="" target="_blank">TOUR</a></li>
+						<li><a href="#" class="" target="_blank">PROMOS</a></li>
+						<li><a href="#" class="" target="_blank">ABOUT</a></li>
+					</ul>
+				</div>
+			</div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
+	<section class="mobile-sidebar-navigation">
+		
+	</section>
 
 	<div id="content" class="site-content">

@@ -1,0 +1,17 @@
+/** breakpoint vars (for mixins, css styling) | mobile first */
+$tablet: 768px;
+$mini-desktop: 992px;
+$desktop: 1200px;
+$breakpoints_keyless: (0, 768px, 992px, 1200px);
+
+$breakpoints: (
+  tablet: $tablet,
+  mini-desktop: $mini-desktop,
+  desktop: $desktop,
+);
+
+:root {
+  --breakpoint-tablet: #{$tablet};
+  --breakpoint-mini-desktop: #{$mini-desktop};
+  --breakpoint-desktop: #{$desktop};
+}
