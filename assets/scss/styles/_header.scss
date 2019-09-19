@@ -1,16 +1,23 @@
 header{
     #site-navigation{
         .primary-nav-container{
-            padding: 60px 0px 25px 0px;
+            padding: 25px 0px 25px 0px;
+            @include tablet{
+                padding: 60px 0px 25px 0px;
+            }
             .upper-header{
                 display: flex;
                 flex-direction: row;
                 margin-bottom: 25px;
                 align-items: center;
                 img{
-                    margin-right: 20px;
+                    margin-right: 10px;
                     width: auto;
-                    max-height: 114px;
+                    max-height: 90px;
+                    @include tablet{
+                        max-height: 114px;
+                        margin-right: 20px;
+                    }
                 }
                 .header-logo-text{
                     color: #013578;
@@ -18,14 +25,15 @@ header{
                     align-items: flex-start;
                     justify-content: center;
                     flex-direction: column;
+                    margin-right: 15px;
+                    @include tablet{
+                        margin-right: 0px;
+                    };
                     h1{
                         font-family: 'MontserratBold', sans-serif;
-                        @include mini-desktop{
-                            font-size: 2.3rem;
-                        }
-                        @include desktop{
-                            font-size: 2.5rem;
-                        }
+                        @include respond((
+                            font-size: (1.1rem,1.2rem,1.4rem,2.3rem,2.5rem)
+                        ));
                     }
                     .cdhi-header-details{
                         display: flex;
@@ -34,11 +42,69 @@ header{
                             display: flex;
                             flex-wrap: wrap;
                             align-items: center;
-                            font-family: 'BarlowBold', sans-serif;
-                            margin-right: 20px;
+                            font-family: 'BarlowSemiBold', sans-serif;
+                            text-transform: uppercase;
+                            &:nth-child(2), &:nth-child(3), svg{
+                                display: none;
+                                @include tablet{
+                                    display: flex;
+                                }
+                            }
+
+                            @include respond((
+                                font-size: (10px,12px,null,16px),
+                            ));
+
+                            @include tablet{
+                                font-family: 'BarlowBold', sans-serif;
+                                margin-right: 20px;
+                            }
                         }
                     }
 
+                }
+                .burger-btn{
+                    padding: 11px 3px;
+                    border: none;
+                    background: transparent;
+                    display: flex;
+                    margin-left: auto;
+                    margin-right: 5px;
+                    margin-top: 10px;
+                    margin-right: 10px;
+                    align-self: flex-start;
+                    @include tablet{
+                        display: none;
+                    }
+                    .burger-menu{
+                        display: flex;
+                        align-self: center;
+                        height: 2px;
+                        width: 26px;
+                        background-color: #333333;
+                        position: relative;
+                        &:before{
+                            content: '';
+                            display: block;
+                            width: 26px;
+                            height: 2px;
+                            position: absolute;
+                            left: 0;
+                            top: -7px;
+                            background-color: #333333;
+                        }
+    
+                        &:after{
+                            content: '';
+                            display: block;
+                            width: 26px;
+                            height: 2px;
+                            position: absolute;
+                            left: 0;
+                            bottom: -7px;
+                            background-color: #333333;
+                        }
+                    }
                 }
             }
 
@@ -49,38 +115,41 @@ header{
                 background: linear-gradient(90deg, rgba(14,91,2,1) 0%, rgba(101,199,51,1) 100%);
                 margin-bottom: 25px;
             }
-
-            .primary-nav{
-                margin-bottom: 25px;
-                ul{
-                    display: flex;
-                    flex-wrap: wrap;
-                    flex-direction: row;
-                    justify-content: center;
-
-                    @include mini-desktop {
-                        justify-content: space-between;
-                    }
-
-                    li{
-                        a{
-                            padding: 5px 10px;
-                            border-radius: 20px;
-                            text-decoration: none;
-                            color: #358600;
-                            font-family: 'BarlowSemiBold', sans-serif;
-                            text-transform: uppercase;
-                            &:hover{
-                                background-color: #f0f9ea;
-                                color: #013578;
+            .menu-primary-menu-container{
+                display: none;
+                @include tablet{
+                    display: block;
+                }
+                .primary-nav, #primary-nav{
+                        display: flex;
+                        flex-wrap: wrap;
+                        flex-direction: row;
+                        justify-content: center;
+                        margin-bottom: 25px;
+    
+                        @include mini-desktop {
+                            justify-content: space-between;
+                        }
+    
+                        li{
+                            a{
+                                padding: 9px 14px;
+                                border-radius: 20px;
+                                text-decoration: none;
+                                color: #358600;
+                                font-family: 'BarlowSemiBold', sans-serif;
+                                text-transform: uppercase;
+                                &:hover{
+                                    background-color: #f0f9ea;
+                                    color: #013578;
+                                }
                             }
                         }
-                    }
-                    li.menu-active{
-                        a{
-                            background-color: #358600;
-                            color: #fff;
-                        }
+                        li.menu-active, li.current_page_item{
+                            a{
+                                background-color: #358600;
+                                color: #fff;
+                            }
                     }
                 }
             }

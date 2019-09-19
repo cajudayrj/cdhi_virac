@@ -1,17 +1,23 @@
 /** breakpoint vars (for mixins, css styling) | mobile first */
+$mini-tablet: 480px;
 $tablet: 768px;
 $mini-desktop: 992px;
 $desktop: 1200px;
-$breakpoints_keyless: (0, 768px, 992px, 1200px);
+$breakpoints_keyless: (0, 480px, 768px, 992px, 1200px);
 
 $breakpoints: (
+  mini-tablet: $mini-tablet,
   tablet: $tablet,
   mini-desktop: $mini-desktop,
   desktop: $desktop,
 );
 
 :root {
+  --breakpoint-mini-tablet: #{$mini-tablet};
   --breakpoint-tablet: #{$tablet};
   --breakpoint-mini-desktop: #{$mini-desktop};
   --breakpoint-desktop: #{$desktop};
 }
+
+$green: rgb(14,91,2);
+$blue: #013578;

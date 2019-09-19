@@ -14,19 +14,51 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'cdhi_theme' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'cdhi_theme' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'cdhi_theme' ), 'cdhi_theme', '<a href="http://underscores.me/">Underscores.me</a>' );
-				?>
-		</div><!-- .site-info -->
+		<section class="cdhi-footer">
+			<div class="footer-container container">
+				<div class="row">
+					<div class="col-md-3 col-sm-12">
+						<img class="footer-img-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/cdhi-logo.png" alt="">
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-3 col-sm-12">
+						<div class="footer-col-1">
+							<p class="cdhi-name">CATANDUANES DOCTORS HOSPITAL INC.</p>
+							<p class="rights">&copy; <?php echo date("Y"); ?>, All Rights Reserved</p>
+							<p class="cdhi-address">SURTIDA ST., VALENCIA, VIRAC, CATANDUANES PHILIPPINES 4800</p>
+							<img class="footer-yhor" src="#" alt="your-health-our-responsibility" />
+							<p class="powered-by">POWERED BY: <a href="http://nocturnalpixels.com" target="_blank">NOCTURNAL PIXELS</a></p>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-12">
+						<div class="footer-col-2">
+							<?php
+								wp_nav_menu( array(
+									'theme_location' => 'footer-primary',
+									'menu_id'        => 'footer-primary-links',
+								) );
+							?>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-12">
+						<div class="footer-col-3">
+							<?php
+								wp_nav_menu( array(
+									'theme_location' => 'footer-secondary',
+									'menu_id'        => 'footer-secondary-links',
+								) );
+							?>
+						</div>
+					</div>
+					<div class="col-md-3 col-sm-12">
+						<div class="footer-col-4">
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 

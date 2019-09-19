@@ -1,0 +1,118 @@
+footer{
+    margin-top: 60px;
+    .cdhi-footer{
+        width: 100%;
+        padding-top: 30px;
+        padding-bottom: 120px;
+        background-color: $green;
+        .row{
+            .footer-img-logo{
+                margin: -80px auto 40px;
+                display: block;
+            }
+            .footer-col-1{
+                text-align: center;
+                color: #fff;
+                padding: 0px 17px;
+                margin-bottom: 15px;
+
+                .cdhi-name{
+                    font-family: 'BarlowSemiBold', sans-serif;
+                    margin-bottom: 8px;
+                    letter-spacing: .6px;
+                }
+                .rights{
+                    font-family: 'BarlowMedium', sans-serif;
+                    font-size: 13px;
+                    letter-spacing: .5px;
+                    margin-bottom: 8px;
+                }
+
+                .cdhi-address, .powered-by{
+                    font-family: 'BarlowMedium', sans-serif;
+                    font-size: 10px;
+                    margin-bottom: 8px;
+                }
+
+                .footer-yhor{
+                    margin-bottom: 10px;
+                }
+
+                .powered-by{
+                    a{
+                        color: #fff;
+                        text-decoration: none;
+                    }
+                }
+            }
+
+            .footer-col-2{
+                .menu-footer-primary-container{
+                    margin-bottom: 15px;
+
+                    #footer-primary-links{
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+                        display: flex;
+                        flex-direction: row;
+                        text-align: center;
+                        justify-content: center;
+                        flex-wrap: wrap;
+
+                        @include tablet{
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                        }
+
+                        li{
+                            a{
+                                text-decoration: none;
+                                font-family: 'Barlow', sans-serif;
+                                color: #fff;
+                                letter-spacing: .5px;
+                                font-size: 14px;
+                                padding: 0px 5px;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .footer-col-3{
+                .menu-footer-secondary-container{
+                    margin-bottom: 15px;
+                    
+                    #footer-secondary-links{
+                        margin: 0;
+                        padding: 0;
+                        list-style-type: none;
+                        display: flex;
+                        flex-direction: row;
+                        text-align: center;
+                        justify-content: center;
+                        flex-wrap: wrap;
+
+                        @include tablet{
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            align-items: flex-start;
+                        }
+                        
+                        li{
+                            a{
+                                text-decoration: none;
+                                font-family: 'Barlow', sans-serif;
+                                color: #fff;
+                                letter-spacing: .5px;
+                                font-size: 14px;
+                                padding: 0px 5px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,146 @@
+.mobile-sidebar-navigation{
+    .bg-overlay{
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: rgba(1,53,120, .9);
+        opacity: 0;
+        display: none;
+        transition: all .3s .1s ease-in-out;
+        z-index: 98;
+    }
+    .sidebar-nav-content{
+        max-width: 320px;
+        display: block;
+        position: fixed;
+        background: #fff;
+        padding: 20px 20px 20px 55px;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        right: 0;
+        z-index: 100;
+        transform: translateX(320px);
+        transition: all .3s .1s ease-in-out;
+        h3{
+            font-family: 'MontserratBold', sans-serif;
+            color: $blue;
+            font-size: 17px;
+            margin-bottom: 20px;
+        }
+
+        .menu-primary-menu-container{
+            margin-bottom: 25px;
+            #primary-nav{
+                margin: 0;
+                padding: 0;
+                list-style-type: none;
+                li{
+                    width: 100%;
+                    border-bottom: solid 1px #ccc;
+                    a{
+                        color: $green;
+                        font-family: 'BarlowMedium', sans-serif;
+                        font-size: 14px;
+                        text-decoration: none;
+                        width: 100%;
+                        padding: 8px 0px 8px 10px;
+                        display: block;
+                        text-transform: uppercase;
+                    }
+                }
+                li.menu-active{
+                    border-bottom: none;
+                    background: $green;
+                    background: linear-gradient(90deg, rgba(14,91,2,1) 0%, rgba(101,199,51,1) 100%);
+                    a{
+                        color: #fff;
+                    }
+                }
+            }
+        }
+
+        .contact-links{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            margin-bottom: 25px;
+            a{
+                border: solid 1px $green;
+                border-radius: 5px;
+                padding: 7px 12px;
+                background-color: transparent;
+                color: $green;
+                display: flex;
+                align-items: center;
+                font-family: 'BarlowSemiBold', sans-serif;
+                font-size: 13px;
+                margin-right: 10px;
+                .sidebar-svg{
+                    fill: $green;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+
+        .socmed-links{
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: row;
+            justify-content: center;
+            .sidebar-svg{
+                fill: $green;
+                width: 25px;
+                height: 25px;
+                margin: 0 5px;
+            }
+        }
+
+        .close-sidebar{
+            position: absolute;
+            top: 26px;
+            left: 15px;
+            border: 0;
+            background: transparent;
+            padding: 13px 0px;
+            div{
+                height: 2px;
+                width: 26px;
+                position: relative;
+                &:before, &:after{
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    height: 2px;
+                    width:26px;
+                    background: #333;
+                }
+                &:before{
+                    transform: rotate(45deg) translate(-10px, 8px);
+                }
+                &:after{
+                    transform: rotate(-45deg) translate(-8px, -10px);
+                }
+            }
+        }
+    }
+}
+.mobile-sidebar-navigation.animation{
+    .bg-overlay{
+        display: block;
+    }
+}
+.mobile-sidebar-navigation.opened{
+    .bg-overlay{
+        opacity: 1;
+    }
+    .sidebar-nav-content{
+        transform: translateX(0px);
+    }
+
+}

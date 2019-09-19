@@ -43,7 +43,7 @@ usage:
 //    }
 //-----------------------------------------------------------------------
 
-// USING: $breakpoints_keyless: (0, 750px, 1280px, 1440px);
+// USING: $breakpoints_keyless: (0, 480px, 750px, 1280px, 1440px);
 @mixin breakpoint($breakpoint) {
 	@if map-has-key($breakpoints, $breakpoint) {
 		@media (min-width: #{map-get($breakpoints, $breakpoint)}) {
@@ -55,6 +55,12 @@ usage:
 		@media (min-width: $breakpoint) {
 			@content;
 		}
+	}
+}
+
+@mixin mini-tablet {
+	@include breakpoint($mini-tablet) {
+		@content;
 	}
 }
 

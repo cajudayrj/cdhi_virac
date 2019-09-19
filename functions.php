@@ -45,6 +45,8 @@ if ( ! function_exists( 'cdhi_theme_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 		register_nav_menus( array(
 			'menu-1' => esc_html__( 'Primary', 'cdhi_theme' ),
+			'footer-primary' => esc_html__( 'Footer Primary', 'cdhi_theme' ),
+			'footer-secondary' => esc_html__( 'Footer Secondary', 'cdhi_theme' ),
 		) );
 
 		/*
@@ -177,10 +179,10 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  add_filter('use_block_editor_for_post', '__return_false');	
 
 // ADD ACTIVE CLASS ON ACTIVE MENU
-add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 4);
 
 function special_nav_class ($classes, $item) {
-    if (in_array('current-menu-item', $classes) ){
+    if (in_array('current-menu-item', $classes)){
         $classes[] = 'menu-active ';
     }
     return $classes;
