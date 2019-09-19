@@ -26,12 +26,6 @@
 
 	<header id="masthead" class="site-header">
 		<nav id="site-navigation" class="main-navigation">
-			<?php
-			// wp_nav_menu( array(
-			// 	'theme_location' => 'menu-1',
-			// 	'menu_id'        => 'primary-nav',
-			// ) );
-			?>
 			<div class="primary-nav-container container">
 				<div class="upper-header">
 					<img src="<?php echo get_template_directory_uri() ?>/assets/images/cdhi-logo.png" alt="" />
@@ -42,7 +36,7 @@
 								<svg role="img" title="facebook" class="svg-icon">
 									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#facebook"/>
 								</svg>
-								BRGY. VALENCIA, VIRAC, CATANDUANES
+								Brgy. Valencia, Virac, Catanduanes
 							</span>
 							<span>
 								<svg role="img" title="facebook" class="svg-icon">
@@ -58,26 +52,71 @@
 							</span>
 						</div>
 					</div>
+					<button class="burger-btn">
+						<div class="burger-menu"></div>
+					</button>
 				</div>
 				<div class="green-line-gradient"></div>
-				<div class="primary-nav">
-					<ul>
-						<li class="menu-active"><a href="#" target="_blank">CDHI</a></li>
-						<li><a href="#" class="" target="_blank">OUR SERVICES</a></li>
-						<li><a href="#" class="" target="_blank">OUR DOCTORS</a></li>
-						<li><a href="#" class="" target="_blank">MAKE AN APPOINTMENT</a></li>
-						<li><a href="#" class="" target="_blank">NEWS & BLOG</a></li>
-						<li><a href="#" class="" target="_blank">CONTACT</a></li>
-						<li><a href="#" class="" target="_blank">TOUR</a></li>
-						<li><a href="#" class="" target="_blank">PROMOS</a></li>
-						<li><a href="#" class="" target="_blank">ABOUT</a></li>
-					</ul>
-				</div>
+				<?php
+					wp_nav_menu( array(
+						'theme_location' => 'menu-1',
+						'menu_id'        => 'primary-nav',
+					) );
+				?>
 			</div>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 	<section class="mobile-sidebar-navigation">
-		
+		<div class="bg-overlay"></div>
+		<div class="sidebar-nav-content">
+			<h3>CATANDUANES DOCTORS HOSPITAL, INC.</h3>
+			<?php
+				wp_nav_menu( array(
+					'theme_location' => 'menu-1',
+					'menu_id'        => 'primary-nav',
+				) );
+			?>
+			<div class="contact-links">
+				<a href="#">
+					<svg role="img" title="facebook" class="svg-icon sidebar-svg">
+						<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#facebook"/>
+					</svg>
+					Emergency
+				</a>
+				<a href="#">
+					<svg role="img" title="facebook" class="svg-icon sidebar-svg">
+						<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#facebook"/>
+					</svg>
+					Free Shuttle
+				</a>
+			</div>
+			<div class="socmed-links">
+					<a href="#">
+						<svg role="img" title="facebook" class="svg-icon sidebar-svg">
+							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#facebook"/>
+						</svg>
+					</a>
+					<a href="#">
+						<svg role="img" title="facebook" class="svg-icon sidebar-svg">
+							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#messenger"/>
+						</svg>
+					</a>
+					<a href="#">
+						<svg role="img" title="facebook" class="svg-icon sidebar-svg">
+							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#twitter"/>
+						</svg>
+					</a>
+					<a href="#">
+						<svg role="img" title="facebook" class="svg-icon sidebar-svg">
+							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#instagram"/>
+						</svg>
+					</a>
+			</div>
+			<button class="close-sidebar">
+				<div></div>
+			</button>
+		</div>
 	</section>
+
 
 	<div id="content" class="site-content">
