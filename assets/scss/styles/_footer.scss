@@ -1,10 +1,22 @@
 footer{
     margin-top: 60px;
+    position: relative;
+    .footer-line{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 7px;
+        border-bottom: 1px solid #333;
+    }
     .cdhi-footer{
         width: 100%;
         padding-top: 30px;
-        padding-bottom: 120px;
-        background-color: $green;
+        padding-bottom: 60px;
+        background-color: $green-2;
+        @include tablet{
+            padding-bottom: 120px;
+        }
         .row{
             .footer-img-logo{
                 margin: -80px auto 40px;
@@ -34,8 +46,15 @@ footer{
                     margin-bottom: 8px;
                 }
 
+                .cdhi-address{
+                    max-width: 232px;
+                    margin: 0 auto 20px;
+                }
+
                 .footer-yhor{
                     margin-bottom: 10px;
+                    max-width: 240px;
+                    width: 100%;
                 }
 
                 .powered-by{
@@ -47,6 +66,10 @@ footer{
             }
 
             .footer-col-2{
+                padding: 0px 20px;
+                @include tablet{
+                    padding: 0px;
+                }
                 .menu-footer-primary-container{
                     margin-bottom: 15px;
 
@@ -67,13 +90,17 @@ footer{
                         }
 
                         li{
+                            line-height: 1.4;
                             a{
                                 text-decoration: none;
                                 font-family: 'Barlow', sans-serif;
                                 color: #fff;
                                 letter-spacing: .5px;
-                                font-size: 14px;
+                                font-size: 12px;
                                 padding: 0px 5px;
+                                @include tablet{
+                                    font-size: 14px;
+                                }
                             }
                         }
                     }
@@ -101,14 +128,96 @@ footer{
                         }
                         
                         li{
+                            line-height: 1.4;
                             a{
                                 text-decoration: none;
                                 font-family: 'Barlow', sans-serif;
                                 color: #fff;
                                 letter-spacing: .5px;
-                                font-size: 14px;
+                                font-size: 12px;
                                 padding: 0px 5px;
+                                @include tablet{
+                                    font-size: 14px;
+                                }
                             }
+                        }
+                    }
+                }
+            }
+
+            .footer-col-4{
+                .footer-socmed-icons{
+                    display: flex;
+                    flex-wrap: wrap;
+                    margin-bottom: 20px;
+                    justify-content: center;
+                    @include tablet{
+                        justify-content: flex-start;
+                    }
+                    a{
+                        text-decoration: none;
+                        color: #fff;
+                        .footer-svg{
+                            width: 25px;
+                            height: 25px;
+                            fill: #fff;
+                            margin: 0 10px;
+                            &:nth-child(1){
+                                margin-left: 0px;
+                            }
+                        }
+                    }
+                }
+                .footer-hotlines{
+                    margin-bottom: 20px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    @include tablet{
+                        justify-content: flex-start;
+                    }
+                    p{
+                        color: #fff;
+                        font-family: 'Barlow', sans-serif;
+                        margin: 0px 5px;
+                        font-size: 12px;
+                        padding: 3px 0px;
+                        @include tablet{
+                            font-size: 14px;
+                            margin: 0px;
+                        }
+                        a{
+                            text-decoration: none;
+                            color: #fff;
+                            letter-spacing: .5px;
+                            font-size: 12px;
+                            display: inline-block;
+                            @include tablet{
+                                font-size: 14px;
+                            }
+                        }
+                    }
+                }
+                .footer-emails{
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+                    @include tablet{
+                        justify-content: flex-start;
+                        flex-direction: column;
+                    }
+                    a{
+                        display: block;
+                        text-decoration: none;
+                        font-family: 'Barlow', sans-serif;
+                        color: #fff;
+                        letter-spacing: .5px;
+                        font-size: 12px;
+                        padding: 3px 0px;
+                        margin: 0px 5px;
+                        @include tablet{
+                            font-size: 14px;
+                            margin: 0px;
                         }
                     }
                 }

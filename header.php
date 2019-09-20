@@ -34,19 +34,19 @@
 						<div class="cdhi-header-details">
 							<span>
 								<svg role="img" title="facebook" class="svg-icon">
-									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#facebook"/>
+									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#location"/>
 								</svg>
 								Brgy. Valencia, Virac, Catanduanes
 							</span>
 							<span>
 								<svg role="img" title="facebook" class="svg-icon">
-									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#messenger"/>
+									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#telephone"/>
 								</svg>
 								(052) 740-5441
 							</span>
 							<span>
 								<svg role="img" title="facebook" class="svg-icon">
-									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#twitter"/>
+									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#phone"/>
 								</svg>
 								09770380379 / 09186183820
 							</span>
@@ -79,13 +79,13 @@
 			<div class="contact-links">
 				<a href="#">
 					<svg role="img" title="facebook" class="svg-icon sidebar-svg">
-						<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#facebook"/>
+						<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#telephone-2"/>
 					</svg>
 					Emergency
 				</a>
 				<a href="#">
 					<svg role="img" title="facebook" class="svg-icon sidebar-svg">
-						<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#facebook"/>
+						<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#telephone-2"/>
 					</svg>
 					Free Shuttle
 				</a>
@@ -93,25 +93,29 @@
 			<div class="socmed-links">
 					<a href="#">
 						<svg role="img" title="facebook" class="svg-icon sidebar-svg">
-							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#facebook"/>
+							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/stack/svg/sprite.stack.svg#facebook"/>
 						</svg>
 					</a>
 					<a href="#">
 						<svg role="img" title="facebook" class="svg-icon sidebar-svg">
-							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#messenger"/>
+							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/stack/svg/sprite.stack.svg#messenger"/>
 						</svg>
 					</a>
 					<a href="#">
 						<svg role="img" title="facebook" class="svg-icon sidebar-svg">
-							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#twitter"/>
+							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/stack/svg/sprite.stack.svg#twitter"/>
 						</svg>
 					</a>
 					<a href="#">
 						<svg role="img" title="facebook" class="svg-icon sidebar-svg">
-							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#instagram"/>
+							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/stack/svg/sprite.stack.svg#instagram"/>
 						</svg>
 					</a>
 			</div>
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/yhor-green.png" alt="your-health-our-responsibility" class="yhor-sidebar" />
+			<p class="cdhi-sb-name">CATANDUANES DOCTORS HOSPITAL INC.</p>
+			<p class="cdhi-sb-rights">&copy; <?php echo date('Y'); ?>, All Rights Reserved</p>
+			<p class="cdhi-sb-address">Surtida St., Valencia, Virac, Catanduanes Philippine 4800</p>
 			<button class="close-sidebar">
 				<div></div>
 			</button>
