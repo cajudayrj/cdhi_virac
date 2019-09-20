@@ -21,6 +21,7 @@
         width: 100%;
         top: 0;
         right: 0;
+        overflow-y: auto;
         z-index: 100;
         transform: translateX(320px);
         transition: all .3s .1s ease-in-out;
