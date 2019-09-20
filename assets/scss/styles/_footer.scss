@@ -14,6 +14,10 @@ footer{
         padding-top: 30px;
         padding-bottom: 60px;
         background-color: $green-2;
+        background-image: url('../images/footer-bg.png');
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: cover;
         @include tablet{
             padding-bottom: 120px;
         }
