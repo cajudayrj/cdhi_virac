@@ -25,6 +25,11 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'cdhi_theme' ); ?></a>
 
 	<header id="masthead" class="site-header">
+		<?php 
+			$header = get_field('header','option'); 
+			$footer = get_field('footer','option'); 
+			$socmed = get_field('social_media','option');
+		?>
 		<nav id="site-navigation" class="main-navigation">
 			<div class="primary-nav-container container">
 				<div class="upper-header">
@@ -36,19 +41,19 @@
 								<svg role="img" title="facebook" class="svg-icon">
 									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#location"/>
 								</svg>
-								Brgy. Valencia, Virac, Catanduanes
+								<?php echo $header['address']; ?>
 							</span>
 							<span>
 								<svg role="img" title="facebook" class="svg-icon">
 									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#telephone"/>
 								</svg>
-								(052) 740-5441
+								<?php echo $header['telephone']; ?>
 							</span>
 							<span>
 								<svg role="img" title="facebook" class="svg-icon">
 									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#phone"/>
 								</svg>
-								09770380379 / 09186183820
+								<?php echo $header['mobile_phone']; ?>
 							</span>
 						</div>
 					</div>
@@ -77,13 +82,13 @@
 				) );
 			?>
 			<div class="contact-links">
-				<a href="#">
+				<a href="tel:<?php echo $footer['emergency_contact'] ?>">
 					<svg role="img" title="facebook" class="svg-icon sidebar-svg">
 						<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#telephone-2"/>
 					</svg>
 					Emergency
 				</a>
-				<a href="#">
+				<a href="tel:<?php echo $footer['free_shuttle_contact'] ?>">
 					<svg role="img" title="facebook" class="svg-icon sidebar-svg">
 						<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#telephone-2"/>
 					</svg>
@@ -91,23 +96,23 @@
 				</a>
 			</div>
 			<div class="socmed-links">
-					<a href="#">
+					<a href="<?php echo $socmed['facebook']; ?>">
 						<svg role="img" title="facebook" class="svg-icon sidebar-svg">
 							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/stack/svg/sprite.stack.svg#facebook"/>
 						</svg>
 					</a>
-					<a href="#">
-						<svg role="img" title="facebook" class="svg-icon sidebar-svg">
+					<a href="<?php echo $socmed['messenger']; ?>">
+						<svg role="img" title="messenger" class="svg-icon sidebar-svg">
 							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/stack/svg/sprite.stack.svg#messenger"/>
 						</svg>
 					</a>
-					<a href="#">
-						<svg role="img" title="facebook" class="svg-icon sidebar-svg">
+					<a href="<?php echo $socmed['twitter']; ?>">
+						<svg role="img" title="twitter" class="svg-icon sidebar-svg">
 							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/stack/svg/sprite.stack.svg#twitter"/>
 						</svg>
 					</a>
-					<a href="#">
-						<svg role="img" title="facebook" class="svg-icon sidebar-svg">
+					<a href="<?php echo $socmed['instagram']; ?>">
+						<svg role="img" title="instagram" class="svg-icon sidebar-svg">
 							<use xlink:href="<?php echo get_template_directory_uri(); ?>/assets/svg/stack/svg/sprite.stack.svg#instagram"/>
 						</svg>
 					</a>
@@ -115,7 +120,7 @@
 			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/yhor-green.png" alt="your-health-our-responsibility" class="yhor-sidebar" />
 			<p class="cdhi-sb-name">CATANDUANES DOCTORS HOSPITAL INC.</p>
 			<p class="cdhi-sb-rights">&copy; <?php echo date('Y'); ?>, All Rights Reserved</p>
-			<p class="cdhi-sb-address">Surtida St., Valencia, Virac, Catanduanes Philippine 4800</p>
+			<p class="cdhi-sb-address"><?php echo $footer['address']; ?></p>
 			<button class="close-sidebar">
 				<div></div>
 			</button>

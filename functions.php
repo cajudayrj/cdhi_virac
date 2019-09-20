@@ -187,3 +187,16 @@ function special_nav_class ($classes, $item) {
     }
     return $classes;
 }
+
+// ADD OPTIONS PAGE FOR GLOBAL ACF FIELDS
+if (function_exists('acf_add_options_page')):
+
+    $glob_opt = [
+        'page_title' => 'Global Fields',
+        'menu_slug' => 'cdhi_options',
+        'redirect' => false,
+    ];
+
+    acf_add_options_page($glob_opt);
+
+endif;
