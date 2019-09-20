@@ -21,6 +21,7 @@
         width: 100%;
         top: 0;
         right: 0;
+        overflow-y: auto;
         z-index: 100;
         transform: translateX(320px);
         transition: all .3s .1s ease-in-out;
@@ -41,7 +42,7 @@
                     width: 100%;
                     border-bottom: solid 1px #ccc;
                     a{
-                        color: $green;
+                        color: $green-2;
                         font-family: 'BarlowMedium', sans-serif;
                         font-size: 14px;
                         text-decoration: none;
@@ -68,20 +69,21 @@
             flex-direction: row;
             margin-bottom: 25px;
             a{
-                border: solid 1px $green;
+                border: solid 1px $green-2;
                 border-radius: 5px;
                 padding: 7px 12px;
                 background-color: transparent;
-                color: $green;
+                color: $green-2;
                 display: flex;
                 align-items: center;
                 font-family: 'BarlowSemiBold', sans-serif;
                 font-size: 13px;
                 margin-right: 10px;
                 .sidebar-svg{
-                    fill: $green;
-                    width: 20px;
-                    height: 20px;
+                    fill: $green-2;
+                    width: 18px;
+                    height: 18px;
+                    margin-right: 8px;
                 }
             }
         }
@@ -91,12 +93,46 @@
             flex-wrap: wrap;
             flex-direction: row;
             justify-content: center;
+            margin-bottom: 20px;
             .sidebar-svg{
-                fill: $green;
+                fill: $green-2;
                 width: 25px;
                 height: 25px;
                 margin: 0 5px;
             }
+        }
+
+        .yhor-sidebar{
+            width: 100%;
+            max-width: 205px;
+            margin: 0px auto 10px;
+            display: block;
+        }
+
+        .cdhi-sb-name{
+            color: $gray;
+            font-family: "BarlowSemiBold",sans-serif;
+            text-align: center;
+            max-width: 200px;
+            margin: 0 auto 10px;
+            line-height: 1.4;
+            letter-spacing: .4px;
+            text-transform: uppercase;
+        }
+
+        .cdhi-sb-rights, .cdhi-sb-address{
+            color: $gray;
+            font-family: "BarlowMedium", sans-serif;
+            text-align: center;
+            margin: 0 auto 10px;
+            font-size: 13px;
+            letter-spacing: .4px;
+        }
+
+        .cdhi-sb-address{
+            margin: 0 auto;
+            font-size: 10px;
+            text-transform: uppercase;
         }
 
         .close-sidebar{

@@ -15,6 +15,7 @@
 
 	<footer id="colophon" class="site-footer">
 		<section class="cdhi-footer">
+			<img src="<?php echo get_template_directory_uri(); ?>/assets/images/footer-line.png" alt="" class="footer-line">
 			<div class="footer-container container">
 				<div class="row">
 					<div class="col-md-3 col-sm-12">
@@ -27,7 +28,7 @@
 							<p class="cdhi-name">CATANDUANES DOCTORS HOSPITAL INC.</p>
 							<p class="rights">&copy; <?php echo date("Y"); ?>, All Rights Reserved</p>
 							<p class="cdhi-address">SURTIDA ST., VALENCIA, VIRAC, CATANDUANES PHILIPPINES 4800</p>
-							<img class="footer-yhor" src="#" alt="your-health-our-responsibility" />
+							<img class="footer-yhor" src="<?php echo get_template_directory_uri(); ?>/assets/images/yhor.png" alt="your-health-our-responsibility" />
 							<p class="powered-by">POWERED BY: <a href="http://nocturnalpixels.com" target="_blank">NOCTURNAL PIXELS</a></p>
 						</div>
 					</div>
@@ -53,7 +54,38 @@
 					</div>
 					<div class="col-md-3 col-sm-12">
 						<div class="footer-col-4">
-
+							<div class="footer-socmed-icons">
+								<a href="#">
+									<svg role="img" title="facebook" class="svg-icon footer-svg">
+										<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#facebook"/>
+									</svg>
+								</a>
+								<a href="#">
+									<svg role="img" title="facebook" class="svg-icon footer-svg">
+										<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#messenger"/>
+									</svg>
+								</a>
+								<a href="#">
+									<svg role="img" title="facebook" class="svg-icon footer-svg">
+										<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#twitter"/>
+									</svg>
+								</a>
+								<a href="#">
+									<svg role="img" title="facebook" class="svg-icon footer-svg">
+										<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#instagram"/>
+									</svg>
+								</a>
+							</div>
+							<div class="footer-hotlines">
+								<p>Emergency | <a href="tel:+639163167866">+63 916 316 7866</a></p>
+								<p>Free Shuttle | <a href="tel:+639161254875">+63 916 125 4875</a></p>
+								<p>Info Desk | <a href="tel:+639163167866">+63 916 316 7866</a></p>
+							</div>
+							<div class="footer-emails">
+								<a href="mailto:cdhi@gmail.com">cdhi@gmail.com</a>
+								<a href="mailto:cdhimarketing@gmail.com">cdhimarketing@gmail.com</a>
+								<a href="mailto:cdhiadmission@gmail.com">cdhiadmission@gmail.com</a>
+							</div>
 						</div>
 					</div>
 				</div>
