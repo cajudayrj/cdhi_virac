@@ -2,7 +2,7 @@
 RESPONSIVE PROPERTY HANDLER
 handles the per-breakpoint property for mobile-first approach
 note: requires a key-less 'breakpoints' scss map
-        e.g. $breakpoints_keyless: ( 0px, 768px, 992px, 1200px );
+        e.g. $breakpoints_keyless: ( 0px, 480px, 768px, 992px, 1200px );
 usage:
     @include respond((
     display: flex,
