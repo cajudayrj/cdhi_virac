@@ -200,3 +200,37 @@ if (function_exists('acf_add_options_page')):
     acf_add_options_page($glob_opt);
 
 endif;
+
+// ADD DOCTOR CUSTOM POST TYPE AND TAXONOMY
+function create_doctors_posttype() {
+ 
+    register_post_type( 'doctor',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Doctors' ),
+                'singular_name' => __( 'Doctor' )
+            ),
+            'public' => true,
+			'has_archive' => true,
+			'menu_icon' => 'dashicons-groups',
+        )
+    );
+}
+// Hooking up our function to theme setup
+add_action( 'init', 'create_doctors_posttype' );
+
+add_action( 'init', 'create_department_tax');
+
+function create_department_tax() {
+	register_taxonomy(
+		'department',
+		'doctor',
+		array(
+			'label' => __( 'Department' ),
+			'rewrite' => array( 'slug' => 'department' ),
+			'hierarchical' => true,
+		)
+	);
+}
+?>
