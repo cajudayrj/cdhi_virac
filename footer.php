@@ -88,14 +88,26 @@
 								<?php endif ?>
 							</div>
 							<div class="footer-hotlines">
-								<p>Emergency | <a href="tel:<?php echo $footer['emergency_contact']; ?>"><?php echo $footer['emergency_contact']; ?></a></p>
-								<p>Free Shuttle | <a href="tel:<?php echo $footer['free_shuttle_contact']; ?>"><?php echo $footer['free_shuttle_contact']; ?></a></p>
-								<p>Info Desk | <a href="tel:<?php echo $footer['info_desk_contact']; ?>"><?php echo $footer['info_desk_contact']; ?></a></p>
+								<?php if ($footer['emergency_contact']) : ?>
+									<p>Emergency | <a href="tel:<?php echo $footer['emergency_contact']; ?>"><?php echo $footer['emergency_contact']; ?></a></p>
+								<?php endif ?>
+								<?php if ($footer['free_shuttle_contact']) : ?>
+									<p>Free Shuttle | <a href="tel:<?php echo $footer['free_shuttle_contact']; ?>"><?php echo $footer['free_shuttle_contact']; ?></a></p>
+								<?php endif ?>
+								<?php if ($footer['info_desk_contact']) : ?>
+									<p>Info Desk | <a href="tel:<?php echo $footer['info_desk_contact']; ?>"><?php echo $footer['info_desk_contact']; ?></a></p>
+								<?php endif ?>
 							</div>
 							<div class="footer-emails">
-								<a href="mailto:cdhi@gmail.com">cdhi@gmail.com</a>
-								<a href="mailto:cdhimarketing@gmail.com">cdhimarketing@gmail.com</a>
-								<a href="mailto:cdhiadmission@gmail.com">cdhiadmission@gmail.com</a>
+								<?php if ($footer['email']) : ?>
+									<a href="mailto:<?php echo $footer['email']; ?>"><?php echo $footer['email']; ?></a>
+								<?php endif ?>
+								<?php if ($footer['marketing_email']) : ?>
+									<a href="mailto:<?php echo $footer['marketing_email']; ?>"><?php echo $footer['marketing_email']; ?></a>
+								<?php endif ?>
+								<?php if ($footer['admission_email']) : ?>
+									<a href="mailto:<?php echo $footer['admission_email']; ?>"><?php echo $footer['admission_email']; ?></a>
+								<?php endif ?>
 							</div>
 						</div>
 					</div>
@@ -106,6 +118,7 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4qwhsAu4vr_l4SSjJ6mg4RgFm4xvWgCw&callback=initMap"
+  type="text/javascript"></script>
 </body>
 </html>
