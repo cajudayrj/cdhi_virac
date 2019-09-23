@@ -1,0 +1,69 @@
+.page-breadcrumb{
+    margin-bottom: 40px;
+    margin-top: 25px;
+    @include tablet{
+        margin-top: 0px;
+    }
+    .breadcrumb-text{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-items: center;
+        font-size: 16px;
+        span{
+            font-family: 'Barlow',sans-serif;
+            margin: 2px 7px 0px;
+            color: $blue;
+            font-size: 18px;
+        }
+        .breadcrumb-svg{
+            display: flex;
+            fill: $blue;
+            height: 21px;
+            width: 21px;
+            margin: 0;
+        }
+        a{
+            font-family: 'BarlowSemiBold',sans-serif;
+            color: $blue;
+            text-decoration: none;
+            letter-spacing: .1px;
+        }
+    }
+}
+
+.doctor-main-content{
+    .doctors-introduction{
+        font-family: "BarlowLight", sans-serif;
+        color: $gray;
+        h1{
+            margin-bottom: 1rem;
+        }
+        .intro-content{
+            margin-bottom: 20px;
+        }
+        picture{
+            img{
+                margin-bottom: 60px;
+                width: 100%;
+                object-fit: contain;
+                display: block;
+            }
+        }
+    }
+
+    .doctors-list-content{
+        h3{
+            color: $green-2;
+            font-family: "BarlowBold", sans-serif;
+            margin-bottom: 40px;
+        }
+        .doctors-department-container{
+            h5{
+                color: $gray;
+                font-family: "BarlowBold", sans-serif;
+                margin-bottom: 25px;
+            }
+        }
+    }
+}

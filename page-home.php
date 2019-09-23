@@ -79,7 +79,7 @@ get_header();
 		<section class="home-description">
 			<div class="container">
 				<h2>Catanduanes Doctors Hospital Inc.</h2>
-				<p>With its prominently elegant structure, CDHI poses as the island’s endearing surprise not only to the people of Catanduanes but also to the global community. To top it all, CDHI’s immense potentials in the medical tourism industry, to likewise include wide job opportunities to the people in and outside Catanduanes, CDHI promises to offer better health and therefore better life. After all, “Your health is our responsibility” is what CDHI is all for.</p>
+				<p>With its prominently elegant structure, CDHI poses as the island’s endearing surprise not only to the people of Catanduanes but also to the global community. To top it all, CDHI’s immense potentials in the medical tourism industry, to likewise include wide job opportunities to the people in and outside Catanduanes, CDHI promises to offer better health and therefore better life. After all, "Your health is our responsibility" is what CDHI is all for.</p>
 			</div>
 		</section>
 		<section class="partners-section">
@@ -170,12 +170,15 @@ get_header();
 									<li>Service Offered One</li>
 									<li>Service Two</li>
 								</ul>
-								<p class="doctor-schedule">
+								<div class="doctor-schedule">
 									<svg role="img" title="calendar" class="ds-svg">
 										<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#calendar"/>
 									</svg>
-									September 19-20, 2019
-								</p>
+									
+									<ul>
+										<li>September 19, 2019</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 						<div class="schedule-container">
@@ -191,12 +194,16 @@ get_header();
 									<li>Service Offered One</li>
 									<li>Service Two</li>
 								</ul>
-								<p class="doctor-schedule">
+								<div class="doctor-schedule">
 									<svg role="img" title="calendar" class="ds-svg">
 										<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#calendar"/>
 									</svg>
-									September 19-20, 2019
-								</p>
+									<ul>
+										<li>September 21, 2019</li>
+										<li>September 22, 2019</li>
+										<li>September 28, 2019</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 						<div class="schedule-container">
@@ -212,12 +219,15 @@ get_header();
 									<li>Service Offered One</li>
 									<li>Service Two</li>
 								</ul>
-								<p class="doctor-schedule">
+								<div class="doctor-schedule">
 									<svg role="img" title="calendar" class="ds-svg">
 										<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#calendar"/>
 									</svg>
-									September 19-20, 2019
-								</p>
+									<ul>
+										<li>September 29, 2019</li>
+										<li>September 30, 2019</li>
+									</ul>
+								</div>
 							</div>
 						</div>
 					</div>
