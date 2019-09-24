@@ -244,6 +244,7 @@ function create_doctors_tax() {
 		'doctor',
 		array(
 			'label' => __( 'HMO' ),
+			'rewrite' => array( 'slug' => 'hmo' ),
 			'hierarchical' => true,
 			'labels' => array(
 				'add_new_item' => __('Add new HMO')
