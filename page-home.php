@@ -79,7 +79,7 @@ get_header();
 		<section class="home-description">
 			<div class="container">
 				<h2>Catanduanes Doctors Hospital Inc.</h2>
-				<p>With its prominently elegant structure, CDHI poses as the island’s endearing surprise not only to the people of Catanduanes but also to the global community. To top it all, CDHI’s immense potentials in the medical tourism industry, to likewise include wide job opportunities to the people in and outside Catanduanes, CDHI promises to offer better health and therefore better life. After all, “Your health is our responsibility” is what CDHI is all for.</p>
+				<p>With its prominently elegant structure, CDHI poses as the island’s endearing surprise not only to the people of Catanduanes but also to the global community. To top it all, CDHI’s immense potentials in the medical tourism industry, to likewise include wide job opportunities to the people in and outside Catanduanes, CDHI promises to offer better health and therefore better life. After all, "Your health is our responsibility" is what CDHI is all for.</p>
 			</div>
 		</section>
 		<section class="partners-section">
@@ -157,69 +157,88 @@ get_header();
 					</div>
 					<div class="col-sm-12 col-md-4 cdhi-schedule">
 						<h4 class="title">SCHEDULED VISITING DOCTORS</h4>
-						<div class="schedule-container">
-							<div class="doctor-thumbnail">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/glideimg.jpg" title="news-thumbnail" alt="news-thumbnail" />
+						<?php
+							$loop = new WP_Query( array( 'post_type' => 'doctor') );
+							$doctorSched = [];
+							$count = 0;
+							foreach($loop->posts as $p):
+								$docId = $p->ID;
+								$hasSched = get_field('has_schedule',$docId);
+								$st = get_field('status',$docId);
+								$visitingSched = get_field('visiting_schedule', $docId);
+								if(($st == 'visiting') and $hasSched) : 
+									$firstSched = $visitingSched[0]['date']['from'];
+									$doctorSched[] = [
+										'date' => $firstSched,
+										'doc' => $p
+									];
+								endif;
+							endforeach;
+							//SORTING DATE FROM EARLIEST
+							usort($doctorSched, function($a, $b){
+								if (strtotime($a['date']) > strtotime($b['date'])) 
+									return 1; 
+								else if (strtotime($a['date']) < strtotime($b['date']))  
+									return -1; 
+								else
+									return 0; 
+							});
+							foreach($doctorSched as $dsched):
+								$count++;
+								$date = $dsched['date'];
+								$id = $dsched['doc']->ID;
+								$fn = get_field('first_name',$id);
+								$ln = get_field('last_name',$id);
+								$st = get_field('status',$id);
+								$specialization = get_field('specialization',$id);
+								$services = get_field('services_offered',$id);
+								$vSched = get_field('visiting_schedule', $id);
+								//DISPLAY UP TO MAX 5 DOCTORS ONLY
+								if($count <= 5):
+						?>
+							<div class="schedule-container">
+								<div class="doctor-thumbnail">
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/glideimg.jpg" title="news-thumbnail" alt="news-thumbnail" />
+								</div>
+								<div class="doctor-summary">
+
+									<p class="doctor-ln"><?php echo $ln ?>,</p>
+									<p class="doctor-fn"><?php echo $fn ?></p>
+									<p class="doctor-specialty"><?php echo $specialization ?></p>
+									<?php if($services): ?>
+										<p class="services">Services Offered:</p>
+										<ul class="service-list">
+											<?php foreach($services as $service): ?>
+												<li><?php echo $service['service_name']; ?></li>
+											<?php endforeach; ?>
+										</ul>
+									<?php endif; ?>
+									<div class="doctor-schedule">
+										<?php 
+											foreach($vSched as $sched): 
+												$date = $sched['date'];
+										?>
+											<div class="doctor-schedule-container">
+												<svg role="img" title="calendar" class="ds-svg">
+													<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#calendar"/>
+												</svg>
+												<ul>
+													<li>
+														<?php 
+															echo $date['from']; 
+                                                            echo $date['to'] != '' ? ' - '.$date['to'] : '';
+														?>
+													</li>
+												</ul>
+											</div>
+										<?php endforeach; ?>
+									</div>
+								</div>
 							</div>
-							<div class="doctor-summary">
-								<p class="doctor-ln">KHO-HERMAN,</p>
-								<p class="doctor-fn">Suzette Grace</p>
-								<p class="doctor-specialty">General Surgery/ Plastic and Reconstructive Surgery</p>
-								<p class="services">Services Offered:</p>
-								<ul class="service-list">
-									<li>Service Offered One</li>
-									<li>Service Two</li>
-								</ul>
-								<p class="doctor-schedule">
-									<svg role="img" title="calendar" class="ds-svg">
-										<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#calendar"/>
-									</svg>
-									September 19-20, 2019
-								</p>
-							</div>
-						</div>
-						<div class="schedule-container">
-							<div class="doctor-thumbnail">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/glideimg.jpg" title="news-thumbnail" alt="news-thumbnail" />
-							</div>
-							<div class="doctor-summary">
-								<p class="doctor-ln">KHO-HERMAN,</p>
-								<p class="doctor-fn">Suzette Grace</p>
-								<p class="doctor-specialty">General Surgery/ Plastic and Reconstructive Surgery</p>
-								<p class="services">Services Offered:</p>
-								<ul class="service-list">
-									<li>Service Offered One</li>
-									<li>Service Two</li>
-								</ul>
-								<p class="doctor-schedule">
-									<svg role="img" title="calendar" class="ds-svg">
-										<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#calendar"/>
-									</svg>
-									September 19-20, 2019
-								</p>
-							</div>
-						</div>
-						<div class="schedule-container">
-							<div class="doctor-thumbnail">
-								<img src="<?php echo get_template_directory_uri(); ?>/assets/images/glideimg.jpg" title="news-thumbnail" alt="news-thumbnail" />
-							</div>
-							<div class="doctor-summary">
-								<p class="doctor-ln">KHO-HERMAN,</p>
-								<p class="doctor-fn">Suzette Grace</p>
-								<p class="doctor-specialty">General Surgery/ Plastic and Reconstructive Surgery</p>
-								<p class="services">Services Offered:</p>
-								<ul class="service-list">
-									<li>Service Offered One</li>
-									<li>Service Two</li>
-								</ul>
-								<p class="doctor-schedule">
-									<svg role="img" title="calendar" class="ds-svg">
-										<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#calendar"/>
-									</svg>
-									September 19-20, 2019
-								</p>
-							</div>
-						</div>
+						<?php
+								endif;
+							endforeach;
+						?>
 					</div>
 					<div class="col-sm-12 col-md-4 cdhi-guide">
 						<h4 class="title">PATIENT & VISITORS GUIDE</h4>

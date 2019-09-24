@@ -177,6 +177,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 
 // DISABLE GUTTENBERG
  add_filter('use_block_editor_for_post', '__return_false');	
+ add_action('admin_head', 'remove_content_editor');
+ function remove_content_editor()
+ { 
+	 remove_post_type_support('page', 'editor');        
+ }
 
 // ADD ACTIVE CLASS ON ACTIVE MENU
 add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 4);
@@ -200,3 +205,56 @@ if (function_exists('acf_add_options_page')):
     acf_add_options_page($glob_opt);
 
 endif;
+
+// ADD DOCTOR CUSTOM POST TYPE AND TAXONOMY
+function create_doctors_posttype() {
+ 
+    register_post_type( 'doctor',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Doctors' ),
+                'singular_name' => __( 'Doctor' )
+            ),
+            'public' => true,
+			'has_archive' => true,
+			'menu_icon' => 'dashicons-groups',
+        )
+    );
+}
+add_action( 'init', 'create_doctors_posttype' );
+// CREATE DEPARTMENT, HMO TAXONOMY FOR DOCTORS CPT
+add_action( 'init', 'create_doctors_tax');
+function create_doctors_tax() {
+	register_taxonomy(
+		'department',
+		'doctor',
+		array(
+			'label' => __( 'Department' ),
+			'rewrite' => array( 'slug' => 'department' ),
+			'hierarchical' => true,
+			'labels' => array(
+				'add_new_item' => __('Add new Department')
+			)
+		)
+	);
+
+	register_taxonomy(
+		'hmo',
+		'doctor',
+		array(
+			'label' => __( 'HMO' ),
+			'rewrite' => array( 'slug' => 'hmo' ),
+			'hierarchical' => true,
+			'labels' => array(
+				'add_new_item' => __('Add new HMO')
+			)
+		)
+	);
+}
+//REMOVE POST TYPE ON DOCTORS EDITOR
+add_action('init', 'init_remove_support',100);
+function init_remove_support(){
+    $post_type = 'doctor';
+    remove_post_type_support( $post_type, 'editor');
+}
