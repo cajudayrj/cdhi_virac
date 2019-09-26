@@ -5,6 +5,7 @@
 
 get_header();
 $content = get_field('content');
+$imageFull = get_field('introduction_image')['url'];
 $image = get_field('introduction_image')['sizes'];
 /**
  * DOCTORS PER DEPARTMENT LIST
@@ -49,10 +50,10 @@ endforeach;
                         <?php echo $content; ?>
                     </div>
                     <picture>
-                        <source srcset="<?php echo $image['large'] ?>" media="(min-width: 1200px)" />
-                        <source srcset="<?php echo $image['medium_large'] ?>" media="(min-width: 768px)" />
+                        <source srcset="<?php echo $imageFull ?>" media="(min-width: 1200px)" />
+                        <source srcset="<?php echo $image['large'] ?>" media="(min-width: 768px)" />
                         <source srcset="<?php echo $image['medium_large'] ?>" media="(min-width: 0px)" />
-                        <img src="<?php echo $image['large'] ?>" />
+                        <img src="<?php echo $imageFull ?>" />
                     </picture>
                 </div>
                 <div class="col"></div>

@@ -17,10 +17,10 @@ get_header();
 								$image = $slider['image']['sizes'];
 							?>
 								<picture>
-									<source srcset="<?php echo $image['large'] ?>" media="(min-width: 1200px)" />
-									<source srcset="<?php echo $image['medium_large'] ?>" media="(min-width: 768px)" />
+									<source srcset="<?php echo $slider['image']['url'] ?>" media="(min-width: 1200px)" />
+									<source srcset="<?php echo $image['large'] ?>" media="(min-width: 768px)" />
 									<source srcset="<?php echo $image['medium_large'] ?>" media="(min-width: 0px)" />
-									<img src="<?php echo $image['large'] ?>" />
+									<img src="<?php echo $slider['image']['url'] ?>" />
 								</picture>
 							<?php
 								endforeach;
@@ -190,6 +190,7 @@ get_header();
 								$fn = get_field('first_name',$id);
 								$ln = get_field('last_name',$id);
 								$st = get_field('status',$id);
+								$docImage =get_field('image', $id) ? get_field('image', $id)['url'] : get_template_directory_uri().'/assets/images/doc-default-photo.png';
 								$specialization = get_field('specialization',$id);
 								$services = get_field('services_offered',$id);
 								$vSched = get_field('visiting_schedule', $id);
@@ -198,7 +199,7 @@ get_header();
 						?>
 							<div class="schedule-container">
 								<div class="doctor-thumbnail">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/glideimg.jpg" title="news-thumbnail" alt="news-thumbnail" />
+									<img src="<?php echo $docImage;?>" title="doctor-image-thumbnail" alt="doctor-image-thumbnail" />
 								</div>
 								<div class="doctor-summary">
 

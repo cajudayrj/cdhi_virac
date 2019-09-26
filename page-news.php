@@ -1,6 +1,6 @@
 <?php
 /**
- * Template Name: About
+ * Template Name: News and Blog
  */
 
 get_header();
@@ -17,7 +17,7 @@ get_header();
                 <a href="#"><?php the_title(); ?></a>
             </div>
         </div>
-        <section class="about-section-container">
+        <section class="news-and-blog-section-container">
             <div class="container">
                 
             </div>
