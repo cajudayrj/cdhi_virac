@@ -158,7 +158,7 @@ get_header();
 					<div class="col-sm-12 col-md-4 cdhi-schedule">
 						<h4 class="title">SCHEDULED VISITING DOCTORS</h4>
 						<?php
-							$loop = new WP_Query( array( 'post_type' => 'doctor') );
+							$loop = new WP_Query( array( 'post_type' => 'doctor',  'posts_per_page' => -1) );
 							$doctorSched = [];
 							$count = 0;
 							foreach($loop->posts as $p):
