@@ -22,7 +22,9 @@
 			<div class="footer-container container">
 				<div class="row">
 					<div class="col-md-3 col-sm-12">
-						<img class="footer-img-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/cdhi-logo.png" alt="">
+						<a href="<?php echo home_url(); ?>">
+							<img class="footer-img-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/cdhi-logo.png" alt="">
+						</a>
 					</div>
 				</div>
 				<div class="row">

@@ -85,6 +85,25 @@
                 "maxlength": ""
             },
             {
+                "key": "field_5d8cd84b0b869",
+                "label": "Sub Specialization",
+                "name": "sub_specialization",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
                 "key": "field_5d8855108aedd",
                 "label": "Services Offered",
                 "name": "services_offered",

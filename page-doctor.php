@@ -5,6 +5,7 @@
 
 get_header();
 $content = get_field('content');
+$imageFull = get_field('introduction_image')['url'];
 $image = get_field('introduction_image')['sizes'];
 /**
  * DOCTORS PER DEPARTMENT LIST
@@ -49,10 +50,10 @@ endforeach;
                         <?php echo $content; ?>
                     </div>
                     <picture>
-                        <source srcset="<?php echo $image['large'] ?>" media="(min-width: 1200px)" />
-                        <source srcset="<?php echo $image['medium_large'] ?>" media="(min-width: 768px)" />
+                        <source srcset="<?php echo $imageFull ?>" media="(min-width: 1200px)" />
+                        <source srcset="<?php echo $image['large'] ?>" media="(min-width: 768px)" />
                         <source srcset="<?php echo $image['medium_large'] ?>" media="(min-width: 0px)" />
-                        <img src="<?php echo $image['large'] ?>" />
+                        <img src="<?php echo $imageFull ?>" />
                     </picture>
                 </div>
                 <div class="col"></div>
@@ -69,9 +70,15 @@ endforeach;
                                     <?php 
                                         foreach($departmentDoctor as $key=>$doctor) :
                                             if($key==$dept) :
+                                                usort($doctor, function($a, $b){
+                                                    $lnameA = get_field('last_name', $a->ID);
+                                                    $lnameB = get_field('last_name', $b->ID);
+                                                    return strcmp($lnameA, $lnameB);
+                                                });
                                                 foreach($doctor as $d):
                                                     $id = $d->ID;
                                                     $specialization = get_field('specialization', $id);
+                                                    $subspec = get_field('sub_specialization', $id);
                                                     $doctorImg = get_field('image', $id) ? get_field('image', $id)['url'] : get_template_directory_uri()."/assets/images/doc-default-photo.png";
                                                     $ln = get_field('last_name', $id);
                                                     $fn = get_field('first_name', $id);
@@ -119,13 +126,14 @@ endforeach;
                                     ?>
                                             <div class="col-lg-4 col-md-6 col-sm-12 column">
                                                 <div class="doctor-profile-container" data-doctor-id="<?php echo $deptIndex."-".$id; ?>">
-                                                    <span class="status <?php echo (($status == 'visiting') and ($hasSched)) ? 'hassched' : $status; ?>"><?php echo (($status == 'visiting') and ($hasSched)) ? 'Scheduled' : $status; ?></span>
+                                                    <span class="status <?php echo (($status == 'visiting') and ($hasSched)) ? 'hassched' : $status; ?>"><?php echo (($status == 'visiting') and ($hasSched)) ? 'Scheduled Visiting' : $status; ?></span>
                                                     <div class="doctor-image">
                                                         <img src="<?php echo $doctorImg; ?>" />
                                                     </div>
                                                     <p class="doctor-ln"><?php echo $ln; ?>,</p>
                                                     <p class="doctor-fn"><?php echo $fn; ?></p>
                                                     <p class="specialization"><?php echo $specialization; ?></p>
+                                                    <p class="sub-spec"><?php echo $subspec; ?></p>
                                                     <?php if(($m or $t or $w or $th or $f or $s or $su) and $status == 'active'): ?>
                                                         <p class="sched"><?php echo $m.''.$t.''. $w.''.$th.''.$f.''.$s.''.$su ?></p>
                                                     <?php endif ?>
@@ -155,9 +163,10 @@ endforeach;
                                                                             <h3>Doctor</h3>
                                                                             <p class="name">
                                                                                 <?php echo $fn.' '.$ln; ?>
-                                                                                <span class="status <?php echo (($status == 'visiting') and ($hasSched)) ? 'hassched' : $status; ?>"><em><?php echo (($status == 'visiting') and ($hasSched)) ? 'Scheduled' : $status; ?></em></span>
+                                                                                <span class="status <?php echo (($status == 'visiting') and ($hasSched)) ? 'hassched' : $status; ?>"><em><?php echo (($status == 'visiting') and ($hasSched)) ? 'Scheduled Visiting' : $status; ?></em></span>
                                                                             </p>
                                                                             <p class="specialty"><?php echo $specialization; ?></p>
+                                                                            <p class="sub-spec"><?php echo $subspec; ?></p>
                                                                             <p class="department"><?php echo $dept; ?> Department</p>
                                                                             <div class="separator"></div>
                                                                             <div class="table-container">

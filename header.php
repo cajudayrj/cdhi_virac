@@ -33,7 +33,9 @@
 		<nav id="site-navigation" class="main-navigation">
 			<div class="primary-nav-container container">
 				<div class="upper-header">
-					<img src="<?php echo get_template_directory_uri() ?>/assets/images/cdhi-logo.png" alt="" />
+					<a href="<?php echo home_url(); ?>">
+						<img src="<?php echo get_template_directory_uri() ?>/assets/images/cdhi-logo.png" alt="" />
+					</a>
 					<div class="header-logo-text">
 						<h1>CATANDUANES DOCTORS HOSPITAL, INC.</h1>
 						<div class="cdhi-header-details">

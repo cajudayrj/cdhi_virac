@@ -258,3 +258,13 @@ function init_remove_support(){
     $post_type = 'doctor';
     remove_post_type_support( $post_type, 'editor');
 }
+
+//REDIRECT ALL DOCTORS TO DOCTOR PAGE
+add_action( 'template_redirect', 'doctor_redirect_post' );
+
+function doctor_redirect_post() {
+  if ( is_single() && (get_post_type() == 'doctor') ) {
+    wp_redirect( home_url().'/our-doctors', 301 );
+    exit;
+  }
+}
