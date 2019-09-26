@@ -9,7 +9,7 @@ $image = get_field('introduction_image')['sizes'];
 /**
  * DOCTORS PER DEPARTMENT LIST
  */
-$loop = new WP_Query( array( 'post_type' => 'doctor') );
+$loop = new WP_Query( array( 'post_type' => 'doctor', 'posts_per_page' => -1) );
 $departmentTerms = get_terms('department');
 $hmoTerms = get_terms('hmo');
 $departmentDoctor = [];
