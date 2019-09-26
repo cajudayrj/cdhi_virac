@@ -133,7 +133,9 @@ endforeach;
                                                     <p class="doctor-ln"><?php echo $ln; ?>,</p>
                                                     <p class="doctor-fn"><?php echo $fn; ?></p>
                                                     <p class="specialization"><?php echo $specialization; ?></p>
-                                                    <p class="sub-spec"><?php echo $subspec; ?></p>
+                                                    <?php if($subspec != ''): ?>
+                                                        <p class="sub-spec"><?php echo $subspec; ?></p>
+                                                    <?php endif; ?>
                                                     <?php if(($m or $t or $w or $th or $f or $s or $su) and $status == 'active'): ?>
                                                         <p class="sched"><?php echo $m.''.$t.''. $w.''.$th.''.$f.''.$s.''.$su ?></p>
                                                     <?php endif ?>
@@ -166,7 +168,9 @@ endforeach;
                                                                                 <span class="status <?php echo (($status == 'visiting') and ($hasSched)) ? 'hassched' : $status; ?>"><em><?php echo (($status == 'visiting') and ($hasSched)) ? 'Scheduled Visiting' : $status; ?></em></span>
                                                                             </p>
                                                                             <p class="specialty"><?php echo $specialization; ?></p>
-                                                                            <p class="sub-spec"><?php echo $subspec; ?></p>
+                                                                            <?php if($subspec != ''): ?>
+                                                                                <p class="sub-spec"><?php echo $subspec; ?></p>
+                                                                            <?php endif; ?>
                                                                             <p class="department"><?php echo $dept; ?> Department</p>
                                                                             <div class="separator"></div>
                                                                             <div class="table-container">
