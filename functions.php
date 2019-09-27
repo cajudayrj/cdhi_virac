@@ -255,8 +255,8 @@ function create_doctors_tax() {
 //REMOVE POST TYPE ON DOCTORS EDITOR
 add_action('init', 'init_remove_support',100);
 function init_remove_support(){
-    $post_type = 'doctor';
-    remove_post_type_support( $post_type, 'editor');
+    remove_post_type_support( 'doctor', 'editor');
+    remove_post_type_support( 'news-and-blog', 'editor');
 }
 
 //REDIRECT ALL DOCTORS TO DOCTOR PAGE
@@ -267,4 +267,50 @@ function doctor_redirect_post() {
     wp_redirect( home_url().'/our-doctors', 301 );
     exit;
   }
+}
+
+add_action( 'template_redirect', 'newsblog_redirect_post' );
+
+function newsblog_redirect_post() {
+  if (is_post_type_archive('news-and-blog') ) {
+    wp_redirect( home_url().'/news-blog', 301 );
+    exit;
+  }
+}
+
+// ADD DOCTOR CUSTOM POST TYPE AND TAXONOMY
+function create_newsblog_posttype() {
+ 
+    register_post_type( 'news-and-blog',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'News and Blogs' ),
+                'singular_name' => __( 'News and Blog' )
+            ),
+            'public' => true,
+			'has_archive' => true,
+			'menu_icon' => 'dashicons-format-aside',
+        )
+    );
+}
+add_action( 'init', 'create_newsblog_posttype' );
+
+//REMOVE ALL ACCESS TO POST IN ADMIN
+add_action( 'admin_menu', 'remove_default_post_type' );
+
+function remove_default_post_type() {
+    remove_menu_page( 'edit.php' );
+}
+
+add_action( 'admin_bar_menu', 'remove_default_post_type_menu_bar', 999 );
+
+function remove_default_post_type_menu_bar( $wp_admin_bar ) {
+    $wp_admin_bar->remove_node( 'new-post' );
+}
+
+add_action( 'wp_dashboard_setup', 'remove_draft_widget', 999 );
+
+function remove_draft_widget(){
+    remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
 }
