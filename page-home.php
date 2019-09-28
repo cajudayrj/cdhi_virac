@@ -86,10 +86,10 @@ get_header();
 			<div class="container">
 				<h3>Our Partners</h3>
 				<div class="partner-images-desktop">
-					<img src="<?php echo get_template_directory_uri() ?>/assets/images/partners/partners-lg.png" />
+					<img title="Catanduanes Doctors Hospital Partners" alt="Catanduanes Doctors Hospital Partners" src="<?php echo get_template_directory_uri() ?>/assets/images/partners/partners-lg.png" />
 				</div>
 				<div class="partner-images-mobile">
-					<img src="<?php echo get_template_directory_uri() ?>/assets/images/partners/partners-sm.png" />
+					<img  title="Catanduanes Doctors Hospital Partners" alt="Catanduanes Doctors Hospital Partners" src="<?php echo get_template_directory_uri() ?>/assets/images/partners/partners-sm.png" />
 				</div>
 			</div>
 		</section>
@@ -199,7 +199,7 @@ get_header();
 						?>
 							<div class="schedule-container">
 								<div class="doctor-thumbnail">
-									<img src="<?php echo $docImage;?>" title="doctor-image-thumbnail" alt="doctor-image-thumbnail" />
+									<img src="<?php echo $docImage;?>" title="<?php echo $fn; ?> <?php echo $ln; ?>  - <?php echo $specialization; ?>  in Catanduanes Doctors Hospital, Inc." alt="<?php echo $fn; ?> <?php echo $ln; ?>  - <?php echo $specialization; ?> in Catanduanes Doctors Hospital, Inc." />
 								</div>
 								<div class="doctor-summary">
 
