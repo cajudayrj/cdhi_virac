@@ -115,7 +115,7 @@ get_header();
                             </div>
                             <div class="col-sm-12 col-lg-8 col-input">
                                 <div class="form-group">
-                                    <select class="form-control" rows="3">
+                                    <select class="form-control" required rows="3">
                                         <option value disabled selected>Select Service</option>
                                         <option value="option-1">Service 1</option>
                                         <option value="option-2">Service 2</option>
@@ -129,13 +129,13 @@ get_header();
                             </div>
                             <div class="col-sm-12 col-lg-8 col-input">
                                 <div class="form-group two-col">
-                                    <select class="form-control" rows="3">
+                                    <select class="form-control" required rows="3">
                                         <option value disabled selected>Select Hour</option>
                                         <option value="option-1">01</option>
                                         <option value="option-2">02</option>
                                         <option value="option-3">03</option>
                                     </select>
-                                    <select class="form-control" rows="3">
+                                    <select class="form-control" required rows="3">
                                         <option value disabled selected>Select Meridiem</option>
                                         <option value="option-1">AM</option>
                                         <option value="option-2">PM</option>
@@ -148,19 +148,19 @@ get_header();
                             </div>
                             <div class="col-sm-12 col-lg-8 col-input">
                                 <div class="form-group three-col">
-                                    <select class="form-control" rows="3">
+                                    <select class="form-control" required rows="3">
                                         <option value disabled selected>Month</option>
                                         <option value="option-1">January</option>
                                         <option value="option-2">February</option>
                                         <option value="option-3">March</option>
                                     </select>
-                                    <select class="form-control" rows="3">
+                                    <select class="form-control" required rows="3">
                                         <option value disabled selected>Day</option>
                                         <option value="option-1">1</option>
                                         <option value="option-2">2</option>
                                         <option value="option-3">3</option>
                                     </select>
-                                    <select class="form-control" rows="3">
+                                    <select class="form-control" required rows="3">
                                         <option value disabled selected>Year</option>
                                         <option value="option-1">2019</option>
                                         <option value="option-2">2020</option>
@@ -174,7 +174,7 @@ get_header();
                             </div>
                             <div class="col-sm-12 col-lg-8 col-input">
                                 <div class="form-group">
-                                    <select class="form-control" rows="3">
+                                    <select class="form-control" required rows="3">
                                         <option value="option-1">HMO</option>
                                         <option value="option-2">Cash</option>
                                     </select>
