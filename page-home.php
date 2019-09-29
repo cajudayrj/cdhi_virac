@@ -46,7 +46,7 @@ get_header();
 					</div>
 				</div>
 				<div class="atf-content">
-					<a href="">
+					<a href="<?php echo home_url() ?>">
 						<svg role="img" title="experiment-results" class="svg-icon atf-buttons-svg">
 							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#experiment-results"/>
 						</svg>
@@ -55,7 +55,7 @@ get_header();
 							<p class="subtext">See your Medical Result Fast</p>
 						</div>
 					</a>
-					<a href="">
+					<a href="<?php echo home_url() ?>/our-services">
 						<svg role="img" title="heart" class="svg-icon atf-buttons-svg">
 							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#heart"/>
 						</svg>
@@ -64,7 +64,7 @@ get_header();
 							<p class="subtext">See available services for you</p>
 						</div>
 					</a>
-					<a href="">
+					<a href="<?php echo home_url() ?>/make-an-appointment">
 						<svg role="img" title="calendar" class="svg-icon atf-buttons-svg">
 							<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#calendar"/>
 						</svg>
@@ -98,62 +98,29 @@ get_header();
 				<div class="row">
 					<div class="col-sm-12 col-md-4 cdhi-news">
 						<h4 class="title">LATEST NEWS & BLOG</h4>
+						<?php
+							$latestnews = new WP_Query( array( 'post_type' => 'news-and-blog',  'posts_per_page' => 5));
+							$news = $latestnews->posts;
+							foreach($news as $n):
+							$newsid = $n->ID;
+							$newstitle = $n->post_title;
+							$newsimage = get_field('post_thumbnail',$newsid) ? get_field('post_thumbnail',$newsid)['sizes']['medium_large'] : get_template_directory_uri().'/assets/images/glideimg.jpg';
+							$newspostdate= $n->post_date;
+							$newsdate = date("F j, Y", strtotime($newspostdate));
+						?>
 						<a href="">
 							<div class="news-container">
 									<div class="news-thumbnail">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/glideimg.jpg" title="news-thumbnail" alt="news-thumbnail" />
+										<img src="<?php echo $newsimage; ?>" title="news-thumbnail" alt="news-thumbnail" />
 									</div>
 									<div class="news-summary">
-										<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-										<p class="date">September 1, 2019</p>
+										<p class="title"><?php echo $newstitle; ?></p>
+										<p class="date"><?php echo $newsdate; ?></p>
 									</div>
 							</div>
 						</a>
-						<a href="">
-							<div class="news-container">
-									<div class="news-thumbnail">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/glideimg.jpg" title="news-thumbnail" alt="news-thumbnail" />
-									</div>
-									<div class="news-summary">
-										<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-										<p class="date">September 1, 2019</p>
-									</div>
-							</div>
-						</a>
-						<a href="">
-							<div class="news-container">
-									<div class="news-thumbnail">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/glideimg.jpg" title="news-thumbnail" alt="news-thumbnail" />
-									</div>
-									<div class="news-summary">
-										<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-										<p class="date">September 1, 2019</p>
-									</div>
-							</div>
-						</a>
-						<a href="">
-							<div class="news-container">
-									<div class="news-thumbnail">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/glideimg.jpg" title="news-thumbnail" alt="news-thumbnail" />
-									</div>
-									<div class="news-summary">
-										<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-										<p class="date">September 1, 2019</p>
-									</div>
-							</div>
-						</a>
-						<a href="">
-							<div class="news-container">
-									<div class="news-thumbnail">
-										<img src="<?php echo get_template_directory_uri(); ?>/assets/images/glideimg.jpg" title="news-thumbnail" alt="news-thumbnail" />
-									</div>
-									<div class="news-summary">
-										<p class="title">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-										<p class="date">September 1, 2019</p>
-									</div>
-							</div>
-						</a>
-						<a href="#" class="view-all">VIEW ALL</a>
+						<?php endforeach; ?>
+						<a href="<?php echo home_url() ?>/news-blog" class="view-all">VIEW ALL</a>
 					</div>
 					<div class="col-sm-12 col-md-4 cdhi-schedule">
 						<h4 class="title">SCHEDULED VISITING DOCTORS</h4>

@@ -1,0 +1,99 @@
+.service-modal{
+    position: fixed;
+    display: none;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(14,91,2, .9);
+    z-index: 3;
+    transition: all .3s ease-in-out;
+    align-items: center;
+    justify-content: center;
+    .modal-container{
+        width: 100%;
+        padding: 25px;
+        border-radius: 5px;
+        background-color: #fff;
+        box-shadow: 0px 0px 8px rgba(0,0,0,0.9);
+        max-height: 100vh;
+        overflow-x: hidden;
+        overflow-y: auto;
+        .back-column{
+            display: flex;
+            width: 100%;
+            align-items: center;
+            flex-direction: row;
+            justify-content: flex-end;
+            color: $green;
+            font-family: 'BarlowMedium', sans-serif;
+            font-size: 14px;
+            margin-bottom: 30px;
+            cursor: pointer;
+            .close-modal-svg{
+                fill: $green;
+                width: 20px;
+                height: 20px;
+                transition: margin .2s ease-in-out;
+                margin-right: 10px
+            }
+            &:hover{
+                .close-modal-svg{
+                    margin-right: 13px;
+                }
+            }
+        }
+        .service-column{
+            .head-title{
+                font-family: "BarlowExtraLight", sans-serif;
+                color: $green;
+                font-size: 36px;
+                margin-bottom: 0;
+                line-height: 1;
+            }
+            .main-title{
+                font-family: "BarlowSemiBold", sans-serif;
+                color: $green;
+                font-size: 30px;
+            }
+            .service-desc{
+                font-family: "Barlow", sans-serif;
+                font-size: 16px;
+                color: $gray;
+                line-height: 1.2;
+            }
+            .service-img{
+                width: 100%;
+                img{
+                    width: 100%;
+                    margin-bottom: 10px;
+                }
+            }
+        }
+        .service-availability, .service-location, .service-officer{
+            margin-bottom: 20px;
+            .content{
+                display: flex;
+                flex-direction: row;
+                font-size: 16px;
+                color: $gray;
+                .label{
+                    font-family: "Barlow", sans-serif;
+                    margin-right: 4px;
+                    margin-bottom: 0;
+                }
+                .value{
+                    font-family: "BarlowSemiBold", sans-serif;
+                    margin-bottom: 0;
+                }
+            }
+        }
+    }
+}
+.service-modal.opened{
+    display: flex;
+}
+.service-modal.animation{
+    opacity: 1;
+}

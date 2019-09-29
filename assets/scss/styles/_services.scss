@@ -1,0 +1,78 @@
+.services-section-container{
+    .service-introduction{
+        font-family: "BarlowLight", sans-serif;
+        color: $gray;
+        h1{
+            margin-bottom: 1rem;
+            font-size: 48px;
+        }
+        .intro-content{
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        picture{
+            img{
+                margin-bottom: 40px;
+                width: 100%;
+                object-fit: contain;
+                display: block;
+                @include tablet{
+                    margin-bottom: 60px;
+                }
+            }
+        }
+    }
+    .service-content-container{
+        .services-tabs{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            &-btn{
+                font-family: "BarlowMedium",sans-serif;
+                font-size: 16px;
+                padding: 5px 15px;
+                border: none;
+                border-radius: 20px;
+                color: $gray;
+                margin: 5px;
+                background-color: transparent;
+                transition: all .2s ease-in-out;
+                &:hover{
+                    color: $green;
+                }
+            }
+            &-btn.active{
+                color: $green;
+                background-color: $gray-3;
+            }
+        }
+        .service-container{
+            display: none;
+            margin-top: 40px;
+            .services{
+                width: 100%;
+                margin-bottom: 50px;
+                h4{
+                    font-family: "BarlowSemiBold", sans-serif;
+                    font-size: 30px;
+                    color: $gray;
+                    margin-bottom: 20px;
+                }
+                .service-title{
+                    font-size: 16px;
+                    font-family: "BarlowMedium", sans-serif;
+                    color: $gray;
+                    line-height: 1;
+                    margin-bottom: 10px;
+                    cursor: pointer;
+                    &:hover{
+                        color: $green;
+                    }
+                }
+            }
+        }
+        .service-container.opened{
+            display: block;
+        }
+    }
+}

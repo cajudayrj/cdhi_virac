@@ -214,7 +214,9 @@ function create_doctors_posttype() {
         array(
             'labels' => array(
                 'name' => __( 'Doctors' ),
-                'singular_name' => __( 'Doctor' )
+                'singular_name' => __( 'Doctor' ),
+				'edit_item' => __('Edit Doctor'),
+				'add_new_item' => __('Add New Doctor')
             ),
             'public' => true,
 			'has_archive' => true,
@@ -224,8 +226,8 @@ function create_doctors_posttype() {
 }
 add_action( 'init', 'create_doctors_posttype' );
 // CREATE DEPARTMENT, HMO TAXONOMY FOR DOCTORS CPT
-add_action( 'init', 'create_doctors_tax');
-function create_doctors_tax() {
+add_action( 'init', 'create_cpt_tax');
+function create_cpt_tax() {
 	register_taxonomy(
 		'department',
 		'doctor',
@@ -234,7 +236,8 @@ function create_doctors_tax() {
 			'rewrite' => array( 'slug' => 'department' ),
 			'hierarchical' => true,
 			'labels' => array(
-				'add_new_item' => __('Add new Department')
+				'add_new_item' => __('Add new Department'),
+				'edit_item' => __('Edit Department')
 			)
 		)
 	);
@@ -247,15 +250,45 @@ function create_doctors_tax() {
 			'rewrite' => array( 'slug' => 'hmo' ),
 			'hierarchical' => true,
 			'labels' => array(
-				'add_new_item' => __('Add new HMO')
+				'add_new_item' => __('Add new HMO'),
+				'edit_item' => __('Edit HMO')
+			)
+		)
+	);
+
+	register_taxonomy(
+		'news-category',
+		'news-and-blog',
+		array(
+			'label' => __( 'News and Blog Category' ),
+			'rewrite' => array( 'slug' => 'news-category' ),
+			'hierarchical' => true,
+			'labels' => array(
+				'add_new_item' => __('Add New Category'),
+				'edit_item' => __('Edit Category')
+			)
+		)
+	);
+
+	register_taxonomy(
+		'service-category',
+		'service',
+		array(
+			'label' => __( 'Services Category' ),
+			'rewrite' => array( 'slug' => 'service-category' ),
+			'hierarchical' => true,
+			'labels' => array(
+				'add_new_item' => __('Add New Category'),
+				'edit_item' => __('Edit Category')
 			)
 		)
 	);
 }
-//REMOVE POST TYPE ON DOCTORS EDITOR
+//REMOVE EDITOR ON POST TYPES
 add_action('init', 'init_remove_support',100);
 function init_remove_support(){
     remove_post_type_support( 'doctor', 'editor');
+    remove_post_type_support( 'service', 'editor');
     remove_post_type_support( 'news-and-blog', 'editor');
 }
 
@@ -278,7 +311,7 @@ function newsblog_redirect_post() {
   }
 }
 
-// ADD DOCTOR CUSTOM POST TYPE AND TAXONOMY
+// ADD NEWS AND BLOG CUSTOM POST TYPE AND TAXONOMY
 function create_newsblog_posttype() {
  
     register_post_type( 'news-and-blog',
@@ -313,4 +346,33 @@ add_action( 'wp_dashboard_setup', 'remove_draft_widget', 999 );
 
 function remove_draft_widget(){
     remove_meta_box( 'dashboard_quick_press', 'dashboard', 'side' );
+}
+
+// ADD SERVICE CUSTOM POST TYPE AND TAXONOMY
+function create_services_posttype() {
+ 
+    register_post_type( 'service',
+    // CPT Options
+        array(
+            'labels' => array(
+                'name' => __( 'Services' ),
+				'singular_name' => __( 'Service' ),
+				'add_new_item' => __('Add New Service'),
+				'edit_item' => __('Edit Service')
+            ),
+            'public' => true,
+			'has_archive' => true,
+        )
+    );
+}
+add_action( 'init', 'create_services_posttype' );
+
+//REDIRECT ALL SERVICES TO SERVICE PAGE
+add_action( 'template_redirect', 'service_redirect_post' );
+
+function service_redirect_post() {
+  if ( is_single() && (get_post_type() == 'service') ) {
+    wp_redirect( home_url().'/our-services', 301 );
+    exit;
+  }
 }

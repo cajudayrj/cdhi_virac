@@ -1,0 +1,156 @@
+.make-an-appointment-section{
+    .appointment-heading{
+        color: $gray;
+        margin-bottom: 17px;
+        &-title{
+            font-size: 48px;
+            font-family: 'BarlowExtraLight', sans-serif;
+            margin-bottom: 1.5rem;
+        }
+        &-instructions{
+            font-size: 14px;
+            font-family: 'BarlowLight', sans-serif;
+            line-height: 1.2;
+            margin-bottom: .8rem;
+            a{
+                text-decoration: underline;
+                color: $gray;
+                &:hover{
+                    color: $green;
+                }
+            }
+        }
+    }
+    .appointment-caution{
+        margin-bottom: 20px;
+        .caution{
+            width: 100%;  
+            border: solid 1px $blue;
+            border-radius: 7px;
+            background-color: #eefaff;
+            padding: 10px 15px;  
+            display: grid;
+            grid-template-columns: auto 1fr;
+            &-svg{
+                grid-column: 1/span 1;
+                fill :$blue;
+                width: 40px;
+                height: 40px;
+                margin-right: 15px;
+                align-self: center;
+            }
+            &-text{
+                grid-column: 2/span 1;
+                font-family: "Barlow", sans-serif;
+                color: $gray;
+                font-size: 14px;
+                p{
+                    margin-bottom: 5px;
+                    line-height: 1.1;
+                    a{
+                        color: $gray;
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+    }
+    .appointment-request-form-label{
+        font-size: 36px;
+        color: $gray;
+        font-family: 'Cookie', sans-serif;
+        margin-bottom: 30px;
+    }
+    .main-form-container{
+        .form-heading{
+            font-family: 'Barlow', sans-serif;
+            color: $gray;
+            font-size: 18px;
+            margin-bottom: 30px;
+        }
+        .form-container{
+            margin-bottom: 30px;
+            .col-label{
+                padding-right: 0px;
+                font-family: "BarlowSemiBold", sans-serif;
+                font-size: 15px;
+                color: $gray;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-start;
+                margin-bottom: 10px;
+                text-align: left;
+                @include mini-desktop{
+                    text-align: right;
+                    justify-content: flex-end;
+                    margin-bottom: 15px;
+                }
+                p{
+                    margin-bottom: 0px;
+                    margin-top: 8px;
+                    line-height: 1.2;
+                }
+            }
+            .col-input{
+                margin-bottom: 15px;
+                input, textarea, select{
+                    border-radius: 8px;
+                    width: 100%;
+                    border: solid 1px $gray-3;
+                    padding: 7px 10px;
+                    &::placeholder{
+                        color: $gray-2;
+                        font-family: "BarlowLight", sans-serif;
+                        font-size: 14px;
+                    }
+                }
+                select.form-control{
+                    font-family: "BarlowLight", sans-serif;
+                    color: $gray-2;
+                    font-size: 14px;
+                    height: calc(1.8em + .75rem + 2px);
+                    border-radius: 8px;
+                }
+                .form-group{
+                    margin-bottom: 0px;
+                }
+                .form-group.two-col{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    select.form-control{
+                        width: 49%;
+                    }
+                }
+                .form-group.three-col{
+                    display: flex;
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    justify-content: space-between;
+                    select.form-control{
+                        width: 32%;
+                    }
+                }
+            }
+        }
+        .appointment-btn{
+            display: block;
+            margin-left: auto;
+            border-radius: 10px;
+            background: $green-2;
+            color: #fff;
+            font-family: "BarlowSemiBold",sans-serif;
+            font-size: 16px;
+            padding: 12px 40px;
+            margin-bottom: 60px;
+        }
+        .disclaimer{
+            font-size:14px;
+            font-family: "Barlow",sans-serif;
+            color: $gray;
+            line-height: 1.2;
+            margin-bottom: 60px;
+        }
+    }
+}
