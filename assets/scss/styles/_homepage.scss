@@ -259,6 +259,16 @@
             }
             a{
                 text-decoration: none;
+                &:hover{
+                    .news-summary{
+                        .title{
+                            color: $green;
+                        }
+                        .date{
+                            color: $green;
+                        }
+                    }
+                }
                 .news-container{
                     margin-bottom: 23px;
                     display: flex;

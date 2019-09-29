@@ -18,11 +18,13 @@ $availableDepartments = [];
 //STORE EACH DOCTOR TO A DEPARTMENT FOR SORTING
 foreach($loop->posts as $p):
     $term = get_the_terms($p->ID, 'department');
-    foreach($term as $t):
-        if($t->name):
-            $departmentDoctor[$t->name][] = $p;
-        endif;
-    endforeach;
+    if(is_array($term) || is_object($term)) :
+        foreach($term as $t):
+            if($t->name):
+                $departmentDoctor[$t->name][] = $p;
+            endif;
+        endforeach;
+    endif;
 endforeach;
 // GET AVAILABLE DEPARTMENTS (COMPARISON CHECKER FOR LOOPING)
 foreach($departmentTerms as $department):
