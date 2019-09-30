@@ -130,7 +130,7 @@ endforeach;
                                                 <div class="doctor-profile-container" data-doctor-id="<?php echo $deptIndex."-".$id; ?>">
                                                     <span class="status <?php echo (($status == 'visiting') and ($hasSched)) ? 'hassched' : $status; ?>"><?php echo (($status == 'visiting') and ($hasSched)) ? 'Scheduled Visiting' : $status; ?></span>
                                                     <div class="doctor-image">
-                                                        <img src="<?php echo $doctorImg; ?>" />
+                                                        <img title="<?php echo 'Doctor' . ' ' . $fn  . ' ' . $ln . ' - ' . $specialization  . ' ' . 'in Catanduanes Doctors Hospital Inc.'; ?>" src="<?php echo $doctorImg; ?>" />
                                                     </div>
                                                     <p class="doctor-ln"><?php echo $ln; ?>,</p>
                                                     <p class="doctor-fn"><?php echo $fn; ?></p>
