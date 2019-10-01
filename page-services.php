@@ -88,6 +88,9 @@ endforeach;
                                                     <div class="services">
                                                         <h4><?php echo $key ?></h4>
                                                         <?php 
+                                                            usort($hService, function($a, $b){
+                                                                return strcmp($a->post_title,$b->post_title);
+                                                            });
                                                             foreach($hService as $h): 
                                                             $hsGroup = get_field('hospital_services',$h->ID);
                                                             $hsImg = $hsGroup['service_image'];

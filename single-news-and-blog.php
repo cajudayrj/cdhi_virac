@@ -39,7 +39,7 @@ endforeach;
                 <span>/</span>
                 <a href="<?php echo get_home_url(); ?>/news-blog">News & Blog</a>
 				<span>/</span>
-				<a href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
+				<a class="blogtitle" href="<?php the_permalink(); ?>"><?php the_title(); ?></a>
             </div>
         </div>
         <section class="news-and-blog-article-container">
