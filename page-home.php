@@ -108,7 +108,7 @@ get_header();
 							$newspostdate= $n->post_date;
 							$newsdate = date("F j, Y", strtotime($newspostdate));
 						?>
-						<a href="">
+						<a href="<?php the_permalink($newsid); ?>">
 							<div class="news-container">
 									<div class="news-thumbnail">
 										<img src="<?php echo $newsimage; ?>" title="news-thumbnail" alt="news-thumbnail" />
