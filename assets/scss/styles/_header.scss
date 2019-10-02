@@ -55,6 +55,7 @@ header{
                             font-family: 'BarlowMedium', sans-serif;
                             text-transform: uppercase;
                             text-shadow: 0px 0px 7px rgba(0,0,0,0.6);
+                            letter-spacing: .5px;
                             &:nth-child(2), &:nth-child(3), svg{
                                 display: none;
                                 @include tablet{
@@ -63,7 +64,7 @@ header{
                             }
 
                             @include respond((
-                                font-size: (10px,12px,null,16px),
+                                font-size: (10px,12px,null,18px),
                             ));
 
                             @include tablet{
