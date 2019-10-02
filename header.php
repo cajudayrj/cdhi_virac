@@ -35,7 +35,7 @@
 				<div class="container">
 					<div class="upper-header">
 							<a href="<?php echo home_url(); ?>">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/cdhi-logo.png" alt="" />
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/cdhi-logo-bordered.png" alt="" />
 							</a>
 							<div class="header-logo-text">
 								<h1>CATANDUANES DOCTORS HOSPITAL, INC.</h1>
