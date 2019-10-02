@@ -1,14 +1,14 @@
 header{
     #site-navigation{
-        .primary-nav-container{
-            padding: 25px 0px 0px 0px;
-            @include tablet{
-                padding: 60px 0px 0px 0px;
-            }
+        .upper-header-container{
+            padding: 15px 0px;
+            width: 100%;
+            background: rgb(14,91,2);
+            background: $green-gradient;
+            margin-bottom: 25px;
             .upper-header{
                 display: flex;
                 flex-direction: row;
-                margin-bottom: 25px;
                 align-items: center;
                 img{
                     margin-right: 7px;
@@ -21,7 +21,7 @@ header{
                     }
                 }
                 .header-logo-text{
-                    color: #013578;
+                    color: #fff;
                     display: flex;
                     align-items: flex-start;
                     justify-content: center;
@@ -34,6 +34,7 @@ header{
                     };
                     h1{
                         font-family: 'MontserratBold', sans-serif;
+                        text-shadow: 0px 0px 7px rgba(0,0,0,0.6);
                         @include respond((
                             font-size: (1.1rem,1.2rem,1.4rem,2.3rem,2.5rem)
                         ));
@@ -41,12 +42,19 @@ header{
                     .cdhi-header-details{
                         display: flex;
                         flex-wrap: wrap;
+                        justify-content: space-between;
+                        width: 100%;
+                        .svg-icon{
+                            fill: #fff;
+                            filter: drop-shadow(0px 0px 7px rgba(0,0,0,0.6));
+                        }
                         span{
                             display: flex;
                             flex-wrap: wrap;
                             align-items: center;
-                            font-family: 'BarlowSemiBold', sans-serif;
+                            font-family: 'BarlowMedium', sans-serif;
                             text-transform: uppercase;
+                            text-shadow: 0px 0px 7px rgba(0,0,0,0.6);
                             &:nth-child(2), &:nth-child(3), svg{
                                 display: none;
                                 @include tablet{
@@ -59,8 +67,12 @@ header{
                             ));
 
                             @include tablet{
-                                font-family: 'BarlowBold', sans-serif;
+                                font-family: 'Barlow', sans-serif;
                                 margin-right: 20px;
+
+                                &:nth-child(3){
+                                    margin-right: 0px;
+                                }
                             }
                         }
                     }
@@ -83,7 +95,7 @@ header{
                         align-self: center;
                         height: 2px;
                         width: 30px;
-                        background-color: #333333;
+                        background-color: #fff;
                         position: relative;
                         &:before{
                             content: '';
@@ -93,7 +105,7 @@ header{
                             position: absolute;
                             left: 0;
                             top: -7px;
-                            background-color: #333333;
+                            background-color: #fff;
                         }
     
                         &:after{
@@ -104,10 +116,16 @@ header{
                             position: absolute;
                             left: 0;
                             bottom: -7px;
-                            background-color: #333333;
+                            background-color: #fff;
                         }
                     }
                 }
+            }
+        }
+        .primary-nav-container{
+            padding: 25px 0px 0px 0px;
+            @include tablet{
+                padding: 0px 0px 0px 0px;
             }
 
             .green-line-gradient{

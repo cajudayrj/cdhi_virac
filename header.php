@@ -31,39 +31,43 @@
 			$socmed = get_field('social_media','option');
 		?>
 		<nav id="site-navigation" class="main-navigation">
-			<div class="primary-nav-container container">
-				<div class="upper-header">
-					<a href="<?php echo home_url(); ?>">
-						<img src="<?php echo get_template_directory_uri() ?>/assets/images/cdhi-logo.png" alt="" />
-					</a>
-					<div class="header-logo-text">
-						<h1>CATANDUANES DOCTORS HOSPITAL, INC.</h1>
-						<div class="cdhi-header-details">
-							<span>
-								<svg role="img" title="facebook" class="svg-icon">
-									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#location"/>
-								</svg>
-								<?php echo $header['address']; ?>
-							</span>
-							<span>
-								<svg role="img" title="facebook" class="svg-icon">
-									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#telephone"/>
-								</svg>
-								<?php echo $header['telephone']; ?>
-							</span>
-							<span>
-								<svg role="img" title="facebook" class="svg-icon">
-									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#phone"/>
-								</svg>
-								<?php echo $header['mobile_phone']; ?>
-							</span>
+			<div class="upper-header-container">
+				<div class="container">
+					<div class="upper-header">
+							<a href="<?php echo home_url(); ?>">
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/cdhi-logo.png" alt="" />
+							</a>
+							<div class="header-logo-text">
+								<h1>CATANDUANES DOCTORS HOSPITAL, INC.</h1>
+								<div class="cdhi-header-details">
+									<span>
+										<svg role="img" title="facebook" class="svg-icon">
+											<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#location"/>
+										</svg>
+										<?php echo $header['address']; ?>
+									</span>
+									<span>
+										<svg role="img" title="facebook" class="svg-icon">
+											<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#telephone"/>
+										</svg>
+										<?php echo $header['telephone']; ?>
+									</span>
+									<span>
+										<svg role="img" title="facebook" class="svg-icon">
+											<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#phone"/>
+										</svg>
+										<?php echo $header['mobile_phone']; ?>
+									</span>
+								</div>
+							</div>
+							<button class="burger-btn">
+								<div class="burger-menu"></div>
+							</button>
 						</div>
-					</div>
-					<button class="burger-btn">
-						<div class="burger-menu"></div>
-					</button>
 				</div>
-				<div class="green-line-gradient"></div>
+			</div>
+			<div class="primary-nav-container container">
+				<!-- <div class="green-line-gradient"></div> -->
 				<?php
 					wp_nav_menu( array(
 						'theme_location' => 'menu-1',
