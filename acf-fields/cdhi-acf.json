@@ -47,8 +47,27 @@
                 "maxlength": ""
             },
             {
+                "key": "field_5d94c6f7d32d3",
+                "label": "Middle Name",
+                "name": "middle_name",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
                 "key": "field_5d882c55e4102",
-                "label": "Last Name",
+                "label": "Surname",
                 "name": "last_name",
                 "type": "text",
                 "instructions": "",
@@ -60,6 +79,25 @@
                     "id": ""
                 },
                 "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5d94c6d5d32d2",
+                "label": "Abbreviation",
+                "name": "abbreviation",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "MD",
                 "placeholder": "",
                 "prepend": "",
                 "append": "",
@@ -79,6 +117,52 @@
                     "id": ""
                 },
                 "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5d94ca446915a",
+                "label": "Is Department Head?",
+                "name": "department_head",
+                "type": "true_false",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 0,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
+                "key": "field_5d94cbaa9699f",
+                "label": "Head Position Title",
+                "name": "position_title",
+                "type": "text",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5d94ca446915a",
+                            "operator": "==",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Medical Head Director",
                 "placeholder": "",
                 "prepend": "",
                 "append": "",
@@ -163,25 +247,6 @@
                 "maxlength": ""
             },
             {
-                "key": "field_5d883da71c6f0",
-                "label": "Internship",
-                "name": "internship",
-                "type": "text",
-                "instructions": "",
-                "required": 0,
-                "conditional_logic": 0,
-                "wrapper": {
-                    "width": "",
-                    "class": "",
-                    "id": ""
-                },
-                "default_value": "",
-                "placeholder": "",
-                "prepend": "",
-                "append": "",
-                "maxlength": ""
-            },
-            {
                 "key": "field_5d883db51c6f1",
                 "label": "Residency",
                 "name": "residency",
@@ -221,7 +286,7 @@
             },
             {
                 "key": "field_5d883dce1c6f3",
-                "label": "Local Specialty Board",
+                "label": "Specialty Board",
                 "name": "local_specialty_board",
                 "type": "text",
                 "instructions": "",
@@ -292,8 +357,35 @@
                 "ui_off_text": ""
             },
             {
+                "key": "field_5d94d8503b6cd",
+                "label": "Simplified Schedule \/ Multiple Schedule",
+                "name": "simplified",
+                "type": "true_false",
+                "instructions": "Check if schedule table should be displayed from monday to sunday.",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5d882c92e4104",
+                            "operator": "==",
+                            "value": "active"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "message": "",
+                "default_value": 1,
+                "ui": 0,
+                "ui_on_text": "",
+                "ui_off_text": ""
+            },
+            {
                 "key": "field_5d882db9e4106",
-                "label": "Active Schedule",
+                "label": "Simplified Active Schedule",
                 "name": "active_schedule",
                 "type": "group",
                 "instructions": "",
@@ -304,6 +396,11 @@
                             "field": "field_5d882c92e4104",
                             "operator": "==",
                             "value": "active"
+                        },
+                        {
+                            "field": "field_5d94d8503b6cd",
+                            "operator": "==",
+                            "value": "1"
                         }
                     ]
                 ],
@@ -1206,6 +1303,186 @@
                 ]
             },
             {
+                "key": "field_5d94d93f04998",
+                "label": "Multiple Active Schedule",
+                "name": "multiple_active_schedule",
+                "type": "group",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": [
+                    [
+                        {
+                            "field": "field_5d882c92e4104",
+                            "operator": "==",
+                            "value": "active"
+                        },
+                        {
+                            "field": "field_5d94d8503b6cd",
+                            "operator": "!=",
+                            "value": "1"
+                        }
+                    ]
+                ],
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "layout": "block",
+                "sub_fields": [
+                    {
+                        "key": "field_5d94d97d049cb",
+                        "label": "Schedule",
+                        "name": "schedule",
+                        "type": "repeater",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "collapsed": "",
+                        "min": 0,
+                        "max": 0,
+                        "layout": "table",
+                        "button_label": "",
+                        "sub_fields": [
+                            {
+                                "key": "field_5d94d98b049cc",
+                                "label": "Days",
+                                "name": "days",
+                                "type": "text",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "33",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "default_value": "",
+                                "placeholder": "",
+                                "prepend": "",
+                                "append": "",
+                                "maxlength": ""
+                            },
+                            {
+                                "key": "field_5d94d9a0049cd",
+                                "label": "AM",
+                                "name": "am",
+                                "type": "group",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "33",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "layout": "block",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_5d94d9b1049ce",
+                                        "label": "Time",
+                                        "name": "time",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "maxlength": ""
+                                    },
+                                    {
+                                        "key": "field_5d94d9b8049cf",
+                                        "label": "By Appointment",
+                                        "name": "by_appointment",
+                                        "type": "true_false",
+                                        "instructions": "Check if schedule is by appointment \/ Uncheck if schedule is on a First Come First Served Basis",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "message": "",
+                                        "default_value": 0,
+                                        "ui": 0,
+                                        "ui_on_text": "",
+                                        "ui_off_text": ""
+                                    }
+                                ]
+                            },
+                            {
+                                "key": "field_5d94d9cd049d0",
+                                "label": "PM",
+                                "name": "pm",
+                                "type": "group",
+                                "instructions": "",
+                                "required": 0,
+                                "conditional_logic": 0,
+                                "wrapper": {
+                                    "width": "33",
+                                    "class": "",
+                                    "id": ""
+                                },
+                                "layout": "block",
+                                "sub_fields": [
+                                    {
+                                        "key": "field_5d94d9cd049d1",
+                                        "label": "Time",
+                                        "name": "time",
+                                        "type": "text",
+                                        "instructions": "",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "default_value": "",
+                                        "placeholder": "",
+                                        "prepend": "",
+                                        "append": "",
+                                        "maxlength": ""
+                                    },
+                                    {
+                                        "key": "field_5d94d9cd049d2",
+                                        "label": "By Appointment",
+                                        "name": "by_appointment",
+                                        "type": "true_false",
+                                        "instructions": "Check if schedule is by appointment \/ Uncheck if schedule is on a First Come First Served Basis",
+                                        "required": 0,
+                                        "conditional_logic": 0,
+                                        "wrapper": {
+                                            "width": "",
+                                            "class": "",
+                                            "id": ""
+                                        },
+                                        "message": "",
+                                        "default_value": 0,
+                                        "ui": 0,
+                                        "ui_on_text": "",
+                                        "ui_off_text": ""
+                                    }
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
                 "key": "field_5d8833cf1eddb",
                 "label": "Visiting Schedule",
                 "name": "visiting_schedule",
@@ -1872,7 +2149,7 @@
                 "name": "hospital_services",
                 "type": "group",
                 "instructions": "",
-                "required": 1,
+                "required": 0,
                 "conditional_logic": [
                     [
                         {
@@ -1893,9 +2170,9 @@
                         "key": "field_5d8f81a8e1ea0",
                         "label": "Service Description",
                         "name": "service_description",
-                        "type": "text",
+                        "type": "wysiwyg",
                         "instructions": "",
-                        "required": 0,
+                        "required": 1,
                         "conditional_logic": 0,
                         "wrapper": {
                             "width": "",
@@ -1903,10 +2180,10 @@
                             "id": ""
                         },
                         "default_value": "",
-                        "placeholder": "",
-                        "prepend": "",
-                        "append": "",
-                        "maxlength": ""
+                        "tabs": "all",
+                        "toolbar": "basic",
+                        "media_upload": 0,
+                        "delay": 0
                     },
                     {
                         "key": "field_5d8f86a18858d",
@@ -1914,7 +2191,7 @@
                         "name": "service_image",
                         "type": "image",
                         "instructions": "",
-                        "required": 0,
+                        "required": 1,
                         "conditional_logic": 0,
                         "wrapper": {
                             "width": "",
@@ -1938,7 +2215,7 @@
                         "name": "availability_day",
                         "type": "text",
                         "instructions": "",
-                        "required": 0,
+                        "required": 1,
                         "conditional_logic": 0,
                         "wrapper": {
                             "width": "",
@@ -1957,7 +2234,7 @@
                         "name": "availability_time",
                         "type": "text",
                         "instructions": "",
-                        "required": 0,
+                        "required": 1,
                         "conditional_logic": 0,
                         "wrapper": {
                             "width": "",
@@ -1976,7 +2253,7 @@
                         "name": "floor",
                         "type": "text",
                         "instructions": "",
-                        "required": 0,
+                        "required": 1,
                         "conditional_logic": 0,
                         "wrapper": {
                             "width": "",
@@ -1995,7 +2272,7 @@
                         "name": "room",
                         "type": "text",
                         "instructions": "",
-                        "required": 0,
+                        "required": 1,
                         "conditional_logic": 0,
                         "wrapper": {
                             "width": "",
@@ -2014,7 +2291,7 @@
                         "name": "officer_in_charge",
                         "type": "text",
                         "instructions": "",
-                        "required": 0,
+                        "required": 1,
                         "conditional_logic": 0,
                         "wrapper": {
                             "width": "",
@@ -2026,6 +2303,25 @@
                         "prepend": "",
                         "append": "",
                         "maxlength": ""
+                    },
+                    {
+                        "key": "field_5d94beffaef19",
+                        "label": "Service Note \/ Instruction",
+                        "name": "service_note_instruction",
+                        "type": "wysiwyg",
+                        "instructions": "",
+                        "required": 0,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "tabs": "all",
+                        "toolbar": "basic",
+                        "media_upload": 0,
+                        "delay": 0
                     }
                 ]
             }

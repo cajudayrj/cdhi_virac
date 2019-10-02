@@ -13,7 +13,7 @@
     justify-content: center;
     .modal-container{
         width: 100%;
-        padding: 25px;
+        padding: 50px 25px;
         border-radius: 5px;
         background-color: #fff;
         box-shadow: 0px 0px 8px rgba(0,0,0,0.9);
@@ -56,12 +56,19 @@
                 font-family: "BarlowSemiBold", sans-serif;
                 color: $green;
                 font-size: 30px;
+                margin-bottom: 30px;
             }
-            .service-desc{
-                font-family: "Barlow", sans-serif;
-                font-size: 16px;
-                color: $gray;
-                line-height: 1.2;
+            .desc-cont{
+                order: 2;
+                @include tablet{
+                    order: 1;
+                }
+            }
+            .img-cont{
+                order: 1;
+                @include tablet{
+                    order: 2;
+                }
             }
             .service-img{
                 width: 100%;
@@ -71,8 +78,17 @@
                 }
             }
         }
+        .service-desc{
+            font-family: "Barlow", sans-serif;
+            font-size: 16px;
+            color: $gray;
+            line-height: 1.2;
+        }
         .service-availability, .service-location, .service-officer{
-            margin-bottom: 20px;
+            margin-bottom: 50px;
+            padding: 10px 15px;
+            border: solid 1px $gray;
+            border-radius: 5px;
             .content{
                 display: flex;
                 flex-direction: row;
@@ -86,6 +102,7 @@
                 .value{
                     font-family: "BarlowSemiBold", sans-serif;
                     margin-bottom: 0;
+                    color: $green;
                 }
             }
         }

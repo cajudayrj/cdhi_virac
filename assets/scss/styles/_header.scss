@@ -36,17 +36,26 @@ header{
                         font-family: 'MontserratBold', sans-serif;
                         text-shadow: 0px 0px 7px rgba(0,0,0,0.6);
                         @include respond((
-                            font-size: (1.1rem,1.2rem,1.4rem,2.3rem,2.5rem)
+                            font-size: (1.1rem,1.2rem,1.5rem,2.2rem,2.6rem)
                         ));
                     }
                     .cdhi-header-details{
                         display: flex;
                         flex-wrap: wrap;
-                        justify-content: space-between;
                         width: 100%;
+                        margin-top: -10px;
+                        justify-content: space-between;
+                        @include mini-desktop{
+                            justify-content: flex-start;
+                        }
+                        @include desktop{
+                            justify-content: space-between;
+                        }
                         .svg-icon{
                             fill: #fff;
                             filter: drop-shadow(0px 0px 7px rgba(0,0,0,0.6));
+                            width: 18px;
+                            height: 18px;
                         }
                         span{
                             display: flex;
@@ -64,7 +73,7 @@ header{
                             }
 
                             @include respond((
-                                font-size: (10px,12px,null,18px),
+                                font-size: (10px,12px,null,20px,22px),
                             ));
 
                             @include tablet{
@@ -166,6 +175,9 @@ header{
                                 &:hover{
                                     background-color: #f0f9ea;
                                     color: #013578;
+                                }
+                                @include desktop{
+                                    font-size: 18px;
                                 }
                             }
                         }

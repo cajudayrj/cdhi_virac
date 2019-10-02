@@ -83,11 +83,15 @@ endforeach;
                                                     $subspec = get_field('sub_specialization', $id);
                                                     $doctorImg = get_field('image', $id) ? get_field('image', $id)['url'] : get_template_directory_uri()."/assets/images/doc-default-photo.png";
                                                     $ln = get_field('last_name', $id);
+                                                    $mn = get_field('middle_name', $id);
                                                     $fn = get_field('first_name', $id);
+                                                    $abv = get_field('abbreviation', $id);
+                                                    $head = get_field('department_head', $id);
+                                                    $postitle = get_field('position_title', $id);
                                                     $status = get_field('status', $id);
+                                                    $simplified = get_field('simplified', $id);
                                                     $hasSched = get_field('has_schedule', $id);
                                                     $medschool = get_field('medical_school', $id);
-                                                    $internship = get_field('internship', $id);
                                                     $residency = get_field('residency', $id);
                                                     $fellowship = get_field('fellowship', $id);
                                                     $localSpecialty = get_field('local_specialty_board', $id);
@@ -116,6 +120,9 @@ endforeach;
                                                     $suPm = $activeSched['sunday']['pm'];
                                                     //VISITING SCHED
                                                     $visitingSched = get_field('visiting_schedule', $id);
+                                                    //MULTI SCHED
+                                                    $multiSched = get_field('multiple_active_schedule', $id)['schedule'];
+                                                    
                                                     //HMO
                                                     $hmo = get_the_terms($id, 'hmo');
                                                     $doctorHMO = [];
@@ -133,7 +140,11 @@ endforeach;
                                                         <img title="<?php echo 'Doctor' . ' ' . $fn  . ' ' . $ln . ' - ' . $specialization  . ' ' . 'in Catanduanes Doctors Hospital Inc.'; ?>" src="<?php echo $doctorImg; ?>" />
                                                     </div>
                                                     <p class="doctor-ln"><?php echo $ln; ?>,</p>
-                                                    <p class="doctor-fn"><?php echo $fn; ?></p>
+                                                    <p class="doctor-fn"><?php echo $fn; ?><?php echo $mn ? ' '.$mn : '' ?></p>
+                                                    <p class="doctor-abv"><?php echo $abv; ?></p>
+                                                    <?php if($head): ?>
+                                                        <p class="doctor-head"><?php echo $postitle; ?></p>
+                                                    <?php endif; ?>
                                                     <p class="specialization"><?php echo $specialization; ?></p>
                                                     <?php if($subspec != ''): ?>
                                                         <p class="sub-spec"><?php echo $subspec; ?></p>
@@ -166,9 +177,12 @@ endforeach;
                                                                         <div class="doctor-details">
                                                                             <h3>Doctor</h3>
                                                                             <p class="name">
-                                                                                <?php echo $fn.' '.$ln; ?>
+                                                                                <?php echo $fn.' '.$mn.' '.$ln.', '.$abv; ?>
                                                                                 <span class="status <?php echo (($status == 'visiting') and ($hasSched)) ? 'hassched' : $status; ?>"><em><?php echo (($status == 'visiting') and ($hasSched)) ? 'Scheduled Visiting' : $status; ?></em></span>
                                                                             </p>
+                                                                            <?php if($head): ?>
+                                                                                <p class="position"><?php echo $postitle; ?></p>
+                                                                            <?php endif; ?>
                                                                             <p class="specialty"><?php echo $specialization; ?></p>
                                                                             <?php if($subspec != ''): ?>
                                                                                 <p class="sub-spec"><?php echo $subspec; ?></p>
@@ -176,180 +190,225 @@ endforeach;
                                                                             <p class="department"><?php echo $dept; ?> Department</p>
                                                                             <div class="separator"></div>
                                                                             <div class="table-container">
-                                                                                <?php if($status == 'active'): ?>
-                                                                                <table class="table">
-                                                                                    <thead>
-                                                                                        <tr>
-                                                                                            <th>DAY</th>
-                                                                                            <th>AM</th>
-                                                                                            <th>PM</th>
-                                                                                        </tr>
-                                                                                    </thead>
-                                                                                    <tbody>
-                                                                                        <tr>
-                                                                                            <td>MONDAY</td>
-                                                                                            <td>
-                                                                                                <?php echo $mAm['time']; ?>
-                                                                                                <?php
-                                                                                                    if(($mAm['time'] != '') or ($mAm['by_appointment'])) :
-                                                                                                ?>
-                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $mAm['by_appointment'] ? 'appointment-svg' : '' ?> ">
-                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
-                                                                                                    </svg>
-                                                                                                <?php endif; ?>
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                <?php echo $mPm['time']; ?>
-                                                                                                <?php
-                                                                                                    if(($mPm['time'] != '') or ($mPm['by_appointment'])) :
-                                                                                                ?>
-                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $mPm['by_appointment'] ? 'appointment-svg' : '' ?> ">
-                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
-                                                                                                    </svg>
-                                                                                                <?php endif; ?>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>TUESDAY</td>
-                                                                                            <td>
-                                                                                                <?php echo $tAm['time']; ?>
-                                                                                                <?php
-                                                                                                    if(($tAm['time'] != '') or ($tAm['by_appointment'])) :
-                                                                                                ?>
-                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $tAm['by_appointment'] ? 'appointment-svg' : '' ?> ">
-                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
-                                                                                                    </svg>
-                                                                                                <?php endif; ?>
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                <?php echo $tPm['time']; ?>
-                                                                                                <?php
-                                                                                                    if(($tPm['time'] != '') or ($tPm['by_appointment'])) :
-                                                                                                ?>
-                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $tPm['by_appointment'] ? 'appointment-svg' : '' ?> ">
-                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
-                                                                                                    </svg>
-                                                                                                <?php endif; ?>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>WEDNESDAY</td>
-                                                                                            <td>
-                                                                                                <?php echo $wAm['time']; ?>
-                                                                                                <?php
-                                                                                                    if(($wAm['time'] != '') or ($wAm['by_appointment'])) :
-                                                                                                ?>
-                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $wAm['by_appointment'] ? 'appointment-svg' : '' ?> ">
-                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
-                                                                                                    </svg>
-                                                                                                <?php endif; ?>
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                <?php echo $wPm['time']; ?>
-                                                                                                <?php
-                                                                                                    if(($wPm['time'] != '') or ($wPm['by_appointment'])) :
-                                                                                                ?>
-                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $wPm['by_appointment'] ? 'appointment-svg' : '' ?> ">
-                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
-                                                                                                    </svg>
-                                                                                                <?php endif; ?>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>THURSDAY</td>
-                                                                                            <td>
-                                                                                                <?php echo $thAm['time']; ?>
-                                                                                                <?php
-                                                                                                    if(($thAm['time'] != '') or ($thAm['by_appointment'])) :
-                                                                                                ?>
-                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $thAm['by_appointment'] ? 'appointment-svg' : '' ?> ">
-                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
-                                                                                                    </svg>
-                                                                                                <?php endif; ?>
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                <?php echo $thPm['time']; ?>
-                                                                                                <?php
-                                                                                                    if(($thPm['time'] != '') or ($thPm['by_appointment'])) :
-                                                                                                ?>
-                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $thPm['by_appointment'] ? 'appointment-svg' : '' ?> ">
-                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
-                                                                                                    </svg>
-                                                                                                <?php endif; ?>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>FRIDAY</td>
-                                                                                            <td>
-                                                                                                <?php echo $fAm['time']; ?>
-                                                                                                <?php
-                                                                                                    if(($fAm['time'] != '') or ($fAm['by_appointment'])) :
-                                                                                                ?>
-                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $fAm['by_appointment'] ? 'appointment-svg' : '' ?> ">
-                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
-                                                                                                    </svg>
-                                                                                                <?php endif; ?>
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                <?php echo $fPm['time']; ?>
-                                                                                                <?php
-                                                                                                    if(($fPm['time'] != '') or ($fPm['by_appointment'])) :
-                                                                                                ?>
-                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $fPm['by_appointment'] ? 'appointment-svg' : '' ?> ">
-                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
-                                                                                                    </svg>
-                                                                                                <?php endif; ?>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>SATURDAY</td>
-                                                                                            <td>
-                                                                                                <?php echo $sAm['time']; ?>
-                                                                                                <?php
-                                                                                                    if(($sAm['time'] != '') or ($sAm['by_appointment'])) :
-                                                                                                ?>
-                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $sAm['by_appointment'] ? 'appointment-svg' : '' ?> ">
-                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
-                                                                                                    </svg>
-                                                                                                <?php endif; ?>
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                <?php echo $sPm['time']; ?>
-                                                                                                <?php
-                                                                                                    if(($sPm['time'] != '') or ($sPm['by_appointment'])) :
-                                                                                                ?>
-                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $sPm['by_appointment'] ? 'appointment-svg' : '' ?> ">
-                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
-                                                                                                    </svg>
-                                                                                                <?php endif; ?>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                        <tr>
-                                                                                            <td>SUNDAY</td>
-                                                                                            <td>
-                                                                                                <?php echo $suAm['time']; ?>
-                                                                                                <?php
-                                                                                                    if(($suAm['time'] != '') or ($suAm['by_appointment'])) :
-                                                                                                ?>
-                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $suAm['by_appointment'] ? 'appointment-svg' : '' ?> ">
-                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
-                                                                                                    </svg>
-                                                                                                <?php endif; ?>
-                                                                                            </td>
-                                                                                            <td>
-                                                                                                <?php echo $suPm['time']; ?>
-                                                                                                <?php
-                                                                                                    if(($suPm['time'] != '') or ($suPm['by_appointment'])) :
-                                                                                                ?>
-                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $suPm['by_appointment'] ? 'appointment-svg' : '' ?> ">
-                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
-                                                                                                    </svg>
-                                                                                                <?php endif; ?>
-                                                                                            </td>
-                                                                                        </tr>
-                                                                                    </tbody>
-                                                                                </table>
-                                                                                <?php endif ?>
+                                                                                <?php 
+                                                                                    if($status == 'active'): 
+                                                                                        if($simplified):
+                                                                                ?>
+                                                                                            <table class="table">
+                                                                                                <thead>
+                                                                                                    <tr>
+                                                                                                        <th>DAY</th>
+                                                                                                        <th>AM</th>
+                                                                                                        <th>PM</th>
+                                                                                                    </tr>
+                                                                                                </thead>
+                                                                                                <tbody>
+                                                                                                    <tr>
+                                                                                                        <td>MONDAY</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $mAm['time']; ?>
+                                                                                                            <?php
+                                                                                                                if(($mAm['time'] != '') or ($mAm['by_appointment'])) :
+                                                                                                            ?>
+                                                                                                                <svg role="img" title="by-appointment" class="info-svg <?php echo $mAm['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                </svg>
+                                                                                                            <?php endif; ?>
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <?php echo $mPm['time']; ?>
+                                                                                                            <?php
+                                                                                                                if(($mPm['time'] != '') or ($mPm['by_appointment'])) :
+                                                                                                            ?>
+                                                                                                                <svg role="img" title="by-appointment" class="info-svg <?php echo $mPm['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                </svg>
+                                                                                                            <?php endif; ?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>TUESDAY</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $tAm['time']; ?>
+                                                                                                            <?php
+                                                                                                                if(($tAm['time'] != '') or ($tAm['by_appointment'])) :
+                                                                                                            ?>
+                                                                                                                <svg role="img" title="by-appointment" class="info-svg <?php echo $tAm['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                </svg>
+                                                                                                            <?php endif; ?>
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <?php echo $tPm['time']; ?>
+                                                                                                            <?php
+                                                                                                                if(($tPm['time'] != '') or ($tPm['by_appointment'])) :
+                                                                                                            ?>
+                                                                                                                <svg role="img" title="by-appointment" class="info-svg <?php echo $tPm['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                </svg>
+                                                                                                            <?php endif; ?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>WEDNESDAY</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $wAm['time']; ?>
+                                                                                                            <?php
+                                                                                                                if(($wAm['time'] != '') or ($wAm['by_appointment'])) :
+                                                                                                            ?>
+                                                                                                                <svg role="img" title="by-appointment" class="info-svg <?php echo $wAm['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                </svg>
+                                                                                                            <?php endif; ?>
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <?php echo $wPm['time']; ?>
+                                                                                                            <?php
+                                                                                                                if(($wPm['time'] != '') or ($wPm['by_appointment'])) :
+                                                                                                            ?>
+                                                                                                                <svg role="img" title="by-appointment" class="info-svg <?php echo $wPm['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                </svg>
+                                                                                                            <?php endif; ?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>THURSDAY</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $thAm['time']; ?>
+                                                                                                            <?php
+                                                                                                                if(($thAm['time'] != '') or ($thAm['by_appointment'])) :
+                                                                                                            ?>
+                                                                                                                <svg role="img" title="by-appointment" class="info-svg <?php echo $thAm['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                </svg>
+                                                                                                            <?php endif; ?>
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <?php echo $thPm['time']; ?>
+                                                                                                            <?php
+                                                                                                                if(($thPm['time'] != '') or ($thPm['by_appointment'])) :
+                                                                                                            ?>
+                                                                                                                <svg role="img" title="by-appointment" class="info-svg <?php echo $thPm['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                </svg>
+                                                                                                            <?php endif; ?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>FRIDAY</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $fAm['time']; ?>
+                                                                                                            <?php
+                                                                                                                if(($fAm['time'] != '') or ($fAm['by_appointment'])) :
+                                                                                                            ?>
+                                                                                                                <svg role="img" title="by-appointment" class="info-svg <?php echo $fAm['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                </svg>
+                                                                                                            <?php endif; ?>
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <?php echo $fPm['time']; ?>
+                                                                                                            <?php
+                                                                                                                if(($fPm['time'] != '') or ($fPm['by_appointment'])) :
+                                                                                                            ?>
+                                                                                                                <svg role="img" title="by-appointment" class="info-svg <?php echo $fPm['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                </svg>
+                                                                                                            <?php endif; ?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>SATURDAY</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $sAm['time']; ?>
+                                                                                                            <?php
+                                                                                                                if(($sAm['time'] != '') or ($sAm['by_appointment'])) :
+                                                                                                            ?>
+                                                                                                                <svg role="img" title="by-appointment" class="info-svg <?php echo $sAm['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                </svg>
+                                                                                                            <?php endif; ?>
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <?php echo $sPm['time']; ?>
+                                                                                                            <?php
+                                                                                                                if(($sPm['time'] != '') or ($sPm['by_appointment'])) :
+                                                                                                            ?>
+                                                                                                                <svg role="img" title="by-appointment" class="info-svg <?php echo $sPm['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                </svg>
+                                                                                                            <?php endif; ?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                                                                                                        <td>SUNDAY</td>
+                                                                                                        <td>
+                                                                                                            <?php echo $suAm['time']; ?>
+                                                                                                            <?php
+                                                                                                                if(($suAm['time'] != '') or ($suAm['by_appointment'])) :
+                                                                                                            ?>
+                                                                                                                <svg role="img" title="by-appointment" class="info-svg <?php echo $suAm['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                </svg>
+                                                                                                            <?php endif; ?>
+                                                                                                        </td>
+                                                                                                        <td>
+                                                                                                            <?php echo $suPm['time']; ?>
+                                                                                                            <?php
+                                                                                                                if(($suPm['time'] != '') or ($suPm['by_appointment'])) :
+                                                                                                            ?>
+                                                                                                                <svg role="img" title="by-appointment" class="info-svg <?php echo $suPm['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                </svg>
+                                                                                                            <?php endif; ?>
+                                                                                                        </td>
+                                                                                                    </tr>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                    <?php
+                                                                                        else:
+                                                                                    ?>
+                                                                                            <table class="table">
+                                                                                                <thead>
+                                                                                                    <tr>
+                                                                                                        <th>DAY</th>
+                                                                                                        <th>AM</th>
+                                                                                                        <th>PM</th>
+                                                                                                    </tr>
+                                                                                                </thead>
+                                                                                                <tbody>
+                                                                                                    <?php foreach($multiSched as $m):?>
+                                                                                                        <tr>
+                                                                                                            <td><?php echo $m['days']; ?></td>
+                                                                                                            <td>
+                                                                                                                <?php echo $m['am']['time']; ?>
+                                                                                                                <?php
+                                                                                                                    if(($m['am']['time'] != '') or ($m['am']['by_appointment'])) :
+                                                                                                                ?>
+                                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $m['am']['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                    </svg>
+                                                                                                                <?php endif; ?>
+                                                                                                            </td>
+                                                                                                            <td>
+                                                                                                                <?php echo $m['pm']['time']; ?>
+                                                                                                                <?php
+                                                                                                                    if(($m['pm']['time'] != '') or ($m['pm']['by_appointment'])) :
+                                                                                                                ?>
+                                                                                                                    <svg role="img" title="by-appointment" class="info-svg <?php echo $m['pm']['by_appointment'] ? 'appointment-svg' : '' ?> ">
+                                                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#info"/>
+                                                                                                                    </svg>
+                                                                                                                <?php endif; ?>
+                                                                                                            </td>
+                                                                                                        </tr>
+                                                                                                    <?php endforeach; ?>
+                                                                                                </tbody>
+                                                                                            </table>
+                                                                                <?php 
+                                                                                        endif;
+                                                                                    endif;
+                                                                                ?>
                                                                                 <?php if($status == 'visiting' and $hasSched): ?>
                                                                                 <table class="table">
                                                                                     <thead>
@@ -419,12 +478,6 @@ endforeach;
                                                                                     <p class="modal-info-detail"><?php echo $medschool; ?></p>
                                                                                 </div>
                                                                             <?php endif; ?>
-                                                                            <?php if($internship): ?>
-                                                                                <div class="doctor-other-info">
-                                                                                    <p class="modal-info-titles">INTERNSHIP</p>
-                                                                                    <p class="modal-info-detail"><?php echo $internship; ?></p>
-                                                                                </div>
-                                                                            <?php endif; ?>
                                                                             <?php if($residency): ?>
                                                                                 <div class="doctor-other-info">
                                                                                     <p class="modal-info-titles">RESIDENCY</p>
@@ -439,7 +492,7 @@ endforeach;
                                                                             <?php endif; ?>
                                                                             <?php if($localSpecialty): ?>
                                                                                 <div class="doctor-other-info">
-                                                                                    <p class="modal-info-titles">LOCAL SPECIALTY BOARD</p>
+                                                                                    <p class="modal-info-titles">SPECIALTY BOARD</p>
                                                                                     <p class="modal-info-detail"><?php echo $localSpecialty; ?></p>
                                                                                 </div>
                                                                             <?php endif; ?>

@@ -98,7 +98,7 @@
                         background: $green-gradient-top;
                         box-shadow: 0px 0px 7px rgba(0,0,0,0.5);
                         color: #fff;
-                        .doctor-ln, .doctor-fn, .specialization, .sub-spec, .sched{
+                        .doctor-ln, .doctor-fn, .doctor-abv, .doctor-head, .specialization, .sub-spec, .sched{
                             color: #fff;
                         }
                     }
@@ -146,7 +146,7 @@
                     .doctor-ln{
                         color: $gray;
                         font-family: 'BarlowSemiBold', sans-serif;
-                        margin-bottom: 0;
+                        margin-bottom: 7px;
                         text-transform: uppercase;
                         line-height: .8;
                         font-size: 18px;
@@ -155,9 +155,29 @@
                     .doctor-fn{
                         color: $gray;
                         font-family: 'Barlow', sans-serif;
-                        margin-bottom: 10px;
+                        margin-bottom: 0px;
                         font-size: 17px;
                         text-align: center;
+                        line-height: 1;
+                    }
+                    .doctor-abv{
+                        color: $gray;
+                        font-family: 'Barlow', sans-serif;
+                        margin-top: 3px;
+                        margin-bottom: 0px;
+                        font-size: 17px;
+                        text-align: center;
+                        line-height: 1;
+                    }
+                    .doctor-head{
+                        font-family: 'BarlowMedium', sans-serif;
+                        margin-top: 10px;
+                        margin-bottom: 0px;
+                        font-size: 17px;
+                        text-align: center;
+                        line-height: 1;
+                        font-size: 15px;
+                        color: $green;
                     }
                     .specialization{
                         font-family: 'Barlow', sans-serif;
@@ -166,6 +186,7 @@
                         text-align: center;
                         line-height: 1.2;
                         text-transform: uppercase;
+                        margin-top: 15px;
                     }
                     .sub-spec{
                         font-family: 'Barlow', sans-serif;

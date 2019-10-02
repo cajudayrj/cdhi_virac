@@ -150,62 +150,76 @@ get_header();
 								else
 									return 0; 
 							});
-							foreach($doctorSched as $dsched):
-								$count++;
-								$date = $dsched['date'];
-								$id = $dsched['doc']->ID;
-								$fn = get_field('first_name',$id);
-								$ln = get_field('last_name',$id);
-								$st = get_field('status',$id);
-								$docImage =get_field('image', $id) ? get_field('image', $id)['url'] : get_template_directory_uri().'/assets/images/doc-default-photo.png';
-								$specialization = get_field('specialization',$id);
-								$services = get_field('services_offered',$id);
-								$vSched = get_field('visiting_schedule', $id);
-								//DISPLAY UP TO MAX 5 DOCTORS ONLY
-								if($count <= 5):
-						?>
-							<div class="schedule-container">
-								<div class="doctor-thumbnail">
-									<img src="<?php echo $docImage;?>" title="<?php echo $fn; ?> <?php echo $ln; ?>  - <?php echo $specialization; ?>  in Catanduanes Doctors Hospital, Inc." alt="<?php echo $fn; ?> <?php echo $ln; ?>  - <?php echo $specialization; ?> in Catanduanes Doctors Hospital, Inc." />
-								</div>
-								<div class="doctor-summary">
-
-									<p class="doctor-ln"><?php echo $ln ?>,</p>
-									<p class="doctor-fn"><?php echo $fn ?></p>
-									<p class="doctor-specialty"><?php echo $specialization ?></p>
-									<?php if($services): ?>
-										<p class="services">Services Offered:</p>
-										<ul class="service-list">
-											<?php foreach($services as $service): ?>
-												<li><?php echo $service['service_name']; ?></li>
-											<?php endforeach; ?>
-										</ul>
-									<?php endif; ?>
-									<div class="doctor-schedule">
-										<?php 
-											foreach($vSched as $sched): 
-												$date = $sched['date'];
-										?>
-											<div class="doctor-schedule-container">
-												<svg role="img" title="calendar" class="ds-svg">
-													<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#calendar"/>
-												</svg>
-												<ul>
-													<li>
-														<?php 
-															echo $date['from']; 
-                                                            echo $date['to'] != '' ? ' - '.$date['to'] : '';
-														?>
-													</li>
-												</ul>
-											</div>
-										<?php endforeach; ?>
+							if(count($doctorSched) > 0) :
+								foreach($doctorSched as $dsched):
+									$count++;
+									$date = $dsched['date'];
+									$id = $dsched['doc']->ID;
+									$fn = get_field('first_name',$id);
+									$ln = get_field('last_name',$id);
+									$st = get_field('status',$id);
+									$docImage =get_field('image', $id) ? get_field('image', $id)['url'] : get_template_directory_uri().'/assets/images/doc-default-photo.png';
+									$specialization = get_field('specialization',$id);
+									$services = get_field('services_offered',$id);
+									$vSched = get_field('visiting_schedule', $id);
+									//DISPLAY UP TO MAX 5 DOCTORS ONLY
+									if($count <= 5):
+							?>
+								<div class="schedule-container">
+									<div class="doctor-thumbnail">
+										<img src="<?php echo $docImage;?>" title="<?php echo $fn; ?> <?php echo $ln; ?>  - <?php echo $specialization; ?>  in Catanduanes Doctors Hospital, Inc." alt="<?php echo $fn; ?> <?php echo $ln; ?>  - <?php echo $specialization; ?> in Catanduanes Doctors Hospital, Inc." />
 									</div>
+									<div class="doctor-summary">
+
+										<p class="doctor-ln"><?php echo $ln ?>,</p>
+										<p class="doctor-fn"><?php echo $fn ?></p>
+										<p class="doctor-specialty"><?php echo $specialization ?></p>
+										<?php if($services): ?>
+											<p class="services">Services Offered:</p>
+											<ul class="service-list">
+												<?php foreach($services as $service): ?>
+													<li><?php echo $service['service_name']; ?></li>
+												<?php endforeach; ?>
+											</ul>
+										<?php endif; ?>
+										<div class="doctor-schedule">
+											<?php 
+												foreach($vSched as $sched): 
+													$date = $sched['date'];
+											?>
+												<div class="doctor-schedule-container">
+													<svg role="img" title="calendar" class="ds-svg">
+														<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#calendar"/>
+													</svg>
+													<ul>
+														<li>
+															<?php 
+																echo $date['from']; 
+																echo $date['to'] != '' ? ' - '.$date['to'] : '';
+															?>
+														</li>
+													</ul>
+												</div>
+											<?php endforeach; ?>
+										</div>
+									</div>
+								</div>
+							<?php
+									endif;
+								endforeach;
+							else:
+							?>
+							<div class="caution">
+								<svg role="img" title="caution" class="caution-svg">
+									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#caution-sign"/>
+								</svg>
+								<div class="caution-text">
+									<p>No scheduled visiting Doctors for now...</p>
+									<p>Please check again tomorrow.</p>
 								</div>
 							</div>
 						<?php
-								endif;
-							endforeach;
+							endif;
 						?>
 					</div>
 					<div class="col-sm-12 col-md-4 cdhi-guide">

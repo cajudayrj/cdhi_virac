@@ -111,14 +111,22 @@ endforeach;
                                                                             <div class="col-md-8 offset-md-2 service-column">
                                                                                 <h3 class="head-title">Service</h3>
                                                                                 <h2 class="main-title"><?php echo $h->post_title ?></h2>
-                                                                                <p class="service-desc"><?php echo $hsGroup['service_description']; ?></p>
-                                                                                <div class="service-img">
-                                                                                    <picture>
-                                                                                        <source srcset="<?php echo $hsImg['url'] ?>" media="(min-width: 1200px)" />
-                                                                                        <source srcset="<?php echo $hsImg['sizes']['large'] ?>" media="(min-width: 768px)" />
-                                                                                        <source srcset="<?php echo $hsImg['sizes']['medium_large'] ?>" media="(min-width: 0px)" />
-                                                                                        <img src="<?php echo $hsImg['url'] ?>" />
-                                                                                    </picture>
+                                                                                <div class="container-fluid">
+                                                                                    <div class="row">
+                                                                                        <div class="col-md-6 pl-0 desc-cont">
+                                                                                            <div class="service-desc"><?php echo $hsGroup['service_description']; ?></div>
+                                                                                        </div>
+                                                                                        <div class="col-md-6 img-cont p-0">
+                                                                                            <div class="service-img">
+                                                                                                <picture>
+                                                                                                    <source srcset="<?php echo $hsImg['url'] ?>" media="(min-width: 1200px)" />
+                                                                                                    <source srcset="<?php echo $hsImg['sizes']['large'] ?>" media="(min-width: 768px)" />
+                                                                                                    <source srcset="<?php echo $hsImg['sizes']['medium_large'] ?>" media="(min-width: 0px)" />
+                                                                                                    <img src="<?php echo $hsImg['url'] ?>" />
+                                                                                                </picture>
+                                                                                            </div>
+                                                                                        </div>
+                                                                                    </div>
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-md-4 offset-md-2 service-availability">
@@ -130,8 +138,6 @@ endforeach;
                                                                                     <p class="label">Availability Time:</p>
                                                                                     <p class="value"><?php echo $hsGroup['availability_time'] ?></p>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div class="col-md-4 service-location">
                                                                                 <div class="service-floor content">
                                                                                     <p class="label">Floor:</p>
                                                                                     <p class="value"><?php echo $hsGroup['floor'] ?></p>
@@ -140,13 +146,16 @@ endforeach;
                                                                                     <p class="label">Room:</p>
                                                                                     <p class="value"><?php echo $hsGroup['room'] ?></p>
                                                                                 </div>
-                                                                            </div>
-                                                                            <div class="col-md-8 offset-md-2 service-officer">
                                                                                 <div class="content">
                                                                                     <p class="label">Officer-In-Charge:</p>
                                                                                     <p class="value"><?php echo $hsGroup['officer_in_charge'] ?></p>
                                                                                 </div>
                                                                             </div>
+                                                                            <?php if($hsGroup['service_note_instruction']): ?>
+                                                                                <div class="col-md-8 offset-md-2 pl-0">
+                                                                                    <div class="service-desc"><?php echo $hsGroup['service_note_instruction']; ?></div>
+                                                                                </div>
+                                                                            <?php endif; ?>
                                                                         </div>
                                                                     </div>
                                                                 </div>
