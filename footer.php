@@ -120,7 +120,7 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB4qwhsAu4vr_l4SSjJ6mg4RgFm4xvWgCw&callback=initMap"
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe-zFZQMRrR5OqRHSxJFRic3B1P3rVt-o&callback=initMap"
   type="text/javascript"></script>
 </body>
 </html>
