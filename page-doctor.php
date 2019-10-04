@@ -378,7 +378,9 @@ endforeach;
                                                                                                     </tr>
                                                                                                 </thead>
                                                                                                 <tbody>
-                                                                                                    <?php foreach($multiSched as $m):?>
+                                                                                                    <?php 
+																										if(is_array($multiSched) || is_object($multiSched)) :
+																										foreach($multiSched as $m):?>
                                                                                                         <tr>
                                                                                                             <td><?php echo $m['days']; ?></td>
                                                                                                             <td>
@@ -402,7 +404,9 @@ endforeach;
                                                                                                                 <?php endif; ?>
                                                                                                             </td>
                                                                                                         </tr>
-                                                                                                    <?php endforeach; ?>
+                                                                                                    <?php endforeach;
+																										endif;
+																									?>
                                                                                                 </tbody>
                                                                                             </table>
                                                                                 <?php 
