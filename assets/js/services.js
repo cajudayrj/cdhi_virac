@@ -11,7 +11,7 @@ if (serviceSection) {
         const activeBtn = serviceSection.querySelector(`button#${address}`);
         setTimeout(() => {
             activeBtn.click();
-        }, 100)
+        }, 300)
     }
 
     serviceTabs.forEach(btn => btn.addEventListener('click', function (e) {
