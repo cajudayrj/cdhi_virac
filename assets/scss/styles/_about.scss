@@ -1,0 +1,57 @@
+.about-section-container{
+    .tabs-container{
+        margin-bottom: 50px;
+        .tab-btns{
+            width: 100%;
+            border: none;
+            color: $gray;
+            font-family: "BarlowSemiBold",sans-serif;
+            text-transform: uppercase;
+            border-radius: 20px;
+            padding: 13px 25px;
+            text-align: left;
+            background-color: transparent;
+            margin-bottom: 10px;
+            line-height: 1;
+        }
+        .tab-btns.active{
+            color: $green-2;
+            background-color: $gray-3;
+        }
+    }
+
+    .tab-content-container{
+        color: $gray;
+        font-family: "BarlowLight",sans-serif;
+        font-size: 16px;
+        display: none;
+        h1{
+            font-size: 48px;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        h2{
+            font-size: 2rem;
+            font-family: "Barlow",sans-serif;
+        }
+        h3{
+            font-size: 1.75rem;
+            font-family: "Barlow",sans-serif;
+        }
+        h4{
+            font-size: 1.5rem;
+            font-family: "Barlow",sans-serif;
+        }
+        h5{
+            font-size: 1.25rem;
+            font-family: "Barlow",sans-serif;
+        }
+        h6{
+            font-size: 1rem;
+            font-family: "Barlow",sans-serif;
+        }
+    }
+    .tab-content-container.active{
+        display: block;
+    }
+}

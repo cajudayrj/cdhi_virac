@@ -1,0 +1,91 @@
+.tour-section-container{
+    .header-title{
+        font-family: "BarlowLight", sans-serif;
+        color: $gray;
+        font-size: 36px;
+        margin-bottom: 40px;
+    }
+    .tabs-btn-container{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        .tab-btn{
+            border: none;
+            border-radius: 5px;
+            margin-right: 5px;
+            font-family: "Barlow",sans-serif;
+            color: $blue;
+            font-size: 24px;
+            padding: 5px 20px;
+            width: 100%;
+            margin-bottom: 5px;
+            @include tablet{
+                border-radius: 0px;
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+                width: auto;
+                margin-bottom: 0px;
+            }
+        }
+        .tab-btn.active{
+            color: #fff;
+            background: $green-2;
+            font-family: "BarlowSemiBold",sans-serif;
+        }
+    }
+    .tab-content-container{
+        border: solid 1px $green-2;
+        width: 100%;
+        padding: 20px 15px;
+        .item-title{
+            font-family: "BarlowSemiBold", sans-serif;
+            font-size: 24px;
+            color: $gray;
+        }
+        .tour-gallery-container{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            position: relative;
+            border-bottom: solid 1px $green-2;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+            figure{
+                margin: 5px;
+                border-radius: 4px;
+                overflow: hidden;
+                @include respond((
+                    width: (calc(50% - 10px),null,calc(33.33% - 10px),calc(25% - 10px), calc(20% - 10px))
+                ));
+                a{
+                    pointer-events:none;
+                    img{
+                        opacity: .6;
+                    }
+                }
+            }
+
+            &:last-of-type{
+                border-bottom: none;
+                margin-bottom: 0px;
+            }
+        }
+        .tour-gallery-container.loaded{
+            figure{
+                a{
+                    pointer-events: auto;
+                    img{
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+        .tab-content{
+            display: none;
+        }
+        .tab-content.active{
+            display: block;
+        }
+    }
+}

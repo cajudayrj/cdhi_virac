@@ -1,0 +1,67 @@
+.career-section-container{
+    margin-bottom: 60px;
+    .career-content-container{
+        .career-container{
+            .career-btns{
+                width: 100%;
+                color: $blue;
+                font-family: "BarlowBold", sans-serif;
+                border: none;
+                background: none;
+                border-bottom: solid 1px $gray-2;
+                padding: 5px 15px;
+                text-align: left;
+                font-size: 20px;
+                cursor: pointer;
+            }
+            .career-content{
+                background: $gray-3;
+                padding: 0px 15px;
+                margin: 0;
+                color: $gray;
+                max-height: 0;
+                transition: all .5s ease-in-out;
+                opacity: 0;
+                .vacant-position{
+                    font-family: "BarlowSemiBold", sans-serif;
+                    color: $green-2;
+                    font-size: 18px;
+                }
+                .qualifications{
+                    font-family: "BarlowLight", sans-serif;
+                    color: $gray;
+                    font-size: 16px;
+                    h2,h3,h4,h5,h6{
+                        font-family: "BarlowBold",sans-serif;
+                        font-size: 12px;
+                        letter-spacing: 2px;
+                        margin-bottom: 15px;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+            .career-content.active{
+                opacity: 1;
+                display: block;
+                max-height: 100vh;
+                padding: 30px 15px;
+                margin-bottom: 20px;
+                margin-top: 5px;
+            }
+        }
+    }
+
+    .info{
+        color: $gray;
+        font-family: "BarlowMedium",sans-serif;
+        font-size: 16px;
+        a{
+            color: $gray;
+            text-decoration: underline;
+        }
+    }
+    .yhor-cdhi-img{
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+}

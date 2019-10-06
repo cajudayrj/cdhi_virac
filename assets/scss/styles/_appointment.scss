@@ -1,4 +1,4 @@
-.make-an-appointment-section{
+.make-an-appointment-section, .contact-section-container{
     .appointment-heading{
         color: $gray;
         margin-bottom: 17px;
@@ -20,6 +20,9 @@
                 }
             }
         }
+        &.header{
+            margin-bottom: 0;
+        }
     }
     .appointment-caution{
         margin-bottom: 20px;
@@ -31,6 +34,9 @@
         margin-bottom: 30px;
     }
     .main-form-container{
+        .form-col-container{
+            padding: 0;
+        }
         .form-heading{
             font-family: 'Barlow', sans-serif;
             color: $gray;
@@ -130,6 +136,27 @@
     }
 }
 
+.contact-section-container{
+    .main-form-container{
+        .disclaimer{
+            margin-bottom: 30px;
+            @include tablet{
+                margin-bottom: 60px;
+            }
+        }
+        .appointment-btn{
+            margin-bottom: 0px;
+        }
+    }
+    .map-container{
+        margin-top: 20px;
+        #map{
+            width: 100%;
+            height: 300px;
+        }
+    }
+}
+
 .caution{
     width: 100%;  
     border: solid 1px $blue;
@@ -151,6 +178,7 @@
         font-family: "Barlow", sans-serif;
         color: $gray;
         font-size: 14px;
+        align-self: center;
         p{
             margin-bottom: 5px;
             line-height: 1.1;
