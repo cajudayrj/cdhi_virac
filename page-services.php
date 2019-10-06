@@ -116,7 +116,7 @@ endforeach;
                                                                                         <div class="col-md-6 pl-0 desc-cont">
                                                                                             <div class="service-desc"><?php echo $hsGroup['service_description']; ?></div>
                                                                                         </div>
-                                                                                        <div class="col-md-6 img-cont p-0">
+                                                                                        <div class="col-md-6 img-cont">
                                                                                             <div class="service-img">
                                                                                                 <picture>
                                                                                                     <source srcset="<?php echo $hsImg['url'] ?>" media="(min-width: 1200px)" />

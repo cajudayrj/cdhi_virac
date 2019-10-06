@@ -134,9 +134,10 @@ function cdhi_theme_scripts() {
 	wp_enqueue_script( 'cdhi_jquery', get_template_directory_uri() . '/assets/bootstrap/jquery.min.js', array(), false );
 	wp_enqueue_script( 'cdhi_popper-js', get_template_directory_uri() . '/assets/bootstrap/popper.min.js', array(), false, true );
 	wp_enqueue_script( 'cdhi_bootstrap-js', get_template_directory_uri() . '/assets/bootstrap/bootstrap.min.js', array(), false, true );
-	wp_enqueue_script( 'cdhi_custom-js', get_template_directory_uri() . '/assets/js/scripts.js', array(), false, true );
 	wp_enqueue_script( 'cdhi_ps-js', get_template_directory_uri() . '/assets/photoswipe/photoswipe.min.js', array(), false, true );
-	wp_enqueue_script( 'cdhi_ps-def-js', get_template_directory_uri() . '/assets/photoswipe/photoswipe-ui-default.js', array(), false, true );
+	wp_enqueue_script( 'cdhi_ps-def-js', get_template_directory_uri() . '/assets/photoswipe/photoswipe-ui-default.min.js', array(), false, true );
+	wp_enqueue_script( 'cdhi_masonry-js', get_template_directory_uri() . '/assets/masonry/masonry.min.js', array(), false, true );
+	wp_enqueue_script( 'cdhi_custom-js', get_template_directory_uri() . '/assets/js/scripts.js', array(), false, true );
 
 	wp_enqueue_script( 'cdhi_theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
 
@@ -380,3 +381,21 @@ function service_redirect_post() {
     exit;
   }
 }
+
+// CUSTOM WYSIWYG FOR CAREER PAGE
+add_filter( 'acf/fields/wysiwyg/toolbars' , 'career_wysiwyg'  );
+function career_wysiwyg($toolbars) {
+	$toolbars['Career Wysiwyg' ] = [];
+	$toolbars['Career Wysiwyg' ][1] = ['formatselect','bold', 'italic', 'underline', 'link', 'bullist', 'numlist'];
+	return $toolbars;
+}
+
+// Customize format select in wysiwyg
+// To remove H1 on formatselect
+function customize_heading($settings)
+{
+    $settings['block_formats'] = 'Heading 2=h2;Heading 3=h3;Heading 4=h5;Heading 5=h5;Heading 6=h6;Paragraph=p;';
+
+    return $settings;
+}
+add_filter('tiny_mce_before_init', 'customize_heading');

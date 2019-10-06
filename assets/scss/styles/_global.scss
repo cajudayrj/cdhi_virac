@@ -15,3 +15,71 @@
 .no-scroll{
     overflow-y: hidden;
 }
+.col-label{
+    padding-right: 0px;
+    font-family: "BarlowSemiBold", sans-serif;
+    font-size: 15px;
+    color: $gray;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-bottom: 10px;
+    text-align: left;
+    @include mini-desktop{
+        text-align: right;
+        justify-content: flex-end;
+        margin-bottom: 15px;
+    }
+    p{
+        margin-bottom: 0px;
+        margin-top: 8px;
+        line-height: 1.2;
+    }
+}
+.col-input{
+    margin-bottom: 15px;
+    input, textarea, select{
+        border-radius: 8px;
+        width: 100%;
+        border: solid 1px $blue;
+        padding: 7px 10px;
+        font-family: "Barlow", sans-serif;
+        font-size: 15px;
+        color: $gray;
+        &::placeholder{
+            color: $gray-2;
+            font-family: "BarlowLight", sans-serif;
+            font-size: 14px;
+        }
+    }
+    select.form-control{
+        font-family: "BarlowLight", sans-serif;
+        font-size: 14px;
+        height: calc(1.8em + .75rem + 2px);
+        border-radius: 8px;
+        &:invalid{
+            color: $gray-2;
+        }
+    }
+    .form-group{
+        margin-bottom: 0px;
+    }
+    .form-group.two-col{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        select.form-control{
+            width: 49%;
+        }
+    }
+    .form-group.three-col{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        select.form-control{
+            width: 32%;
+        }
+    }
+}
