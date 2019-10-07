@@ -64,19 +64,32 @@
                     order: 1;
                 }
             }
-            .img-cont{
+            .img-container{
                 order: 1;
                 padding: 0px;
                 @include tablet{
                     order: 2;
                     padding: 0px 15px;
                 }
-            }
-            .service-img{
-                width: 100%;
-                img{
+                .img-cont{
                     width: 100%;
-                    margin-bottom: 10px;
+                    img{
+                        width: calc(100% - 10px);
+                        margin: 5px;
+                    }
+                    .other-img-container{
+                        position: relative;
+                        .other-imgs-cont{
+                            .other-imgs{
+                                width: calc(50% - 10px);
+                                margin: 5px;
+                                img{
+                                    width: 100%;
+                                    margin: 0px;
+                                }
+                            }
+                        }
+                    }
                 }
             }
         }

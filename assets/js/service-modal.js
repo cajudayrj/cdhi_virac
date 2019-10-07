@@ -13,6 +13,13 @@ if (serviceContainer) {
         setTimeout(() => {
             modal.classList.add('animation');
         }, 100)
+
+        const mason = modal.querySelector('.other-imgs-cont');
+        setTimeout(() => {
+            $(mason).masonry({
+                itemSelector: '.other-imgs'
+            })
+        }, 10)
     }))
 
     closeBtns.forEach(btn => btn.addEventListener('click', function (e) {
