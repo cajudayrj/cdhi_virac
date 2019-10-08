@@ -1,5 +1,4 @@
 jQuery(window).on('load', function () {
-    console.log('window loaded')
     const aboutSection = document.querySelector('.about-section-container');
 
     if (aboutSection) {
