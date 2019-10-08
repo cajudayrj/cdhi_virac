@@ -1,5 +1,5 @@
 node_modules
 .env
 yarn.lock
-./assets/scss/theme.css.map
-./assets/js/scripts.js.map
+assets/scss/theme.css.map
+assets/js/scripts.js.map
