@@ -5,7 +5,9 @@ header{
             width: 100%;
             background: rgb(14,91,2);
             background: $green-gradient;
-            margin-bottom: 25px;
+            @include tablet{
+                margin-bottom: 25px;
+            }
             .upper-header{
                 display: flex;
                 flex-direction: row;
@@ -133,10 +135,7 @@ header{
             }
         }
         .primary-nav-container{
-            padding: 25px 0px 0px 0px;
-            @include tablet{
-                padding: 0px 0px 0px 0px;
-            }
+            padding: 0px 0px 0px 0px;
 
             .green-line-gradient{
                 width: 100%;

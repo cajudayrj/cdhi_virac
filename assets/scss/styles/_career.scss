@@ -22,6 +22,7 @@
                 max-height: 0;
                 transition: all .5s ease-in-out;
                 opacity: 0;
+                pointer-events: none;
                 .vacant-position{
                     font-family: "BarlowSemiBold", sans-serif;
                     color: $green-2;
@@ -43,10 +44,11 @@
             .career-content.active{
                 opacity: 1;
                 display: block;
-                max-height: 100vh;
+                max-height: 300vh;
                 padding: 30px 15px;
                 margin-bottom: 20px;
                 margin-top: 5px;
+                pointer-events: auto;
             }
         }
     }

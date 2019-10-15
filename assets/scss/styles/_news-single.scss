@@ -22,8 +22,8 @@
                     position: relative;
                     font-family: 'Barlow', sans-serif;
                     margin-bottom: 0;
-                    &:nth-child(2){
-                        padding-left: 20px;
+                    &:nth-child(1){
+                        padding-right: 20px;
                         &:before{
                             content: '';
                             width: 2px;
@@ -31,7 +31,29 @@
                             display: block;
                             position: absolute;
                             top: 50%;
-                            left: -1px;
+                            right: 8px;
+                            background: $gray;
+                            transform: translateY(-50%);
+                        }
+                    }
+                    a{
+                        text-decoration: none;
+                        color: $gray;
+                    }
+                }
+            }
+            .post-date.has-category{
+                p{
+                    &:nth-child(2){
+                        padding-right: 20px;
+                        &:before{
+                            content: '';
+                            width: 2px;
+                            height: 19px;
+                            display: block;
+                            position: absolute;
+                            top: 50%;
+                            right: 8px;
                             background: $gray;
                             transform: translateY(-50%);
                         }
@@ -94,6 +116,11 @@
                     font-size: 14px;
                 }
             }
+        }
+        .no-related-articles{
+            font-family: "Barlow", sans-serif;
+            color: $gray;
+            font-size: 16px;
         }
     }
 }

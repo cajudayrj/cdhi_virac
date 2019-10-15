@@ -1,0 +1,48 @@
+.reviews-section-container{
+    .review-heading{
+        color: $gray;
+        font-size: 48px;
+        font-family: "BarlowExtraLight", sans-serif;
+        line-height: 1;
+        margin-bottom: 40px;
+    }
+    .review-block-container{
+        margin-bottom: 40px;
+        .stars{
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            .review-star{
+                width: 23px;
+                height: 23px;
+                margin: 0;
+                padding: 0;
+            }
+        }
+        .review-title{
+            font-family: "BarlowMedium", sans-serif;
+            color: $gray;
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+        .review-description{
+            font-family: "BarlowExtraLight", sans-serif;
+            color: $gray;
+            font-size: 16px;
+            span{
+                display: inline-block;
+                font-family: "BarlowMedium", sans-serif;
+            }
+        }
+    }
+    .review-disclaimer{
+        margin-top: 30px;
+        p{
+            font-family: "BarlowLight", sans-serif;
+            color: $gray;
+            font-size: 16px;
+            font-style: italic;
+        }
+    }
+}

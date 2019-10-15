@@ -1,11 +1,8 @@
 .page-breadcrumb{
     margin-bottom: 30px;
-    margin-top: 25px;
+    margin-top: 35px;
     @include tablet{
         margin-bottom: 40px;
-    }
-    @include tablet{
-        margin-top: 0px;
     }
     .breadcrumb-text{
         display: flex;
