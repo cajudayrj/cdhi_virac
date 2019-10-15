@@ -1,6 +1,8 @@
 .about-section-container{
     .tabs-container{
         margin-bottom: 50px;
+        display: flex;
+        flex-direction: column;
         .tab-btns{
             width: 100%;
             border: none;
@@ -13,6 +15,7 @@
             background-color: transparent;
             margin-bottom: 10px;
             line-height: 1;
+            text-decoration: none;
         }
         .tab-btns.active{
             color: $green-2;

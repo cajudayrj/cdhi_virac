@@ -25,9 +25,11 @@ $img = get_field('banner_image');
                    
                             <?php 
                                 if($fields):
+                            ?>
+                                <div class="col-md-9">
+                            <?php
                                     foreach($fields as $key => $f): 
                             ?>
-                                    <div class="col-md-9">
                                         <div class="career-content-container">
                                             <div class="career-container">
                                                 <button class="career-btns" data-career="<?php echo 'career-'.$key ?>"><?php echo $f['career_title']; ?></button>
@@ -41,9 +43,11 @@ $img = get_field('banner_image');
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
                             <?php 
                                     endforeach; 
+                            ?>
+                                </div>
+                            <?php
                                 else:
                             ?>
                                 <div class="col-md-4">
@@ -62,7 +66,7 @@ $img = get_field('banner_image');
                             ?>
                     <div class="col-md-3">
                         <div class="info">
-                            <p>You can send your resume to <a href="mailto:hr.cdhi@gmail.com">hr.cdhi@gmail.com</a> or you can walk-in to our HR Department Office - Ground Floor in front of Laboratory Room and Look for Ms. Juana dela Cruz.</p>
+                            <?php echo get_field('side_information'); ?>
                         </div>
                     </div>
                 </div>

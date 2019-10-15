@@ -116,20 +116,32 @@ endforeach;
                                                                                         <div class="col-md-6 pl-0 desc-cont">
                                                                                             <div class="service-desc"><?php echo $hsGroup['service_description']; ?></div>
                                                                                         </div>
-                                                                                        <div class="col-md-6 img-cont">
-                                                                                            <div class="service-img">
-                                                                                                <picture>
-                                                                                                    <source srcset="<?php echo $hsImg['url'] ?>" media="(min-width: 1200px)" />
-                                                                                                    <source srcset="<?php echo $hsImg['sizes']['large'] ?>" media="(min-width: 768px)" />
-                                                                                                    <source srcset="<?php echo $hsImg['sizes']['medium_large'] ?>" media="(min-width: 0px)" />
-                                                                                                    <img src="<?php echo $hsImg['url'] ?>" />
-                                                                                                </picture>
+                                                                                        <div class="col-md-6 img-container">
+                                                                                            <div class="img-cont" itemscope itemtype="http://schema.org/ImageGallery">
+                                                                                                <img src="<?php echo $hsImg['sizes']['medium_large']; ?>" />
+                                                                                                <div class="other-img-container">
+                                                                                                    <div class="other-imgs-cont">
+                                                                                                        <?php
+                                                                                                            if($hsGroup['gallery']):
+                                                                                                                foreach($hsGroup['gallery'] as $key=>$g):
+                                                                                                        ?>
+                                                                                                            <figure class="other-imgs" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                                                                                                <a href="<?php echo $g['url']; ?>" itemprop="contentUrl" data-size="<?php echo $g['width']; ?>x<?php echo $g['height']; ?>" data-index="<?php echo $key + 1; ?>">
+                                                                                                                    <img src="<?php echo $g['sizes']['medium_large']; ?>" itemprop="thumbnail" />
+                                                                                                                </a>
+                                                                                                            </figure>
+                                                                                                        <?php
+                                                                                                                endforeach;
+                                                                                                            endif;
+                                                                                                        ?>
+                                                                                                    </div>
+                                                                                                </div>
                                                                                             </div>
                                                                                         </div>
                                                                                     </div>
                                                                                 </div>
                                                                             </div>
-                                                                            <div class="col-md-4 offset-md-2 service-availability">
+                                                                            <div class="col-md-8 offset-md-2 service-availability">
                                                                                 <div class="availability-day content">
                                                                                     <p class="label">Availability Day:</p>
                                                                                     <p class="value"><?php echo $hsGroup['availability_day'] ?></p>
@@ -182,5 +194,43 @@ endforeach;
         </div>
     </section>
  </main>
+ <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+        <div class="pswp__bg"></div>
+        <div class="pswp__scroll-wrap">
+    
+            <div class="pswp__container">
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+                <div class="pswp__item"></div>
+            </div>
+    
+            <div class="pswp__ui pswp__ui--hidden">
+                <div class="pswp__top-bar">
+                    <div class="pswp__counter"></div>
+                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                    <button class="pswp__button pswp__button--share" title="Share"></button>
+                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                    <div class="pswp__preloader">
+                        <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                    <div class="pswp__share-tooltip"></div> 
+                </div>
+                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+                </button>
+                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+                </button>
+                <div class="pswp__caption">
+                    <div class="pswp__caption__center"></div>
+                </div>
+            </div>
+        </div>
+    </div>
 <?php
 get_footer();

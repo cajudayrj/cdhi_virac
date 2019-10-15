@@ -14,18 +14,7 @@ $post_date = get_the_date();
 $date = date("F j, Y", strtotime($post_date));
 $day = date("l", strtotime($post_date));
 $post_content = get_field('post_content', $id);
-$relatedposts = new WP_Query(array( 'post_type' => 'news-and-blog', 'posts_per_page' => 16));
-$posts = $relatedposts->posts;
-shuffle($posts);
-$related = [];
-$count = 0;
-foreach($posts as $p):
-    if($count < 3) :
-        if($p->ID == $id) continue;
-        $related[] = $p;
-        $count++;
-    endif;
-endforeach;
+$category_name = get_the_terms(the_post(), 'news-category');
 ?>
 
     <main>
@@ -49,9 +38,12 @@ endforeach;
                         <div class="article-content-container">
                             <div class="article-details">
                                 <h1 class="post-title"><?php the_title(); ?></h1>
-                                <div class="post-date">
+                                <div class="post-date <?php echo $category_name ? 'has-category' : '' ?>">
                                     <p><?php echo $date; ?></p>
                                     <p><?php echo $day; ?></p>
+                                    <?php if($category_name): ?>
+                                        <p><a href="<?php echo get_term_link($category_name[0]->term_id) ?>"><?php echo $category_name[0]->name ?></a></p>
+                                    <?php endif; ?>
                                 </div>
                             </div>
                             <?php if($post_thumbnail) :  ?>
@@ -73,10 +65,33 @@ endforeach;
                         <div class="related-articles-container">
                             <h3 class="related-label">Related Articles</h3>
                             <?php 
-                                foreach($related as $r): 
-                                    $rId = $r->ID;
-                                    $relatedImg = get_field('post_thumbnail', $rId) ? get_field('post_thumbnail', $rId)['sizes']['large'] : get_template_directory_uri().'/assets/images/banner-sample.png';
-                                    $relatedDate = date("F j, Y", strtotime($r->post_date));
+                                $relatedposts = new WP_Query(array( 
+                                    'post_type' => 'news-and-blog', 
+                                    'posts_per_page' => 16,
+                                    'tax_query' => array(
+                                            array (
+                                                'taxonomy' => 'news-category',
+                                                'field' => 'slug',
+                                                'terms' => $category_name[0]->slug,
+                                            )
+                                        )
+                                    ));
+                                $posts = $relatedposts->posts;
+                                shuffle($posts);
+                                $related = [];
+                                $count = 0;
+                                if(count($posts) > 0) :
+                                    foreach($posts as $p):
+                                        if($count < 3) :
+                                            if($p->ID == $id) continue;
+                                            $related[] = $p;
+                                            $count++;
+                                        endif;
+                                    endforeach;
+                                    foreach($related as $r): 
+                                        $rId = $r->ID;
+                                        $relatedImg = get_field('post_thumbnail', $rId) ? get_field('post_thumbnail', $rId)['sizes']['large'] : get_template_directory_uri().'/assets/images/banner-sample.png';
+                                        $relatedDate = date("F j, Y", strtotime($r->post_date));
                             ?>
                                 <a href="<?php echo get_post_permalink($rId); ?>" class="related-article">
                                     <div class="related-thumbnail">
@@ -87,7 +102,19 @@ endforeach;
                                         <p class="related-date"><?php echo $relatedDate; ?></p>
                                     </div>
                                 </a>
-                            <?php endforeach; ?>
+                            <?php 
+                                    endforeach;
+                                else:
+                            ?>
+                                <div class="caution">
+                                    <svg role="img" title="caution" class="caution-svg">
+                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#caution-sign"/>
+                                    </svg>
+                                    <div class="caution-text">
+                                        <p>No related articles on same category found.</p>
+                                    </div>
+                                </div>
+                            <?php endif; ?>
                         </div>
                     </div>
                 </div>
