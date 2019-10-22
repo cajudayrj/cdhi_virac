@@ -79,17 +79,19 @@ get_header();
 		<section class="home-description">
 			<div class="container">
 				<h2>Catanduanes Doctors Hospital Inc.</h2>
-				<p>With its prominently elegant structure, CDHI poses as the island’s endearing surprise not only to the people of Catanduanes but also to the global community. To top it all, CDHI’s immense potentials in the medical tourism industry, to likewise include wide job opportunities to the people in and outside Catanduanes, CDHI promises to offer better health and therefore better life. After all, "Your health is our responsibility" is what CDHI is all for.</p>
+                                <p><?php the_field('introduction');  ?></p>
 			</div>
 		</section>
 		<section class="partners-section">
 			<div class="container">
 				<h3>Our Partners</h3>
 				<div class="partner-images-desktop">
-					<img title="Catanduanes Doctors Hospital Partners" alt="Catanduanes Doctors Hospital Partners" src="<?php echo get_template_directory_uri() ?>/assets/images/partners/partners-lg.png" />
+					<img title="Catanduanes Doctors Hospital Partners" alt="Catanduanes Doctors Hospital Partners"
+                                             src="<?php the_field('partners_logo_desktop_screen'); ?>"
+                                        />
 				</div>
 				<div class="partner-images-mobile">
-					<img  title="Catanduanes Doctors Hospital Partners" alt="Catanduanes Doctors Hospital Partners" src="<?php echo get_template_directory_uri() ?>/assets/images/partners/partners-sm.png" />
+					<img  title="Catanduanes Doctors Hospital Partners" alt="Catanduanes Doctors Hospital Partners" src="<?php the_field('partners_logo_mobile_screen'); ?>" />
 				</div>
 			</div>
 		</section>
@@ -133,7 +135,7 @@ get_header();
 								$hasSched = get_field('has_schedule',$docId);
 								$st = get_field('status',$docId);
 								$visitingSched = get_field('visiting_schedule', $docId);
-								if(($st == 'visiting') and $hasSched) : 
+								if(($st == 'visiting') and $hasSched) :
 									$firstSched = $visitingSched[0]['date']['from'];
 									$doctorSched[] = [
 										'date' => $firstSched,
@@ -143,12 +145,12 @@ get_header();
 							endforeach;
 							//SORTING DATE FROM EARLIEST
 							usort($doctorSched, function($a, $b){
-								if (strtotime($a['date']) > strtotime($b['date'])) 
-									return 1; 
-								else if (strtotime($a['date']) < strtotime($b['date']))  
-									return -1; 
+								if (strtotime($a['date']) > strtotime($b['date']))
+									return 1;
+								else if (strtotime($a['date']) < strtotime($b['date']))
+									return -1;
 								else
-									return 0; 
+									return 0;
 							});
 							if(count($doctorSched) > 0) :
 								foreach($doctorSched as $dsched):
@@ -183,8 +185,8 @@ get_header();
 											</ul>
 										<?php endif; ?>
 										<div class="doctor-schedule">
-											<?php 
-												foreach($vSched as $sched): 
+											<?php
+												foreach($vSched as $sched):
 													$date = $sched['date'];
 											?>
 												<div class="doctor-schedule-container">
@@ -193,8 +195,8 @@ get_header();
 													</svg>
 													<ul>
 														<li>
-															<?php 
-																echo $date['from']; 
+															<?php
+																echo $date['from'];
 																echo $date['to'] != '' ? ' - '.$date['to'] : '';
 															?>
 														</li>
@@ -214,8 +216,7 @@ get_header();
 									<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#caution-sign"/>
 								</svg>
 								<div class="caution-text">
-									<p>No scheduled visiting Doctors for now...</p>
-									<p>Please check again tomorrow.</p>
+									<?php the_field('no_scheduled_visiting_doctors_information_text'); ?>
 								</div>
 							</div>
 						<?php
@@ -223,44 +224,34 @@ get_header();
 						?>
 					</div>
 					<div class="col-sm-12 col-md-4 cdhi-guide">
-						<h4 class="title">PATIENT & VISITORS GUIDE</h4>
-						<a href="">
+						<h4 class="title">YOUR CDHI GUIDE</h4>
+                                                <a href="<?php bloginfo('url'); ?>">
 							<div class="guide-container">
 								<div class="thumbnail">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/glideimg.jpg" alt="">
-								</div>
-								<div class="guide-text">
-									<p>PATIENT ADMISSION</p>
-								</div>
-							</div>
-						</a>
-						<a href="">
-							<div class="guide-container">
-								<div class="thumbnail">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/glideimg.jpg" alt="">
-								</div>
-								<div class="guide-text">
-									<p>VISITOR INFORMATION</p>
-								</div>
-							</div>
-						</a>
-						<a href="">
-							<div class="guide-container">
-								<div class="thumbnail">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/glideimg.jpg" alt="">
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/Guide-PatientAdmission.png" alt="">
 								</div>
 								<div class="guide-text">
 									<p>PATIENT REFERENCES</p>
 								</div>
 							</div>
 						</a>
-						<a href="">
+						<a href="<?php bloginfo('url'); ?>/our-doctors">
 							<div class="guide-container">
 								<div class="thumbnail">
-									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/glideimg.jpg" alt="">
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/Guide-OurDoctors.png" alt="">
 								</div>
 								<div class="guide-text">
-									<p>HEALTH ADVICES</p>
+									<p>OUR DOCTORS</p>
+								</div>
+							</div>
+						</a>
+						<a href="<?php bloginfo('url'); ?>/about">
+							<div class="guide-container">
+								<div class="thumbnail">
+									<img src="<?php echo get_template_directory_uri(); ?>/assets/images/Guide-About.png" alt="">
+								</div>
+								<div class="guide-text">
+									<p>ABOUT CDHI</p>
 								</div>
 							</div>
 						</a>
