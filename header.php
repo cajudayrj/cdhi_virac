@@ -25,9 +25,9 @@
 	<a class="skip-link screen-reader-text" href="#content"><?php esc_html_e( 'Skip to content', 'cdhi_theme' ); ?></a>
 
 	<header id="masthead" class="site-header">
-		<?php 
-			$header = get_field('header','option'); 
-			$footer = get_field('footer','option'); 
+		<?php
+			$header = get_field('header','option');
+			$footer = get_field('footer','option');
 			$socmed = get_field('social_media','option');
 		?>
 		<nav id="site-navigation" class="main-navigation">
@@ -35,7 +35,7 @@
 				<div class="container">
 					<div class="upper-header">
 							<a href="<?php echo home_url(); ?>">
-								<img src="<?php echo get_template_directory_uri() ?>/assets/images/cdhi-logo-bordered.png" alt="" />
+								<img src="<?php echo get_template_directory_uri() ?>/assets/images/cdhi-logo-bordered@2x.png" alt="" />
 							</a>
 							<div class="header-logo-text">
 								<h1>CATANDUANES DOCTORS HOSPITAL, INC.</h1>

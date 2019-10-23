@@ -137,6 +137,7 @@ function cdhi_theme_scripts() {
 	wp_enqueue_script( 'cdhi_ps-js', get_template_directory_uri() . '/assets/photoswipe/photoswipe.min.js', array(), false, true );
 	wp_enqueue_script( 'cdhi_ps-def-js', get_template_directory_uri() . '/assets/photoswipe/photoswipe-ui-default.min.js', array(), false, true );
 	wp_enqueue_script( 'cdhi_masonry-js', get_template_directory_uri() . '/assets/masonry/masonry.min.js', array(), false, true );
+	wp_enqueue_script( 'cdhi_retina-js', get_template_directory_uri() . '/assets/js/retina.min.js', array(), false, true );
 	wp_enqueue_script( 'cdhi_custom-js', get_template_directory_uri() . '/assets/js/scripts.js', array(), false, true );
 
 	wp_enqueue_script( 'cdhi_theme-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true );
@@ -181,11 +182,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
  */
 
 // DISABLE GUTTENBERG
- add_filter('use_block_editor_for_post', '__return_false');	
+ add_filter('use_block_editor_for_post', '__return_false');
  add_action('admin_head', 'remove_content_editor');
  function remove_content_editor()
- { 
-	 remove_post_type_support('page', 'editor');        
+ {
+	 remove_post_type_support('page', 'editor');
  }
 
 // ADD ACTIVE CLASS ON ACTIVE MENU
@@ -213,7 +214,7 @@ endif;
 
 // ADD DOCTOR CUSTOM POST TYPE AND TAXONOMY
 function create_doctors_posttype() {
- 
+
     register_post_type( 'doctor',
     // CPT Options
         array(
@@ -318,7 +319,7 @@ function newsblog_redirect_post() {
 
 // ADD NEWS AND BLOG CUSTOM POST TYPE AND TAXONOMY
 function create_newsblog_posttype() {
- 
+
     register_post_type( 'news-and-blog',
     // CPT Options
         array(
@@ -355,7 +356,7 @@ function remove_draft_widget(){
 
 // ADD SERVICE CUSTOM POST TYPE AND TAXONOMY
 function create_services_posttype() {
- 
+
     register_post_type( 'service',
     // CPT Options
         array(

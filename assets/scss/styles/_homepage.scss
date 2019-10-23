@@ -2,10 +2,10 @@
     position: relative;
     padding-left: 0px;
     padding-right: 0px;
-    .atf-glide{
+
+    .atf-glide, .atf-glide2{
         overflow: hidden;
         max-height: 650px;
-        border-bottom: solid 1px $gray;
         position: relative;
         @include tablet{
             border: none;
@@ -41,9 +41,6 @@
                     outline:none!important;
                 }
             }
-
-
-
             .atf-prev{
                 left: 20px;
             }
@@ -85,6 +82,10 @@
             }
         }
     }
+
+
+
+
     .atf-content{
         position: relative;
         width: 100%;
@@ -92,7 +93,7 @@
         justify-content: center;
         flex-direction: column;
         margin-bottom: 60px;
-        margin-top: 30px;
+        margin-top: 0px;
         padding: 0px 15px;
         @include mini-tablet{
             flex-direction: row;
@@ -103,6 +104,7 @@
             padding: 0px;
             margin-top: -95px;
             margin-bottom: 95px;
+            flex-direction: row;
         }
         @include mini-desktop{
             margin-top: -125px;
@@ -130,14 +132,16 @@
                 padding: 8px 25px;
             }
             .atf-buttons-svg{
-                width: 39px;
-                height: 39px;
+                width: 55px;
+                height: 55px;
                 margin-bottom: 15px;
                 fill: $green-2;
                 @include tablet{
                     fill: #fff;
                     margin-right: 8px;
                     margin-bottom: 0px;
+                    width: 45px;
+                    height: 45px;
                 }
             }
             .btn-text{
@@ -175,13 +179,22 @@
                     }
                 }
             }
-            &:hover {
-                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7); 
+        }
 
+        a:hover {
+
+            @include tablet{
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7); 
             }
 
+            @include desktop{
+                box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.7); 
+            }
         }
+
     }
+
+
 }
 
 .home-description{
@@ -544,3 +557,5 @@
         }
     }
 }
+
+
