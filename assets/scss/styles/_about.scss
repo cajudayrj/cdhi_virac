@@ -21,17 +21,19 @@
             color: $green-2;
             background-color: $gray-3;
         }
-        
+
         .tab-btns.active:focus{
             outline: none;
         }
     }
-   
+
 
     .tab-content-container{
         color: $gray;
         font-family: "BarlowLight",sans-serif;
         font-size: 16px;
+        text-align: justify!important;
+        text-justify: inter-cluster!important;
         h1{
             font-size: 48px;
             margin-bottom: 20px;

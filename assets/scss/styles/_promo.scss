@@ -35,6 +35,8 @@
                 line-height: 1;
                 margin-bottom: 20px;
                 margin-top: 20px;
+                text-align: justify!important;
+                text-justify: inter-cluster!important;
                 @include tablet{
                     margin-top: 0px;
                 }
@@ -44,6 +46,8 @@
                 font-family: "BarlowExtraLight", sans-serif;
                 font-size: 16px;
                 margin-bottom: 20px;
+                text-align: justify!important;
+                text-justify: inter-cluster!important;
             }
             .promo-valid{
                 margin-bottom: 0;

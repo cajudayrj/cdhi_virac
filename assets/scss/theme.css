@@ -1752,8 +1752,10 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
 /* line 47, styles/_doctorpage.scss */
 .doctor-main-content .doctors-introduction .intro-content {
   margin-bottom: 20px;
+  text-align: justify;
+  text-justify: inter-cluster;
 }
-/* line 51, styles/_doctorpage.scss */
+/* line 53, styles/_doctorpage.scss */
 .doctor-main-content .doctors-introduction picture img {
   margin-bottom: 40px;
   width: 100%;
@@ -1761,41 +1763,41 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   display: block;
 }
 @media (min-width: 768px) {
-  /* line 51, styles/_doctorpage.scss */
+  /* line 53, styles/_doctorpage.scss */
   .doctor-main-content .doctors-introduction picture img {
     margin-bottom: 60px;
   }
 }
-/* line 64, styles/_doctorpage.scss */
+/* line 66, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content h3 {
   color: #358500;
   font-family: "BarlowBold", sans-serif;
   margin-bottom: 30px;
 }
 @media (min-width: 768px) {
-  /* line 64, styles/_doctorpage.scss */
+  /* line 66, styles/_doctorpage.scss */
   .doctor-main-content .doctors-list-content h3 {
     margin-bottom: 40px;
   }
 }
-/* line 72, styles/_doctorpage.scss */
+/* line 74, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container {
   margin-bottom: 30px;
 }
-/* line 74, styles/_doctorpage.scss */
+/* line 76, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container h5 {
   font-size: 28px;
   color: #4a4a4a;
   font-family: "BarlowBold", sans-serif;
   margin-bottom: 25px;
 }
-/* line 80, styles/_doctorpage.scss */
+/* line 82, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column {
   margin-bottom: 20px;
   padding-left: 5px;
   padding-right: 5px;
 }
-/* line 84, styles/_doctorpage.scss */
+/* line 86, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container {
   border: solid 1px #a4a4a4;
   display: flex;
@@ -1809,24 +1811,24 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   cursor: pointer;
 }
 @media (min-width: 768px) {
-  /* line 84, styles/_doctorpage.scss */
+  /* line 86, styles/_doctorpage.scss */
   .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container {
     padding: 15px;
     border-radius: 6px;
   }
 }
-/* line 100, styles/_doctorpage.scss */
+/* line 102, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover {
   transition: all 0.2s ease;
   background: linear-gradient(to top, #0e5b02 0%, #65c733 100%);
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   color: #fff;
 }
-/* line 105, styles/_doctorpage.scss */
+/* line 107, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover .doctor-ln, .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover .doctor-fn, .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover .doctor-abv, .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover .doctor-head, .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover .specialization, .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover .sub-spec, .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover .sched {
   color: #fff;
 }
-/* line 109, styles/_doctorpage.scss */
+/* line 111, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .status {
   font-family: 'BarlowSemiBold', sans-serif;
   font-size: 14px;
@@ -1842,26 +1844,26 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   border-radius: 0px 0px 0px 6px;
   font-style: italic;
 }
-/* line 123, styles/_doctorpage.scss */
+/* line 125, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .status.visiting {
   background-color: #013578;
 }
-/* line 126, styles/_doctorpage.scss */
+/* line 128, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .status.affiliated {
   background-color: #013578;
 }
-/* line 129, styles/_doctorpage.scss */
+/* line 131, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .status.hassched {
   background-color: #ffa800;
 }
 @media (min-width: 768px) {
-  /* line 109, styles/_doctorpage.scss */
+  /* line 111, styles/_doctorpage.scss */
   .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .status {
     padding: 4px 12px;
     font-size: 11px;
   }
 }
-/* line 138, styles/_doctorpage.scss */
+/* line 140, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-image {
   max-width: 280px;
   max-height: 280px;
@@ -1872,21 +1874,21 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   position: relative;
 }
 @media (min-width: 768px) {
-  /* line 138, styles/_doctorpage.scss */
+  /* line 140, styles/_doctorpage.scss */
   .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-image {
     max-width: 160px;
     max-height: 160px;
     height: 160px;
   }
 }
-/* line 151, styles/_doctorpage.scss */
+/* line 153, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-image img {
   object-fit: cover;
   height: 100%;
   width: 100%;
   display: flex;
 }
-/* line 158, styles/_doctorpage.scss */
+/* line 160, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-ln {
   color: #4a4a4a;
   font-family: 'BarlowSemiBold', sans-serif;
@@ -1897,12 +1899,12 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   text-align: center;
 }
 @media (min-width: 768px) {
-  /* line 158, styles/_doctorpage.scss */
+  /* line 160, styles/_doctorpage.scss */
   .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-ln {
     font-size: 18px;
   }
 }
-/* line 170, styles/_doctorpage.scss */
+/* line 172, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-fn {
   color: #4a4a4a;
   font-family: 'Barlow', sans-serif;
@@ -1912,12 +1914,12 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   line-height: 1;
 }
 @media (min-width: 768px) {
-  /* line 170, styles/_doctorpage.scss */
+  /* line 172, styles/_doctorpage.scss */
   .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-fn {
     font-size: 18px;
   }
 }
-/* line 181, styles/_doctorpage.scss */
+/* line 183, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-abv {
   color: #4a4a4a;
   font-family: 'Barlow', sans-serif;
@@ -1928,12 +1930,12 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   line-height: 1;
 }
 @media (min-width: 768px) {
-  /* line 181, styles/_doctorpage.scss */
+  /* line 183, styles/_doctorpage.scss */
   .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-abv {
     font-size: 16px;
   }
 }
-/* line 193, styles/_doctorpage.scss */
+/* line 195, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-head {
   font-family: 'BarlowMedium', sans-serif;
   margin-top: 10px;
@@ -1944,12 +1946,12 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   color: #0e5b02;
 }
 @media (min-width: 768px) {
-  /* line 193, styles/_doctorpage.scss */
+  /* line 195, styles/_doctorpage.scss */
   .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-head {
     font-size: 14px;
   }
 }
-/* line 205, styles/_doctorpage.scss */
+/* line 207, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .specialization {
   font-family: 'Barlow', sans-serif;
   color: #4a4a4a;
@@ -1960,12 +1962,12 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   margin-top: 15px;
 }
 @media (min-width: 768px) {
-  /* line 205, styles/_doctorpage.scss */
+  /* line 207, styles/_doctorpage.scss */
   .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .specialization {
     font-size: 14px;
   }
 }
-/* line 217, styles/_doctorpage.scss */
+/* line 219, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .sub-spec {
   font-family: 'Barlow', sans-serif;
   color: #4a4a4a;
@@ -1975,7 +1977,7 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   text-transform: uppercase;
   margin-top: -14px;
 }
-/* line 226, styles/_doctorpage.scss */
+/* line 228, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .sched {
   font-family: 'BarlowMedium', sans-serif;
   text-align: center;
@@ -2545,17 +2547,22 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   font-family: "BarlowLight", sans-serif;
   color: #4a4a4a;
 }
-/* line 5, styles/_services.scss */
+/* line 6, styles/_services.scss */
 .services-section-container .service-introduction h1 {
   margin-bottom: 1rem;
   font-size: 48px;
 }
-/* line 9, styles/_services.scss */
+/* line 10, styles/_services.scss */
 .services-section-container .service-introduction .intro-content {
   margin-bottom: 20px;
   font-size: 16px;
 }
 /* line 14, styles/_services.scss */
+.services-section-container .service-introduction .intro-content p {
+  text-align: justify !important;
+  text-justify: inter-cluster !important;
+}
+/* line 20, styles/_services.scss */
 .services-section-container .service-introduction picture img {
   margin-bottom: 40px;
   width: 100%;
@@ -2563,18 +2570,18 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   display: block;
 }
 @media (min-width: 768px) {
-  /* line 14, styles/_services.scss */
+  /* line 20, styles/_services.scss */
   .services-section-container .service-introduction picture img {
     margin-bottom: 60px;
   }
 }
-/* line 26, styles/_services.scss */
+/* line 32, styles/_services.scss */
 .services-section-container .service-content-container .services-tabs {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
-/* line 30, styles/_services.scss */
+/* line 36, styles/_services.scss */
 .services-section-container .service-content-container .services-tabs-btn {
   font-family: "BarlowMedium",sans-serif;
   font-size: 16px;
@@ -2586,33 +2593,33 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   background-color: transparent;
   transition: all .2s ease-in-out;
 }
-/* line 40, styles/_services.scss */
+/* line 46, styles/_services.scss */
 .services-section-container .service-content-container .services-tabs-btn:hover {
   color: #0e5b02;
 }
-/* line 44, styles/_services.scss */
+/* line 50, styles/_services.scss */
 .services-section-container .service-content-container .services-tabs-btn.active {
   color: #0e5b02;
   background-color: #ececec;
 }
-/* line 49, styles/_services.scss */
+/* line 55, styles/_services.scss */
 .services-section-container .service-content-container .service-container {
   display: none;
   margin-top: 40px;
 }
-/* line 52, styles/_services.scss */
+/* line 58, styles/_services.scss */
 .services-section-container .service-content-container .service-container .services {
   width: 100%;
   margin-bottom: 50px;
 }
-/* line 55, styles/_services.scss */
+/* line 61, styles/_services.scss */
 .services-section-container .service-content-container .service-container .services h4 {
   font-family: "BarlowSemiBold", sans-serif;
   font-size: 30px;
   color: #4a4a4a;
   margin-bottom: 20px;
 }
-/* line 61, styles/_services.scss */
+/* line 67, styles/_services.scss */
 .services-section-container .service-content-container .service-container .services .service-title {
   font-size: 16px;
   font-family: "BarlowMedium", sans-serif;
@@ -2621,11 +2628,11 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   margin-bottom: 10px;
   cursor: pointer;
 }
-/* line 68, styles/_services.scss */
+/* line 74, styles/_services.scss */
 .services-section-container .service-content-container .service-container .services .service-title:hover {
   color: #0e5b02;
 }
-/* line 74, styles/_services.scss */
+/* line 80, styles/_services.scss */
 .services-section-container .service-content-container .service-container.opened {
   display: block;
 }
@@ -3054,40 +3061,114 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   color: #4a4a4a;
   font-family: "BarlowLight",sans-serif;
   font-size: 16px;
+  text-align: justify !important;
+  text-justify: inter-cluster !important;
 }
-/* line 35, styles/_about.scss */
+/* line 37, styles/_about.scss */
 .about-section-container .tab-content-container h1 {
   font-size: 48px;
   margin-bottom: 20px;
   line-height: 1;
 }
-/* line 40, styles/_about.scss */
+/* line 42, styles/_about.scss */
 .about-section-container .tab-content-container h2 {
   font-size: 2rem;
   font-family: "Barlow",sans-serif;
 }
-/* line 44, styles/_about.scss */
+/* line 46, styles/_about.scss */
 .about-section-container .tab-content-container h3 {
   font-size: 1.75rem;
   font-family: "Barlow",sans-serif;
 }
-/* line 48, styles/_about.scss */
+/* line 50, styles/_about.scss */
 .about-section-container .tab-content-container h4 {
   font-size: 1.5rem;
   font-family: "Barlow",sans-serif;
 }
-/* line 52, styles/_about.scss */
+/* line 54, styles/_about.scss */
 .about-section-container .tab-content-container h5 {
   font-size: 1.25rem;
   font-family: "Barlow",sans-serif;
 }
-/* line 56, styles/_about.scss */
+/* line 58, styles/_about.scss */
 .about-section-container .tab-content-container h6 {
   font-size: 1rem;
   font-family: "Barlow",sans-serif;
 }
-/* line 61, styles/_about.scss */
+/* line 63, styles/_about.scss */
 .about-section-container .tab-content-container.active {
+  display: block;
+}
+
+/* line 2, styles/_reference.scss */
+.reference-section-container .tabs-container {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+}
+/* line 6, styles/_reference.scss */
+.reference-section-container .tabs-container .tab-btns {
+  width: 100%;
+  border: none;
+  color: #4a4a4a;
+  font-family: "BarlowSemiBold",sans-serif;
+  text-transform: uppercase;
+  border-radius: 20px;
+  padding: 13px 25px;
+  text-align: left;
+  background-color: transparent;
+  margin-bottom: 10px;
+  line-height: 1;
+  text-decoration: none;
+}
+/* line 20, styles/_reference.scss */
+.reference-section-container .tabs-container .tab-btns.active {
+  color: #358500;
+  background-color: #ececec;
+}
+/* line 25, styles/_reference.scss */
+.reference-section-container .tabs-container .tab-btns.active:focus {
+  outline: none;
+}
+/* line 31, styles/_reference.scss */
+.reference-section-container .tab-content-container {
+  color: #4a4a4a;
+  font-family: "BarlowLight",sans-serif;
+  font-size: 16px;
+}
+/* line 35, styles/_reference.scss */
+.reference-section-container .tab-content-container h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+  line-height: 1;
+}
+/* line 40, styles/_reference.scss */
+.reference-section-container .tab-content-container h2 {
+  font-size: 2rem;
+  font-family: "Barlow",sans-serif;
+}
+/* line 44, styles/_reference.scss */
+.reference-section-container .tab-content-container h3 {
+  font-size: 1.75rem;
+  font-family: "Barlow",sans-serif;
+}
+/* line 48, styles/_reference.scss */
+.reference-section-container .tab-content-container h4 {
+  font-size: 1.5rem;
+  font-family: "Barlow",sans-serif;
+}
+/* line 52, styles/_reference.scss */
+.reference-section-container .tab-content-container h5 {
+  font-size: 1.25rem;
+  font-family: "Barlow",sans-serif;
+}
+/* line 56, styles/_reference.scss */
+.reference-section-container .tab-content-container h6 {
+  font-size: 1rem;
+  font-family: "Barlow",sans-serif;
+}
+/* line 61, styles/_reference.scss */
+.reference-section-container .tab-content-container.active {
   display: block;
 }
 
@@ -3132,6 +3213,8 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   line-height: 1;
   margin-bottom: 20px;
   margin-top: 20px;
+  text-align: justify !important;
+  text-justify: inter-cluster !important;
 }
 @media (min-width: 768px) {
   /* line 31, styles/_promo.scss */
@@ -3139,14 +3222,16 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
     margin-top: 0px;
   }
 }
-/* line 42, styles/_promo.scss */
+/* line 44, styles/_promo.scss */
 .promos-section-container .promo-rows .promo-detail-content .promo-desc {
   color: #4a4a4a;
   font-family: "BarlowExtraLight", sans-serif;
   font-size: 16px;
   margin-bottom: 20px;
+  text-align: justify !important;
+  text-justify: inter-cluster !important;
 }
-/* line 48, styles/_promo.scss */
+/* line 52, styles/_promo.scss */
 .promos-section-container .promo-rows .promo-detail-content .promo-valid {
   margin-bottom: 0;
   text-transform: uppercase;

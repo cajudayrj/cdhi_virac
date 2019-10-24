@@ -17,7 +17,7 @@
             <a href="#"><?php the_title(); ?></a>
         </div>
     </div>
-    <section class="about-section-container">
+    <section class="reference-section-container">
         <div class="container">
 
             <div class="row">

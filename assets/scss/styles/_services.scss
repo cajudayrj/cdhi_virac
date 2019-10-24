@@ -2,6 +2,7 @@
     .service-introduction{
         font-family: "BarlowLight", sans-serif;
         color: $gray;
+
         h1{
             margin-bottom: 1rem;
             font-size: 48px;
@@ -9,6 +10,11 @@
         .intro-content{
             margin-bottom: 20px;
             font-size: 16px;
+
+            p {
+                text-align: justify!important;
+                text-justify: inter-cluster!important;
+            }
         }
         picture{
             img{
