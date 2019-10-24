@@ -1,6 +1,6 @@
 <?php
     /**
-     * Template Name: About
+     * Template Name: Reference
      */
     get_header();
     $fields = get_field('tabs_and_content');

@@ -63,6 +63,7 @@
         }
         .post-thumbnail-container{
             margin-bottom: 2rem;
+            
         }
         .post-content-container{
             font-family: "BarlowLight", sans-serif;
@@ -92,6 +93,7 @@
                 overflow: hidden;
                 outline: 1px solid $green;
                 margin-bottom: 10px;
+                border-radius: 6px;
                 @include tablet{
                     height: 165px;
                 }

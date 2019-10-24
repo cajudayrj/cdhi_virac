@@ -19,8 +19,10 @@
                 .news-thumbnail{
                     margin-bottom: 14px;
                     height: 190px;
-                    outline: solid 1px $green-2;
                     width: 100%;
+                    border: solid 1px $green-2;
+                    border-radius: 6px!important;
+                    overflow: hidden;
                     @include mini-tablet{
                         height: 230px;
                     }

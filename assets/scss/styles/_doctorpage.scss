@@ -94,7 +94,7 @@
                     
                     @include tablet{
                         padding: 15px;
-                        border-radius: 0px;
+                        border-radius: 6px;
                     }
                     cursor: pointer;
                     &:hover{
@@ -118,6 +118,8 @@
                         z-index: 1;
                         background-color: $green;
                         letter-spacing:1px;
+                        border-radius:0px 0px 0px 6px;
+                        font-style: italic;
                         &.visiting{
                             background-color: $blue;
                         }
