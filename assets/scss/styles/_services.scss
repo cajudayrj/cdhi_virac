@@ -71,6 +71,18 @@
                     line-height: 1;
                     margin-bottom: 10px;
                     cursor: pointer;
+                    span{
+                        pointer-events: none;
+                        font-family: "Barlow", sans-serif;
+                        background-color: $gray;
+                        padding: 2px 5px;
+                        font-size: 12px;
+                        margin-left: 5px;
+                        border-top-right-radius: 5px;
+                        border-bottom-left-radius: 5px;
+                        font-style: italic;
+                        color:  #fff;
+                    }
                     &:hover{
                         color: $green;
                     }
