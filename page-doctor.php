@@ -69,7 +69,7 @@ endforeach;
                             <h5><?php echo $dept ?></h5>
                             <div class="container">
                                 <div class="row">
-                                    <?php 
+                                    <?php
                                         foreach($departmentDoctor as $key=>$doctor) :
                                             if($key==$dept) :
                                                 usort($doctor, function($a, $b){
@@ -122,7 +122,7 @@ endforeach;
                                                     $visitingSched = get_field('visiting_schedule', $id);
                                                     //MULTI SCHED
                                                     $multiSched = get_field('multiple_active_schedule', $id)['schedule'];
-                                                    
+
                                                     //HMO
                                                     $hmo = get_the_terms($id, 'hmo');
                                                     $doctorHMO = [];
@@ -135,7 +135,7 @@ endforeach;
                                     ?>
                                             <div class="col-lg-4 col-md-6 col-sm-12 column">
                                                 <div class="doctor-profile-container" data-doctor-id="<?php echo $deptIndex."-".$id; ?>">
-                                                    <span class="status <?php echo (($status == 'visiting') and ($hasSched)) ? 'hassched' : $status; ?>"><?php echo (($status == 'visiting') and ($hasSched)) ? 'Scheduled Visiting' : $status; ?></span>
+                                                    <span class="status <?php echo (($status == 'visiting consultant') and ($hasSched)) ? 'hassched' : $status; ?>"><?php echo (($status == 'visiting consultant') and ($hasSched)) ? 'Scheduled Visiting' : $status; ?></span>
                                                     <div class="doctor-image">
                                                         <img title="<?php echo 'Doctor' . ' ' . $fn  . ' ' . $ln . ' - ' . $specialization  . ' ' . 'in Catanduanes Doctors Hospital Inc.'; ?>" src="<?php echo $doctorImg; ?>" />
                                                     </div>
@@ -178,7 +178,7 @@ endforeach;
                                                                             <h3>Doctor</h3>
                                                                             <p class="name">
                                                                                 <?php echo $fn.' '.$mn.' '.$ln.', '.$abv; ?>
-                                                                                <span class="status <?php echo (($status == 'visiting') and ($hasSched)) ? 'hassched' : $status; ?>"><em><?php echo (($status == 'visiting') and ($hasSched)) ? 'Scheduled Visiting' : $status; ?></em></span>
+                                                                                <span class="status <?php echo (($status == 'visiting consultant') and ($hasSched)) ? 'hassched' : $status; ?>"><em><?php echo (($status == 'visiting consultant') and ($hasSched)) ? 'Scheduled Visiting' : $status; ?></em></span>
                                                                             </p>
                                                                             <?php if($head): ?>
                                                                                 <p class="position"><?php echo $postitle; ?></p>
@@ -187,11 +187,11 @@ endforeach;
                                                                             <?php if($subspec != ''): ?>
                                                                                 <p class="sub-spec"><?php echo $subspec; ?></p>
                                                                             <?php endif; ?>
-                                                                            <p class="department"><?php echo $dept; ?> Department</p>
+                                                                            <p class="department"><?php echo $dept; ?></p>
                                                                             <div class="separator"></div>
                                                                             <div class="table-container">
-                                                                                <?php 
-                                                                                    if($status == 'active'): 
+                                                                                <?php
+                                                                                    if($status == 'active'):
                                                                                         if($simplified):
                                                                                 ?>
                                                                                             <table class="table">
@@ -378,7 +378,7 @@ endforeach;
                                                                                                     </tr>
                                                                                                 </thead>
                                                                                                 <tbody>
-                                                                                                    <?php 
+                                                                                                    <?php
 																										if(is_array($multiSched) || is_object($multiSched)) :
 																										foreach($multiSched as $m):?>
                                                                                                         <tr>
@@ -409,18 +409,18 @@ endforeach;
 																									?>
                                                                                                 </tbody>
                                                                                             </table>
-                                                                                <?php 
+                                                                                <?php
                                                                                         endif;
                                                                                     endif;
                                                                                 ?>
-                                                                                <?php if($status == 'visiting' and $hasSched): ?>
+                                                                                <?php if($status == 'visiting consultant' and $hasSched): ?>
                                                                                 <table class="table">
                                                                                     <thead>
                                                                                         <th>SCHEDULE</th>
                                                                                     </thead>
                                                                                     <tbody>
-                                                                                        <?php 
-                                                                                            foreach($visitingSched as $vSched): 
+                                                                                        <?php
+                                                                                            foreach($visitingSched as $vSched):
                                                                                         ?>
                                                                                             <tr>
                                                                                                 <td>
@@ -435,13 +435,13 @@ endforeach;
                                                                                                 </td>
                                                                                             </tr>
                                                                                         <?php
-                                                                                            endforeach; 
+                                                                                            endforeach;
                                                                                         ?>
                                                                                     </tbody>
                                                                                 </table>
                                                                                 <?php endif; ?>
                                                                             </div>
-                                                                            <?php if(($status == 'active') or ($status == 'visiting' and $hasSched)) : ?>
+                                                                            <?php if(($status == 'active') or ($status == 'visiting consultant' and $hasSched)) : ?>
                                                                                 <div class="legend-container">
                                                                                     <?php if($status == 'active') : ?>
                                                                                         <div class="legend">
@@ -507,7 +507,7 @@ endforeach;
                                                         </div>
                                                     </div>
                                             </div>
-                                    <?php 
+                                    <?php
                                                 endforeach;
                                             endif;
                                         endforeach;

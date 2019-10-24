@@ -52,9 +52,9 @@
                 }
             }
             .doctor-image{
-                max-width: 220px;
-                max-height: 220px;
-                height: 220px;
+                max-width: 280px;
+                max-height: 280px;
+                height: 280px;
                 width: 100%;
                 display: block;
                 margin: 0 auto 20px auto;
@@ -98,13 +98,13 @@
                         margin-top: 4px;
                     }
                     .status.visiting{
-                        background: $dark;
+                        background: $blue;
                     }
                     .status.affiliated{
-                        background: $dark;
+                        background: $blue;
                     }
                     .status.hassched{
-                        background: $blue;
+                        background: $orange;
                     }
                 }
                 .position{

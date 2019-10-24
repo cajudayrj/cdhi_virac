@@ -1754,143 +1754,186 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
 }
 /* line 74, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container h5 {
+  font-size: 28px;
   color: #4a4a4a;
   font-family: "BarlowBold", sans-serif;
   margin-bottom: 25px;
 }
-/* line 79, styles/_doctorpage.scss */
+/* line 80, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column {
   margin-bottom: 20px;
   padding-left: 5px;
   padding-right: 5px;
 }
-/* line 83, styles/_doctorpage.scss */
+/* line 84, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container {
   border: solid 1px #a4a4a4;
   display: flex;
   flex-direction: column;
   height: 100%;
   position: relative;
-  padding: 25px 15px 15px;
+  padding: 40px 15px 15px;
+  transition: all 0.2s ease;
+  border-radius: 6px;
+  overflow: hidden;
   cursor: pointer;
 }
 @media (min-width: 768px) {
-  /* line 83, styles/_doctorpage.scss */
+  /* line 84, styles/_doctorpage.scss */
   .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container {
     padding: 15px;
+    border-radius: 0px;
   }
 }
-/* line 94, styles/_doctorpage.scss */
+/* line 100, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover {
+  transition: all 0.2s ease;
   background: linear-gradient(to top, #0e5b02 0%, #65c733 100%);
-  box-shadow: 0px 0px 7px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
   color: #fff;
 }
-/* line 98, styles/_doctorpage.scss */
+/* line 105, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover .doctor-ln, .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover .doctor-fn, .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover .doctor-abv, .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover .doctor-head, .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover .specialization, .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover .sub-spec, .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container:hover .sched {
   color: #fff;
 }
-/* line 102, styles/_doctorpage.scss */
+/* line 109, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .status {
   font-family: 'BarlowSemiBold', sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   text-transform: uppercase;
   position: absolute;
   right: -1px;
-  top: 5px;
-  padding: 4px 10px;
+  top: 0px;
+  padding: 4px 15px;
   color: #fff;
   z-index: 1;
   background-color: #0e5b02;
+  letter-spacing: 1px;
 }
-/* line 113, styles/_doctorpage.scss */
+/* line 121, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .status.visiting {
-  background-color: #1f1f1f;
-}
-/* line 116, styles/_doctorpage.scss */
-.doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .status.affiliated {
-  background-color: #1f1f1f;
-}
-/* line 119, styles/_doctorpage.scss */
-.doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .status.hassched {
   background-color: #013578;
 }
-/* line 123, styles/_doctorpage.scss */
+/* line 124, styles/_doctorpage.scss */
+.doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .status.affiliated {
+  background-color: #013578;
+}
+/* line 127, styles/_doctorpage.scss */
+.doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .status.hassched {
+  background-color: #ffa800;
+}
+@media (min-width: 768px) {
+  /* line 109, styles/_doctorpage.scss */
+  .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .status {
+    padding: 4px 12px;
+    font-size: 11px;
+  }
+}
+/* line 136, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-image {
-  max-width: 220px;
-  max-height: 220px;
-  height: 220px;
+  max-width: 280px;
+  max-height: 280px;
+  height: 280px;
   width: 100%;
   display: block;
   margin: 0 auto 20px auto;
   position: relative;
 }
 @media (min-width: 768px) {
-  /* line 123, styles/_doctorpage.scss */
+  /* line 136, styles/_doctorpage.scss */
   .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-image {
     max-width: 160px;
     max-height: 160px;
     height: 160px;
   }
 }
-/* line 136, styles/_doctorpage.scss */
+/* line 149, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-image img {
   object-fit: cover;
   height: 100%;
   width: 100%;
   display: flex;
 }
-/* line 143, styles/_doctorpage.scss */
+/* line 156, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-ln {
   color: #4a4a4a;
   font-family: 'BarlowSemiBold', sans-serif;
   margin-bottom: 7px;
   text-transform: uppercase;
   line-height: .8;
-  font-size: 18px;
+  font-size: 24px;
   text-align: center;
 }
-/* line 152, styles/_doctorpage.scss */
+@media (min-width: 768px) {
+  /* line 156, styles/_doctorpage.scss */
+  .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-ln {
+    font-size: 18px;
+  }
+}
+/* line 168, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-fn {
   color: #4a4a4a;
   font-family: 'Barlow', sans-serif;
   margin-bottom: 0px;
-  font-size: 17px;
+  font-size: 24px;
   text-align: center;
   line-height: 1;
 }
-/* line 160, styles/_doctorpage.scss */
+@media (min-width: 768px) {
+  /* line 168, styles/_doctorpage.scss */
+  .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-fn {
+    font-size: 18px;
+  }
+}
+/* line 179, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-abv {
   color: #4a4a4a;
   font-family: 'Barlow', sans-serif;
-  margin-top: 3px;
+  margin-top: 6px;
   margin-bottom: 0px;
-  font-size: 17px;
+  font-size: 20px;
   text-align: center;
   line-height: 1;
 }
-/* line 169, styles/_doctorpage.scss */
+@media (min-width: 768px) {
+  /* line 179, styles/_doctorpage.scss */
+  .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-abv {
+    font-size: 16px;
+  }
+}
+/* line 191, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-head {
   font-family: 'BarlowMedium', sans-serif;
   margin-top: 10px;
   margin-bottom: 0px;
-  font-size: 17px;
+  font-size: 14px;
   text-align: center;
-  line-height: 1;
-  font-size: 15px;
+  line-height: 22px;
   color: #0e5b02;
 }
-/* line 179, styles/_doctorpage.scss */
+@media (min-width: 768px) {
+  /* line 191, styles/_doctorpage.scss */
+  .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .doctor-head {
+    font-size: 14px;
+  }
+}
+/* line 203, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .specialization {
   font-family: 'Barlow', sans-serif;
   color: #4a4a4a;
-  font-size: 12px;
+  font-size: 18px;
   text-align: center;
   line-height: 1.2;
   text-transform: uppercase;
   margin-top: 15px;
 }
-/* line 188, styles/_doctorpage.scss */
+@media (min-width: 768px) {
+  /* line 203, styles/_doctorpage.scss */
+  .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .specialization {
+    font-size: 14px;
+  }
+}
+/* line 215, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .sub-spec {
   font-family: 'Barlow', sans-serif;
   color: #4a4a4a;
@@ -1900,7 +1943,7 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   text-transform: uppercase;
   margin-top: -14px;
 }
-/* line 197, styles/_doctorpage.scss */
+/* line 224, styles/_doctorpage.scss */
 .doctor-main-content .doctors-list-content .doctors-department-container .column .doctor-profile-container .sched {
   font-family: 'BarlowMedium', sans-serif;
   text-align: center;
@@ -1973,9 +2016,9 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
 }
 /* line 54, styles/_doctor-modal.scss */
 .doctor-modal .container .modal-content-container .doctor-image {
-  max-width: 220px;
-  max-height: 220px;
-  height: 220px;
+  max-width: 280px;
+  max-height: 280px;
+  height: 280px;
   width: 100%;
   display: block;
   margin: 0 auto 20px auto;
@@ -2027,15 +2070,15 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
 }
 /* line 100, styles/_doctor-modal.scss */
 .doctor-modal .container .modal-content-container .doctor-details .name .status.visiting {
-  background: #1f1f1f;
+  background: #013578;
 }
 /* line 103, styles/_doctor-modal.scss */
 .doctor-modal .container .modal-content-container .doctor-details .name .status.affiliated {
-  background: #1f1f1f;
+  background: #013578;
 }
 /* line 106, styles/_doctor-modal.scss */
 .doctor-modal .container .modal-content-container .doctor-details .name .status.hassched {
-  background: #013578;
+  background: #ffa800;
 }
 /* line 110, styles/_doctor-modal.scss */
 .doctor-modal .container .modal-content-container .doctor-details .position {
@@ -2587,7 +2630,7 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   color: #0e5b02;
   font-family: 'BarlowMedium', sans-serif;
   font-size: 14px;
-  margin-bottom: 30px;
+  margin-bottom: 10px;
   cursor: pointer;
 }
 /* line 35, styles/_service-modal.scss */
@@ -2670,38 +2713,46 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   line-height: 1.2;
 }
 /* line 103, styles/_service-modal.scss */
+.service-modal .modal-container .service-note {
+  padding: 15px;
+  border-radius: 6px;
+  background: #0e5b02;
+  color: #fff;
+}
+/* line 110, styles/_service-modal.scss */
 .service-modal .modal-container .service-availability, .service-modal .modal-container .service-location, .service-modal .modal-container .service-officer {
   margin-bottom: 50px;
   padding: 10px 15px;
   border: solid 1px #4a4a4a;
   border-radius: 5px;
+  margin-top: 60px;
 }
-/* line 108, styles/_service-modal.scss */
+/* line 116, styles/_service-modal.scss */
 .service-modal .modal-container .service-availability .content, .service-modal .modal-container .service-location .content, .service-modal .modal-container .service-officer .content {
   display: flex;
   flex-direction: row;
   font-size: 16px;
   color: #4a4a4a;
 }
-/* line 113, styles/_service-modal.scss */
+/* line 121, styles/_service-modal.scss */
 .service-modal .modal-container .service-availability .content .label, .service-modal .modal-container .service-location .content .label, .service-modal .modal-container .service-officer .content .label {
   font-family: "Barlow", sans-serif;
   margin-right: 4px;
   margin-bottom: 0;
 }
-/* line 118, styles/_service-modal.scss */
+/* line 126, styles/_service-modal.scss */
 .service-modal .modal-container .service-availability .content .value, .service-modal .modal-container .service-location .content .value, .service-modal .modal-container .service-officer .content .value {
   font-family: "BarlowSemiBold", sans-serif;
   margin-bottom: 0;
   color: #0e5b02;
 }
 
-/* line 127, styles/_service-modal.scss */
+/* line 135, styles/_service-modal.scss */
 .service-modal.opened {
   display: flex;
 }
 
-/* line 130, styles/_service-modal.scss */
+/* line 138, styles/_service-modal.scss */
 .service-modal.animation {
   opacity: 1;
 }

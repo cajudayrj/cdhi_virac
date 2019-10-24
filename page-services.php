@@ -1,56 +1,55 @@
 <?php
-/**
- * Template Name: Services
- */
+    /**
+     * Template Name: Services
+     */
+    get_header();
 
-get_header();
-
-$content = get_field('content');
-$imageFull = get_field('introduction_image')['url'];
-$image = get_field('introduction_image')['sizes'];
-/**
- * QUERY SERVICES POST TYPE
- */
-$query = new WP_Query( array( 'post_type' => 'service', 'posts_per_page' => -1) );
-$posts = $query->posts;
-$hospitalServices = [];
-$catTerms = get_terms('service-category');
-$availableCat = [];
-/**
- * STORE ALL SERVICES UNDER HOSPITAL SERVICE ON OWN CATEGORY
- */
-foreach ($posts as $p) :
-    $pId = $p->ID;
-    $hospServ = get_field('main_category', $pId);
-    $term = get_the_terms($pId, 'service-category');
-    if($hospServ == 'hospital-services'):
-        if(is_array($term) || is_object($term)) :
-            foreach($term as $t):
-                if($t->name):
-                    $hospitalServices[$t->name][] = $p;
-                endif;
-            endforeach;
+    $content = get_field('content');
+    $imageFull = get_field('introduction_image')['url'];
+    $image = get_field('introduction_image')['sizes'];
+    /**
+     * QUERY SERVICES POST TYPE
+     */
+    $query = new WP_Query(array('post_type' => 'service', 'posts_per_page' => -1));
+    $posts = $query->posts;
+    $hospitalServices = [];
+    $catTerms = get_terms('service-category');
+    $availableCat = [];
+    /**
+     * STORE ALL SERVICES UNDER HOSPITAL SERVICE ON OWN CATEGORY
+     */
+    foreach ($posts as $p) :
+        $pId = $p->ID;
+        $hospServ = get_field('main_category', $pId);
+        $term = get_the_terms($pId, 'service-category');
+        if ($hospServ == 'hospital-services'):
+            if (is_array($term) || is_object($term)) :
+                foreach ($term as $t):
+                    if ($t->name):
+                        $hospitalServices[$t->name][] = $p;
+                    endif;
+                endforeach;
+            endif;
         endif;
-    endif;
-endforeach;
-/**
- * GET ALL AVAILABLE CATEGORY
- * SORT ALPHABETICALLY
- */
-foreach($catTerms as $categ):
-    $availableCat[] = $categ->name;
-endforeach;
+    endforeach;
+    /**
+     * GET ALL AVAILABLE CATEGORY
+     * SORT ALPHABETICALLY
+     */
+    foreach ($catTerms as $categ):
+        $availableCat[] = $categ->name;
+    endforeach;
 ?>
- <main>
+<main>
     <div class="page-breadcrumb container">
         <div class="breadcrumb-text">
             <a href="<?php echo get_home_url(); ?>">
                 <svg role="img" title="previous" class="breadcrumb-svg">
-                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#house"/>
+                <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#house"/>
                 </svg>
             </a>
-             <span>/</span>
-             <a href="#"><?php the_title(); ?></a>
+            <span>/</span>
+            <a href="#"><?php the_title(); ?></a>
         </div>
     </div>
     <section class="services-section-container">
@@ -58,16 +57,16 @@ endforeach;
             <div class="row">
                 <div class="col-md-4 col-sm-12 service-introduction">
                     <h1>Our Services</h1>
-                        <div class="intro-content">
-                            <?php echo $content; ?>
-                        </div>
-                        <picture>
-                            <source srcset="<?php echo $imageFull ?>" media="(min-width: 1200px)" />
-                            <source srcset="<?php echo $image['large'] ?>" media="(min-width: 768px)" />
-                            <source srcset="<?php echo $image['medium_large'] ?>" media="(min-width: 0px)" />
-                            <img src="<?php echo $imageFull ?>" />
-                        </picture>
+                    <div class="intro-content">
+                        <?php echo $content; ?>
                     </div>
+                    <picture>
+                        <source srcset="<?php echo $imageFull ?>" media="(min-width: 1200px)" />
+                        <source srcset="<?php echo $image['large'] ?>" media="(min-width: 768px)" />
+                        <source srcset="<?php echo $image['medium_large'] ?>" media="(min-width: 0px)" />
+                        <img src="<?php echo $imageFull ?>" />
+                    </picture>
+                </div>
                 <div class="col"></div>
                 <div class="col-md-7 service-content-container">
                     <div class="services-tabs">
@@ -82,28 +81,28 @@ endforeach;
                                     foreach ($availableCat as $key => $avc):
                                         $catKey = $key;
                                         foreach ($hospitalServices as $key => $hService) :
-                                            if($key == $avc):
-                                ?>
+                                            if ($key == $avc):
+                                                ?>
                                                 <div class="col-md-6 col-sm-12">
                                                     <div class="services">
                                                         <h4><?php echo $key ?></h4>
-                                                        <?php 
-                                                            usort($hService, function($a, $b){
-                                                                return strcmp($a->post_title,$b->post_title);
-                                                            });
-                                                            foreach($hService as $h): 
-                                                            $hsGroup = get_field('hospital_services',$h->ID);
+                                                        <?php
+                                                        usort($hService, function($a, $b) {
+                                                            return strcmp($a->post_title, $b->post_title);
+                                                        });
+                                                        foreach ($hService as $h):
+                                                            $hsGroup = get_field('hospital_services', $h->ID);
                                                             $hsImg = $hsGroup['service_image'];
-                                                        ?>
-                                                            <p class="service-title" data-service-modal="<?php echo $catKey.'-'.$h->ID; ?>"><?php echo $h->post_title ?></p>
-                                                            <div class="service-modal modal-<?php echo $catKey.'-'.$h->ID; ?>">
+                                                            ?>
+                                                            <p class="service-title" data-service-modal="<?php echo $catKey . '-' . $h->ID; ?>"><?php echo $h->post_title ?></p>
+                                                            <div class="service-modal modal-<?php echo $catKey . '-' . $h->ID; ?>">
                                                                 <div class="container p-0">
                                                                     <div class="modal-container">
                                                                         <div class="row">
                                                                             <div class="col-md-8 offset-md-2 back-column">
-                                                                                <p class="close-modal" data-modal-close="<?php echo $catKey.'-'.$h->ID; ?>">
+                                                                                <p class="close-modal" data-modal-close="<?php echo $catKey . '-' . $h->ID; ?>">
                                                                                     <svg role="img" title="close-modal" class="close-modal-svg">
-                                                                                        <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#left-arrow"/>
+                                                                                    <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#left-arrow"/>
                                                                                     </svg>
                                                                                     Back to Our Services
                                                                                 </p>
@@ -122,17 +121,17 @@ endforeach;
                                                                                                 <div class="other-img-container">
                                                                                                     <div class="other-imgs-cont">
                                                                                                         <?php
-                                                                                                            if($hsGroup['gallery']):
-                                                                                                                foreach($hsGroup['gallery'] as $key=>$g):
-                                                                                                        ?>
-                                                                                                            <figure class="other-imgs" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
-                                                                                                                <a href="<?php echo $g['url']; ?>" itemprop="contentUrl" data-size="<?php echo $g['width']; ?>x<?php echo $g['height']; ?>" data-index="<?php echo $key + 1; ?>">
-                                                                                                                    <img src="<?php echo $g['sizes']['medium_large']; ?>" itemprop="thumbnail" />
-                                                                                                                </a>
-                                                                                                            </figure>
-                                                                                                        <?php
-                                                                                                                endforeach;
-                                                                                                            endif;
+                                                                                                        if ($hsGroup['gallery']):
+                                                                                                            foreach ($hsGroup['gallery'] as $key => $g):
+                                                                                                                ?>
+                                                                                                                <figure class="other-imgs" itemprop="associatedMedia" itemscope itemtype="http://schema.org/ImageObject">
+                                                                                                                    <a href="<?php echo $g['url']; ?>" itemprop="contentUrl" data-size="<?php echo $g['width']; ?>x<?php echo $g['height']; ?>" data-index="<?php echo $key + 1; ?>">
+                                                                                                                        <img src="<?php echo $g['sizes']['medium_large']; ?>" itemprop="thumbnail" />
+                                                                                                                    </a>
+                                                                                                                </figure>
+                                                                                                                <?php
+                                                                                                            endforeach;
+                                                                                                        endif;
                                                                                                         ?>
                                                                                                     </div>
                                                                                                 </div>
@@ -142,30 +141,40 @@ endforeach;
                                                                                 </div>
                                                                             </div>
                                                                             <div class="col-md-8 offset-md-2 service-availability">
-                                                                                <div class="availability-day content">
-                                                                                    <p class="label">Availability Day:</p>
-                                                                                    <p class="value"><?php echo $hsGroup['availability_day'] ?></p>
+                                                                                <div class="row">
+                                                                                    <div class="col-md-6">
+                                                                                        <div class="availability-day content">
+                                                                                            <p class="label">Availability Day:</p>
+                                                                                            <p class="value"><?php echo $hsGroup['availability_day'] ?></p>
+                                                                                        </div>
+                                                                                        <div class="availability-time content">
+                                                                                            <p class="label">Availability Time:</p>
+                                                                                            <p class="value"><?php echo $hsGroup['availability_time'] ?></p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-6">
+                                                                                        <div class="service-floor content">
+                                                                                            <p class="label">Floor:</p>
+                                                                                            <p class="value"><?php echo $hsGroup['floor'] ?></p>
+                                                                                        </div>
+                                                                                        <div class="service-room content">
+                                                                                            <p class="label">Room:</p>
+                                                                                            <p class="value"><?php echo $hsGroup['room'] ?></p>
+                                                                                        </div>
+                                                                                    </div>
+                                                                                    <div class="col-md-12">
+                                                                                        <div class="content">
+                                                                                            <p class="label">Officer-In-Charge:</p>
+                                                                                            <p class="value"><?php echo $hsGroup['officer_in_charge'] ?></p>
+                                                                                        </div>
+                                                                                    </div>
                                                                                 </div>
-                                                                                <div class="availability-time content">
-                                                                                    <p class="label">Availability Time:</p>
-                                                                                    <p class="value"><?php echo $hsGroup['availability_time'] ?></p>
-                                                                                </div>
-                                                                                <div class="service-floor content">
-                                                                                    <p class="label">Floor:</p>
-                                                                                    <p class="value"><?php echo $hsGroup['floor'] ?></p>
-                                                                                </div>
-                                                                                <div class="service-room content">
-                                                                                    <p class="label">Room:</p>
-                                                                                    <p class="value"><?php echo $hsGroup['room'] ?></p>
-                                                                                </div>
-                                                                                <div class="content">
-                                                                                    <p class="label">Officer-In-Charge:</p>
-                                                                                    <p class="value"><?php echo $hsGroup['officer_in_charge'] ?></p>
-                                                                                </div>
+
+
                                                                             </div>
-                                                                            <?php if($hsGroup['service_note_instruction']): ?>
+                                                                            <?php if ($hsGroup['service_note_instruction']): ?>
                                                                                 <div class="col-md-8 offset-md-2 pl-0">
-                                                                                    <div class="service-desc"><?php echo $hsGroup['service_note_instruction']; ?></div>
+                                                                                    <div class="service-desc service-note"><?php echo $hsGroup['service_note_instruction']; ?></div>
                                                                                 </div>
                                                                             <?php endif; ?>
                                                                         </div>
@@ -175,10 +184,10 @@ endforeach;
                                                         <?php endforeach; ?>
                                                     </div>
                                                 </div>
-                                <?php 
+                                                <?php
                                             endif;
                                         endforeach;
-                                    endforeach; 
+                                    endforeach;
                                 ?>
                             </div>
                         </div>
@@ -193,44 +202,44 @@ endforeach;
             </div>
         </div>
     </section>
- </main>
- <div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
-        <div class="pswp__bg"></div>
-        <div class="pswp__scroll-wrap">
-    
-            <div class="pswp__container">
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-                <div class="pswp__item"></div>
-            </div>
-    
-            <div class="pswp__ui pswp__ui--hidden">
-                <div class="pswp__top-bar">
-                    <div class="pswp__counter"></div>
-                    <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
-                    <button class="pswp__button pswp__button--share" title="Share"></button>
-                    <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
-                    <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
-                    <div class="pswp__preloader">
-                        <div class="pswp__preloader__icn">
+</main>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="pswp__bg"></div>
+    <div class="pswp__scroll-wrap">
+
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        <div class="pswp__ui pswp__ui--hidden">
+            <div class="pswp__top-bar">
+                <div class="pswp__counter"></div>
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
                         <div class="pswp__preloader__cut">
                             <div class="pswp__preloader__donut"></div>
                         </div>
-                        </div>
                     </div>
                 </div>
-                <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
-                    <div class="pswp__share-tooltip"></div> 
-                </div>
-                <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
-                </button>
-                <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
-                </button>
-                <div class="pswp__caption">
-                    <div class="pswp__caption__center"></div>
-                </div>
+            </div>
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
             </div>
         </div>
     </div>
+</div>
 <?php
-get_footer();
+    get_footer();
