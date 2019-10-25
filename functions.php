@@ -400,3 +400,18 @@ function customize_heading($settings)
     return $settings;
 }
 add_filter('tiny_mce_before_init', 'customize_heading');
+
+
+
+function fb_the_password_form() {
+    global $post;
+
+    $label = 'pwbox-'.(empty($post->ID) ? rand() : $post->ID);
+    $output = '<form action="' . get_option('siteurl') . '/wp-login.php?action=postpass" method="post">
+    <p>' . __("This is a Password Protected Page. Please enter the Password given to you by the admin.") . '</p>
+    <p><label for="' . $label . '">' . __("") . ' <input class="pppp" name="post_password" id="' . $label . '" type="password" size="20" /></label> <input class="pppsubmit" type="submit" name="Submit" value="' . esc_attr__("Let Me In") . '" /></p>
+    </form>';
+
+    return $output;
+}
+add_filter('the_password_form', 'fb_the_password_form');

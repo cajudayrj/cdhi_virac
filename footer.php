@@ -61,28 +61,28 @@
 						<div class="footer-col-4">
 							<div class="footer-socmed-icons">
 								<?php if($socmed['facebook']): ?>
-									<a href="<?php echo $socmed['facebook']; ?>">
+									<a target="_blank" href="<?php echo $socmed['facebook']; ?>">
 										<svg role="img" title="facebook" class="svg-icon footer-svg">
 											<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#facebook"/>
 										</svg>
 									</a>
 								<?php endif ?>
 								<?php if($socmed['messenger']): ?>
-									<a href="<?php echo $socmed['messenger']; ?>">
+									<a target="_blank" href="<?php echo $socmed['messenger']; ?>">
 										<svg role="img" title="messenger" class="svg-icon footer-svg">
 											<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#messenger"/>
 										</svg>
 									</a>
 								<?php endif ?>
 								<?php if($socmed['twitter']): ?>
-									<a href="<?php echo $socmed['twitter']; ?>">
+									<a target="_blank" href="<?php echo $socmed['twitter']; ?>">
 										<svg role="img" title="twitter" class="svg-icon footer-svg">
 											<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#twitter"/>
 										</svg>
 									</a>
 								<?php endif ?>
 								<?php if($socmed['instagram']): ?>
-									<a href="<?php echo $socmed['instagram']; ?>">
+									<a target="_blank" href="<?php echo $socmed['instagram']; ?>">
 										<svg role="img" title="instagram" class="svg-icon footer-svg">
 											<use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#instagram"/>
 										</svg>
