@@ -201,7 +201,7 @@
                             $hasSched = get_field('has_schedule', $docId);
                             $st = get_field('status', $docId);
                             $visitingSched = get_field('visiting_schedule', $docId);
-                            if (($st == 'visiting') and $hasSched) :
+                            if (($st == 'visiting consultant') and $hasSched) :
                                 $firstSched = $visitingSched[0]['date']['from'];
                                 $doctorSched[] = [
                                     'date' => $firstSched,
