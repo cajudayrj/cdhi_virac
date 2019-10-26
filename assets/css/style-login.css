@@ -1,0 +1,60 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Oct 26, 2019, 7:25:59 PM
+    Author     : Karlo Adrianne Aguilar <www.ithirtyone.com>
+*/
+
+body.login {
+    background:linear-gradient(90deg, #0e5b02 0%, #65c733 100%);
+    background: #358500;
+    background-image: url("../images/footer-bg.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+}
+body.login a {
+    color:#fff;
+
+}
+
+body.login div#login form#loginform {
+    border-radius:6px;
+    font-family: Barlow;
+    font-weight:bold;
+
+}
+
+body.login div#login form#loginform p label {
+    font-size:16px;
+
+}
+body.login div#login form#loginform input[type=text],
+body.login div#login form#loginform input[type=password]
+{
+    color:#013578;
+    font-size:14px;
+    padding:15px 10px;
+}
+
+body.login div#login p#nav a, body.login div#login p#backtoblog a {
+    color:#fff;
+    font-family: Barlow;
+    letter-spacing: 1px;
+}
+
+body.login div#login form#loginform p.submit input#wp-submit {
+    background:#013578;
+    border-radius:6px;
+    border:0px;
+    font-family: Barlow;
+    text-transform: uppercase;
+    text-shadow: none;
+    letter-spacing: 1px;
+    font-size:16px;
+}
+

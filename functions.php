@@ -415,3 +415,38 @@ function fb_the_password_form() {
     return $output;
 }
 add_filter('the_password_form', 'fb_the_password_form');
+
+//CUSTOM CSS FOR LOGIN
+//Replace style-login.css with the name of your custom CSS file
+function my_custom_login_stylesheet() {
+    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/assets/css/style-login.css' );
+}
+//This loads the function above on the login page
+add_action( 'login_enqueue_scripts', 'my_custom_login_stylesheet' );
+
+//CUSTOM LOGO FOR LOGIN
+function my_login_logo() { ?>
+    <style type="text/css">
+        #login h1 a, .login h1 a {
+            background-image: url(<?php echo get_stylesheet_directory_uri(); ?>/assets/images/cdhi-logo-bordered@2x.png);
+		height:125px;
+		width:125px;
+		background-size: 125px 125px;
+		background-repeat: no-repeat;
+        	padding-bottom: 10px;
+        }
+    </style>
+<?php }
+add_action( 'login_enqueue_scripts', 'my_login_logo' );
+
+
+//CUSTOM LOGIN URL
+function my_login_logo_url() {
+    return home_url();
+}
+add_filter( 'login_headerurl', 'my_login_logo_url' );
+
+function my_login_logo_url_title() {
+    return 'Catanduanes Doctors Hospital Inc.';
+}
+add_filter( 'login_headertitle', 'my_login_logo_url_title' );
