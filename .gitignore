@@ -3,3 +3,4 @@ node_modules
 yarn.lock
 assets/scss/theme.css.map
 assets/js/scripts.js.map
+assets/scss/.sass-cache
