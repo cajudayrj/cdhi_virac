@@ -16,7 +16,7 @@
 <!-- 7. WordPress will then import each of the posts, pages, comments, categories, etc. -->
 <!--    contained in this file into your site. -->
 
-	<!-- generator="WordPress/5.2.3" created="2019-10-27 14:08" -->
+	<!-- generator="WordPress/5.2.3" created="2019-10-27 17:36" -->
 <rss version="2.0"
 	xmlns:excerpt="http://wordpress.org/export/1.2/excerpt/"
 	xmlns:content="http://purl.org/rss/1.0/modules/content/"
@@ -29,7 +29,7 @@
 	<title>CDHI</title>
 	<link>http://cdhi.test</link>
 	<description>Catanduanes Doctors Hospital Inc.</description>
-	<pubDate>Sun, 27 Oct 2019 14:08:10 +0000</pubDate>
+	<pubDate>Sun, 27 Oct 2019 17:36:14 +0000</pubDate>
 	<language>en-US</language>
 	<wp:wxr_version>1.2</wp:wxr_version>
 	<wp:base_site_url>http://cdhi.test</wp:base_site_url>
@@ -117,11 +117,26 @@
                             </div>
                             <!-- -->
                             <div class="col-sm-12 col-lg-4 col-label">
-                                <p>Service*</p>
+                                <p>Laboratory Services</p>
                             </div>
                             <div class="col-sm-12 col-lg-8 col-input">
-                                <div class="form-group">
-                                    [select appointment-service-select class:form-control "Laboratory Services" "Radiology Services"]
+                                <div class="form-group">[select lab-services class:form-control class:selectpicker multiple "Bacteriology" "Blood Banking" "Clinical Chemistry" "Clinical Microscopy" "Hematology" "Immunology/Serology" "Other Laboratory Services"]
+                                </div>
+                            </div>
+                            <!-- -->
+<div class="col-sm-12 col-lg-4 col-label">
+                                <p>Radiology Services</p>
+                            </div>
+                            <div class="col-sm-12 col-lg-8 col-input">
+                                <div class="form-group">[select rad-services class:form-control class:selectpicker multiple "2D Echo" "CT Scan" "Mammogram" "Ultrasound" "X-Ray"]
+                                </div>
+                            </div>
+                            <!-- -->
+<div class="col-sm-12 col-lg-4 col-label">
+                                <p>Dialysis Services</p>
+                            </div>
+                            <div class="col-sm-12 col-lg-8 col-input">
+                                <div class="form-group">[select dialysis-services class:form-control class:selectpicker multiple "Renal Dialysis"]
                                 </div>
                             </div>
                             <!-- -->
@@ -168,18 +183,21 @@
                 </div>
             </div>
 1
-CDHI "[your-subject]"
+CDHI "Make An Appointment"
 CDHI <admin@cdhi.test>
-admin@cdhi.test
-From: [your-name] <[your-email]>
-Subject: [your-subject]
+cajuday.reyjude@gmail.com
+From: [appointment-first-name] [appointment-middle-name] [appointment-last-name]<[your-email]>
+
+Laboratory Services: [lab-services]
+Radiology Services: [rad-services]
+Dialysis Services: [dialysis-services]
 
 Message Body:
-[your-message]
+[appointment-feeling]
 
 
 
-
+1
 
 CDHI "[your-subject]"
 CDHI <admin@cdhi.test>
@@ -293,11 +311,26 @@ The telephone number is invalid.]]></content:encoded>
                             </div>
                             <!-- -->
                             <div class="col-sm-12 col-lg-4 col-label">
-                                <p>Service*</p>
+                                <p>Laboratory Services</p>
                             </div>
                             <div class="col-sm-12 col-lg-8 col-input">
-                                <div class="form-group">
-                                    [select appointment-service-select class:form-control "Laboratory Services" "Radiology Services"]
+                                <div class="form-group">[select lab-services class:form-control class:selectpicker multiple "Bacteriology" "Blood Banking" "Clinical Chemistry" "Clinical Microscopy" "Hematology" "Immunology/Serology" "Other Laboratory Services"]
+                                </div>
+                            </div>
+                            <!-- -->
+<div class="col-sm-12 col-lg-4 col-label">
+                                <p>Radiology Services</p>
+                            </div>
+                            <div class="col-sm-12 col-lg-8 col-input">
+                                <div class="form-group">[select rad-services class:form-control class:selectpicker multiple "2D Echo" "CT Scan" "Mammogram" "Ultrasound" "X-Ray"]
+                                </div>
+                            </div>
+                            <!-- -->
+<div class="col-sm-12 col-lg-4 col-label">
+                                <p>Dialysis Services</p>
+                            </div>
+                            <div class="col-sm-12 col-lg-8 col-input">
+                                <div class="form-group">[select dialysis-services class:form-control class:selectpicker multiple "Renal Dialysis"]
                                 </div>
                             </div>
                             <!-- -->
@@ -346,11 +379,14 @@ The telephone number is invalid.]]></content:encoded>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_mail]]></wp:meta_key>
-		<wp:meta_value><![CDATA[a:9:{s:6:"active";b:1;s:7:"subject";s:21:"CDHI "[your-subject]"";s:6:"sender";s:22:"CDHI <admin@cdhi.test>";s:9:"recipient";s:15:"admin@cdhi.test";s:4:"body";s:86:"From: [your-name] <[your-email]>
-Subject: [your-subject]
+		<wp:meta_value><![CDATA[a:9:{s:6:"active";b:1;s:7:"subject";s:26:"CDHI "Make An Appointment"";s:6:"sender";s:22:"CDHI <admin@cdhi.test>";s:9:"recipient";s:25:"cajuday.reyjude@gmail.com";s:4:"body";s:242:"From: [appointment-first-name] [appointment-middle-name] [appointment-last-name]<[your-email]>
+
+Laboratory Services: [lab-services]
+Radiology Services: [rad-services]
+Dialysis Services: [dialysis-services]
 
 Message Body:
-[your-message]";s:18:"additional_headers";s:0:"";s:11:"attachments";s:0:"";s:8:"use_html";b:0;s:13:"exclude_blank";b:0;}]]></wp:meta_value>
+[appointment-feeling]";s:18:"additional_headers";s:0:"";s:11:"attachments";s:0:"";s:8:"use_html";b:0;s:13:"exclude_blank";b:1;}]]></wp:meta_value>
 		</wp:postmeta>
 							<wp:postmeta>
 		<wp:meta_key><![CDATA[_mail_2]]></wp:meta_key>
