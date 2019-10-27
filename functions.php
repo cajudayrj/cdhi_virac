@@ -450,3 +450,34 @@ function my_login_logo_url_title() {
     return 'Catanduanes Doctors Hospital Inc.';
 }
 add_filter( 'login_headertitle', 'my_login_logo_url_title' );
+
+
+
+//DYNAMIC TAXONOMY
+add_action( 'wpcf7_init', 'custom_cf7_service_select' );
+function custom_cf7_service_select() {
+    wpcf7_add_form_tag( 'services_category', 'custom_cf7_service_handler', array( 'name-attr' => true ) );
+}
+function custom_cf7_service_handler($tag) {
+	$atts = [];
+    $atts['name'] = $tag->name;
+    $atts['class'] = $tag->get_class_option();
+    $atts['id'] = $tag->get_id_option();
+    $atts = wpcf7_format_atts( $atts );
+	$html = '<select ' . $atts . '>';
+	$categories = get_terms('service-category');
+    foreach ( $categories as $category ):
+        $html .= '<option value="' . $category->name . '">' . $category->name . '</option>';
+    endforeach;
+    $html .= '</select>';
+    return $html;
+}
+
+// test for contact form post data
+function filter_wpcf7_posted_data( $posted_data ) { 
+	if($posted_data['contact-subject'] === 'Others' && $posted_data['other-subject'] === ''){
+		$posted_data['contact-subject'] = 'Inquiry';
+	};
+	return $posted_data;
+}; 
+add_filter( 'wpcf7_posted_data', 'filter_wpcf7_posted_data', 10, 1 );

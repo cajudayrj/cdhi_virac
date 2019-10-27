@@ -1,0 +1,18 @@
+span.wpcf7-not-valid-tip {
+    font-size: 11px;
+    font-family: "Barlow", sans-serif;
+    margin-top: 5px;
+}
+
+div.wpcf7-response-output{
+    margin: 0;
+    margin-top: -25px;
+    margin-bottom: 30px;
+    font-family: "Barlow", sans-serif;
+    padding: 1em;
+    font-size: 13px;
+}
+
+.appointment-form + div.wpcf7-response-output{
+    margin-top: -90px;
+}

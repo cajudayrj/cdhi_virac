@@ -102,6 +102,12 @@
                     select.form-control{
                         width: 49%;
                     }
+                    .wpcf7-form-control-wrap{
+                        width: 49%;
+                        select.form-control{
+                            width: 100%;
+                        }
+                    }
                 }
                 .form-group.three-col{
                     display: flex;
@@ -110,6 +116,12 @@
                     justify-content: space-between;
                     select.form-control{
                         width: 32%;
+                    }
+                    .wpcf7-form-control-wrap{
+                        width: 32%;
+                        select.form-control{
+                            width: 100%;
+                        }
                     }
                 }
             }
@@ -138,6 +150,16 @@
 
 .contact-section-container{
     .main-form-container{
+        .form-container{
+            margin-bottom: 0;
+            input[name=other-subject]{
+                display: none;
+            }
+            input[name=other-subject].shown{
+                display: block;
+                margin-top: 10px;
+            }
+        }
         .disclaimer{
             margin-bottom: 30px;
             @include tablet{

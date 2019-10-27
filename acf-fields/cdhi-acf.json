@@ -82,6 +82,128 @@
         "description": ""
     },
     {
+        "key": "group_5db5a072b5d2f",
+        "title": "Appointment Page",
+        "fields": [
+            {
+                "key": "field_5db5a07f4f1c8",
+                "label": "Appointment Heading Instructions",
+                "name": "heading_instructions",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5db5a0d04f1c9",
+                "label": "Appointment Heading Caution",
+                "name": "heading_caution",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            },
+            {
+                "key": "field_5db5a0f64f1ca",
+                "label": "Appointment Disclaimer",
+                "name": "appointment_disclaimer",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "page-appointment.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
+        "key": "group_5db1a9a94b865",
+        "title": "Board Report Page",
+        "fields": [
+            {
+                "key": "field_5db1a9b65360a",
+                "label": "Content",
+                "name": "content",
+                "type": "wysiwyg",
+                "instructions": "You can input here some information to be disclosed to the board.",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "tabs": "all",
+                "toolbar": "full",
+                "media_upload": 1,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page",
+                    "operator": "==",
+                    "value": "1396"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
         "key": "group_5d98c0ae1efcf",
         "title": "Career Page",
         "fields": [
@@ -546,7 +668,7 @@
                 },
                 "choices": {
                     "active": "Active",
-                    "visiting": "Visiting",
+                    "visiting consultant": "Visiting Consultant",
                     "affiliated": "Affiliated"
                 },
                 "default_value": [],
@@ -569,7 +691,7 @@
                         {
                             "field": "field_5d882c92e4104",
                             "operator": "==",
-                            "value": "visiting"
+                            "value": "visiting consultant"
                         }
                     ]
                 ],
@@ -2763,6 +2885,88 @@
         "description": ""
     },
     {
+        "key": "group_5db17e71bc2a1",
+        "title": "Reference Page",
+        "fields": [
+            {
+                "key": "field_5db17e721abdc",
+                "label": "Tabs and Content",
+                "name": "tabs_and_content",
+                "type": "repeater",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "collapsed": "",
+                "min": 0,
+                "max": 0,
+                "layout": "table",
+                "button_label": "",
+                "sub_fields": [
+                    {
+                        "key": "field_5db17e724b0d7",
+                        "label": "Tab Title",
+                        "name": "tab_title",
+                        "type": "text",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "placeholder": "",
+                        "prepend": "",
+                        "append": "",
+                        "maxlength": ""
+                    },
+                    {
+                        "key": "field_5db17e724b4c4",
+                        "label": "Content",
+                        "name": "content",
+                        "type": "wysiwyg",
+                        "instructions": "",
+                        "required": 1,
+                        "conditional_logic": 0,
+                        "wrapper": {
+                            "width": "",
+                            "class": "",
+                            "id": ""
+                        },
+                        "default_value": "",
+                        "tabs": "all",
+                        "toolbar": "full",
+                        "media_upload": 1,
+                        "delay": 0
+                    }
+                ]
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "page-reference.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
         "key": "group_5da5dc7ddafd6",
         "title": "Reviews and Testimonials Page",
         "fields": [
@@ -3689,9 +3893,7 @@
                                 "max_width": "",
                                 "max_height": "",
                                 "max_size": "",
-                                "mime_types": "",
-                                "return_format": "array",
-                                "preview_size": "medium"
+                                "mime_types": ""
                             }
                         ]
                     }

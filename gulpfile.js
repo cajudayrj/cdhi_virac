@@ -24,8 +24,12 @@ const SOURCE = {
         '!assets/js/scripts.js.map',
     ],
     // Scss files will be concantonated, minified if ran with --production
-    styles: 'assets/scss/**/*.scss',
-
+    styles: [
+        'assets/scss/**/*.scss',
+        '!assets/scss/sass/*.css',
+        '!assets/scss/sass/*.scss',
+        '!assets/scss/sass/*.scss.map',
+    ],
     php: '**/*.php',
 
     sprites: 'assets/svg/files/*.svg'

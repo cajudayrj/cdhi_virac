@@ -43,70 +43,8 @@ get_header();
                                 <h3 class="appointment-request-form-label">Contact Form</h3>
                             </div>
                         </div>
+                        <?php echo do_shortcode('[contact-form-7 id="652" title="CDHI Contact Us"]') ?>
                         <div class="row main-form-container">
-                            <div class="col-md-12 form-col-container">
-                                <div class="form-container container-fluid">
-                                    <div class="row">
-                                        <div class="col-sm-12 col-lg-3 col-label">
-                                            <p>Subject*</p>
-                                        </div>
-                                        <div class="col-sm-12 col-lg-9 col-input">
-                                            <div class="form-group">
-                                                <select class="form-control" required rows="4">
-                                                    <option value disabled selected>Subject</option>
-                                                    <option value="option-1">Inquiry</option>
-                                                    <option value="option-2">Sample</option>
-                                                    <option value="option-3">Sample 2</option>
-                                                </select>
-                                            </div>
-                                        </div>
-                                        <!-- -->
-                                        <div class="col-sm-12 col-lg-12 col-input">
-                                            <textarea type="text" placeholder="Your message" rows="3"></textarea>
-                                        </div>
-                                        <!-- -->
-                                        <div class="col-sm-12 col-lg-3 col-label">
-                                            <p>Last Name*</p>
-                                        </div>
-                                        <div class="col-sm-12 col-lg-9 col-input">
-                                            <input type="text" placeholder="Last Name"/>
-                                        </div>
-                                        <!-- -->
-                                        <div class="col-sm-12 col-lg-3 col-label">
-                                            <p>First Name*</p>
-                                        </div>
-                                        <div class="col-sm-12 col-lg-9 col-input">
-                                            <input type="text" placeholder="First Name"/>
-                                        </div>
-                                        <!-- -->
-                                        <div class="col-sm-12 col-lg-3 col-label">
-                                            <p>Address</p>
-                                        </div>
-                                        <div class="col-sm-12 col-lg-9 col-input">
-                                            <input type="text" placeholder="Address"/>
-                                        </div>
-                                        <!-- -->
-                                        <div class="col-sm-12 col-lg-3 col-label">
-                                            <p>Email*</p>
-                                        </div>
-                                        <div class="col-sm-12 col-lg-9 col-input">
-                                            <input type="email" placeholder="Gender"/>
-                                        </div>
-                                        <!-- -->
-                                        <div class="col-sm-12 col-lg-3 col-label">
-                                            <p>Contact No.*</p>
-                                        </div>
-                                        <div class="col-sm-12 col-lg-9 col-input">
-                                            <input type="text" placeholder="Contact No."/>
-                                        </div>
-                                    </div>
-                                    <div class="row">
-                                        <div class="col-sm-12">
-                                            <button class="appointment-btn">Send Request</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                             <div class="col-md-12">
                                 <div class="disclaimer">
                                     <p>We will try to get back to you within 48 Hours! Thank you!</p>
