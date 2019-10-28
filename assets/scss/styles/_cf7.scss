@@ -16,3 +16,32 @@ div.wpcf7-response-output{
 .appointment-form + div.wpcf7-response-output{
     margin-top: -90px;
 }
+
+.bootstrap-select > .dropdown-toggle.bs-placeholder, .bootstrap-select > .dropdown-toggle.bs-placeholder:hover, .bootstrap-select > .dropdown-toggle.bs-placeholder:focus, .bootstrap-select > .dropdown-toggle.bs-placeholder:active {
+    color: #999;
+    font-family: "BarlowLight", sans-serif;
+    font-size: 14px;
+    background-color: #fff;
+    border: solid 1px $blue;
+}
+
+.bootstrap-select .dropdown-menu li a {
+    color: $dark;
+    font-family: "BarlowLight",sans-serif;
+    font-size: 14px;
+}
+
+.bootstrap-select.show-tick .dropdown-menu .selected span.check-mark {
+    color: $green-2;
+}
+
+.bootstrap-select .dropdown-toggle .filter-option-inner-inner {
+    font-size: 14px;
+    font-family: "BarlowLight", sans-serif;
+}
+
+.bootstrap-select > .dropdown-toggle {
+    background: #fff;
+    border: solid 1px $blue;
+    height: 100%;
+}
