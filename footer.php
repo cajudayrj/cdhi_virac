@@ -111,6 +111,17 @@
 									<a href="mailto:<?php echo $footer['admission_email']; ?>"><?php echo $footer['admission_email']; ?></a>
 								<?php endif ?>
 							</div>
+                                                        <div class="trustsiteseal">
+                                                            <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe-zFZQMRrR5OqRHSxJFRic3B1P3rVt-o&callback=initMap"
+                                                                type="text/javascript"></script>
+                                                                <script type="text/javascript"> //<![CDATA[
+                                                                var tlJsHost = ((window.location.protocol == "https:") ? "https://secure.trust-provider.com/" : "http://www.trustlogo.com/");
+                                                                document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
+                                                              //]]></script>
+                                                              <script language="JavaScript" type="text/javascript">
+                                                                TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_md_167x42.png", "POSDV", "none");
+                                                            </script>
+                                                        </div>
 						</div>
 					</div>
 				</div>
@@ -120,7 +131,6 @@
 </div><!-- #page -->
 
 <?php wp_footer(); ?>
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAe-zFZQMRrR5OqRHSxJFRic3B1P3rVt-o&callback=initMap"
-  type="text/javascript"></script>
+
 </body>
 </html>
