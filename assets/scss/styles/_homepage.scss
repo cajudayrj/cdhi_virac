@@ -227,6 +227,20 @@
     }
 }
 
+.video-teaser {
+    margin-top:75px;
+    margin-bottom:75px;
+
+    h2 {
+        color: $gray;
+        font-family: 'BarlowMedium', sans-serif;
+        text-align: center;
+        font-size: 24px;
+        letter-spacing: 1.2px;
+        margin-bottom: 1.5rem;
+    }
+}
+
 .partners-section{
     margin-bottom: 50px;
     @include tablet{

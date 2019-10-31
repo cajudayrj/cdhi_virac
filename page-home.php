@@ -112,9 +112,9 @@
 
 
             <div class="atf-content">
-<!--                <a href="<?php // echo home_url() ?>">
+<!--                <a href="<?php // echo home_url()  ?>">
                     <svg role="img" title="experiment-results" class="svg-icon atf-buttons-svg">
-                    <use xlink:href="<?php // echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#experiment-results"/>
+                    <use xlink:href="<?php // echo get_template_directory_uri()  ?>/assets/svg/stack/svg/sprite.stack.svg#experiment-results"/>
                     </svg>
                     <div class="btn-text">
                         <p class="text">Online Result</p>
@@ -146,6 +146,17 @@
         <div class="container">
             <h2>Catanduanes Doctors Hospital Inc.</h2>
             <p><?php the_field('introduction'); ?></p>
+        </div>
+    </section>
+    <section class="video-teaser">
+        <div class="container text-center">
+            <h2><?php the_field('video_teaser_title'); ?></h2>
+            <p><?php the_field('video_teaser_description'); ?></p>
+
+            <?php if( get_field('video_teaser_url') ): ?>
+                    <div class="embed-container"><?php the_field('video_teaser_url'); ?><div>
+            <?php endif; ?>
+
         </div>
     </section>
     <section class="partners-section">
