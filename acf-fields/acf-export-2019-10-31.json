@@ -3168,7 +3168,7 @@
                 },
                 "choices": {
                     "hospital-services": "Hospital Services",
-                    "resource-center": "Resource Center",
+                    "concessionaires": "Concessionaires",
                     "community-program": "Community Program"
                 },
                 "default_value": [],
@@ -3409,8 +3409,8 @@
             },
             {
                 "key": "field_5db1d5fe9b04d",
-                "label": "Resource Center",
-                "name": "resource_center",
+                "label": "Concessionaires",
+                "name": "concessionaires",
                 "type": "group",
                 "instructions": "",
                 "required": 0,
@@ -3419,7 +3419,7 @@
                         {
                             "field": "field_5d8f803d7a909",
                             "operator": "==",
-                            "value": "resource-center"
+                            "value": "concessionaires"
                         }
                     ]
                 ],

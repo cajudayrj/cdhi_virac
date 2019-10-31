@@ -13,7 +13,7 @@
     $query = new WP_Query(array('post_type' => 'service', 'posts_per_page' => -1));
     $posts = $query->posts;
     $hospitalServices = [];
-    $resourceCenters = [];
+    $concessionaires = [];
     $communityPrograms = [];
     $catTerms = get_terms('service-category');
     $availableCat = [];
@@ -34,8 +34,8 @@
             endif;
         endif;
 
-        if($serviceCategory == 'resource-center'):
-            $resourceCenters[] = $p;
+        if($serviceCategory == 'concessionaires'):
+            $concessionaires[] = $p;
         endif;
 
         if($serviceCategory == 'community-program'):
@@ -81,7 +81,7 @@
                 <div class="col-md-7 service-content-container">
                     <div class="services-tabs">
                         <button id="hospital-services" class="services-tabs-btn active" data-cat-btn="hospital-services">Hospital Services</button>
-                        <button id="resource-center" class="services-tabs-btn" data-cat-btn="resource-center">Resource Center</button>
+                        <button id="concessionaires" class="services-tabs-btn" data-cat-btn="concessionaires">Concessionaires</button>
                         <button id="community-program" class="services-tabs-btn" data-cat-btn="community-program">Community Program</button>
                     </div>
                     <div class="service-container opened" data-category="hospital-services">
@@ -203,18 +203,18 @@
                             </div>
                         </div>
                     </div>
-                    <div class="service-container" data-category="resource-center">
+                    <div class="service-container" data-category="concessionaires">
                         <div class="container-fluid">
                             <div class="row">
                                 <div class="col-sm-12">
                                     <div class="services">
-                                        <h4>Resource Center</h4>
+                                        <h4>Concessionaires</h4>
                                         <?php
-                                            usort($resourceCenters, function($a, $b) {
+                                            usort($concessionaires, function($a, $b) {
                                                 return strcmp($a->post_title, $b->post_title);
                                             });
-                                            foreach ($resourceCenters as $key => $rc):
-                                                $rcGroup = get_field('resource_center', $rc->ID);
+                                            foreach ($concessionaires as $key => $rc):
+                                                $rcGroup = get_field('concessionaires', $rc->ID);
                                                 $rcImg = $rcGroup['service_image'];
                                                 $soon = $rcGroup['service_coming_soon']
                                                 ?>
@@ -232,7 +232,7 @@
                                                                     </p>
                                                                 </div>
                                                                 <div class="col-md-8 offset-md-2 service-column">
-                                                                    <h3 class="head-title">Resource Center</h3>
+                                                                    <h3 class="head-title">Concessionaires</h3>
                                                                     <h2 class="main-title"><?php echo $rc->post_title ?></h2>
                                                                     <div class="container-fluid">
                                                                         <div class="row">
