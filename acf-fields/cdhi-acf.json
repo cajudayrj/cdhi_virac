@@ -350,6 +350,48 @@
         "description": ""
     },
     {
+        "key": "group_5dbc2ffd9eec8",
+        "title": "Contact Page",
+        "fields": [
+            {
+                "key": "field_5dbc300239a37",
+                "label": "Sidebar Text",
+                "name": "sidebar_text",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "For more urgent requests, please contact CDHI at 09770380379 \/ 09186183820\r\n\r\nYou can also visit us at Surtida St. Brgy. Valencia, Virac, Catanduanes",
+                "tabs": "all",
+                "toolbar": "career_wysiwyg",
+                "media_upload": 0,
+                "delay": 0
+            }
+        ],
+        "location": [
+            [
+                {
+                    "param": "page_template",
+                    "operator": "==",
+                    "value": "page-contact.php"
+                }
+            ]
+        ],
+        "menu_order": 0,
+        "position": "normal",
+        "style": "default",
+        "label_placement": "top",
+        "instruction_placement": "label",
+        "hide_on_screen": "",
+        "active": true,
+        "description": ""
+    },
+    {
         "key": "group_5d8836f18a15b",
         "title": "Doctor Information",
         "fields": [
@@ -1958,7 +2000,7 @@
                 "key": "field_5d88623a69cfd",
                 "label": "Introduction Image",
                 "name": "introduction_image",
-                "type": "image",
+                "type": "gallery",
                 "instructions": "",
                 "required": 0,
                 "conditional_logic": 0,
@@ -1967,8 +2009,9 @@
                     "class": "",
                     "id": ""
                 },
-                "return_format": "array",
-                "preview_size": "thumbnail",
+                "min": 1,
+                "max": "",
+                "insert": "append",
                 "library": "all",
                 "min_width": "",
                 "min_height": "",
@@ -2654,6 +2697,60 @@
                 "max_height": "",
                 "max_size": "",
                 "mime_types": ""
+            },
+            {
+                "key": "field_5dbafac27f4b8",
+                "label": "Video Teaser Title",
+                "name": "video_teaser_title",
+                "type": "text",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "prepend": "",
+                "append": "",
+                "maxlength": ""
+            },
+            {
+                "key": "field_5dbafad57f4b9",
+                "label": "Video Teaser Description",
+                "name": "video_teaser_description",
+                "type": "textarea",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "",
+                "placeholder": "",
+                "maxlength": "",
+                "rows": "",
+                "new_lines": ""
+            },
+            {
+                "key": "field_5dbb21c098942",
+                "label": "Video Teaser URL",
+                "name": "video_teaser_url",
+                "type": "oembed",
+                "instructions": "",
+                "required": 0,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "width": "",
+                "height": ""
             }
         ],
         "location": [
@@ -3075,6 +3172,25 @@
                         "maxlength": ""
                     }
                 ]
+            },
+            {
+                "key": "field_5dbc2f51c0cd9",
+                "label": "Disclaimer Text",
+                "name": "disclaimer_text",
+                "type": "wysiwyg",
+                "instructions": "",
+                "required": 1,
+                "conditional_logic": 0,
+                "wrapper": {
+                    "width": "",
+                    "class": "",
+                    "id": ""
+                },
+                "default_value": "Reviews and Testimonial Form is given to the patient or patient’s relative before they leave the hospital.",
+                "tabs": "all",
+                "toolbar": "career_wysiwyg",
+                "media_upload": 0,
+                "delay": 0
             }
         ],
         "location": [
@@ -3114,7 +3230,7 @@
                 },
                 "choices": {
                     "hospital-services": "Hospital Services",
-                    "resource-center": "Resource Center",
+                    "concessionaires": "Concessionaires",
                     "community-program": "Community Program"
                 },
                 "default_value": [],
@@ -3355,8 +3471,8 @@
             },
             {
                 "key": "field_5db1d5fe9b04d",
-                "label": "Resource Center",
-                "name": "resource_center",
+                "label": "Concessionaires",
+                "name": "concessionaires",
                 "type": "group",
                 "instructions": "",
                 "required": 0,
@@ -3365,7 +3481,7 @@
                         {
                             "field": "field_5d8f803d7a909",
                             "operator": "==",
-                            "value": "resource-center"
+                            "value": "concessionaires"
                         }
                     ]
                 ],

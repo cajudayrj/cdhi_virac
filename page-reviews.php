@@ -5,6 +5,7 @@
 
 get_header();
 $fields = get_field('reviews');
+$disclaimer = get_field('disclaimer_text');
 ?>
     <main>
         <div class="page-breadcrumb container">
@@ -62,7 +63,7 @@ $fields = get_field('reviews');
                     ?>
                     <div class="col-12">
                         <div class="review-disclaimer">
-                            <p>Reviews and Testimonial Form is given to the patient or patient’s relative before they leave the hospital.</p>
+                            <?php echo $disclaimer; ?>
                         </div>
                     </div>
                 </div>

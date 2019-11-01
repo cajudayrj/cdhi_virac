@@ -58,8 +58,9 @@ get_header();
                     <div class="container-fluid">
                         <div class="row">
                             <div class="col-sm-12">
-                                <p class="appointment-heading-instructions">For more urgent requests, please contact CDHI at <?php echo get_field('header','option')['mobile_phone']; ?></p>
-                                <p class="appointment-heading-instructions">You can also visit us at Surtida St. Brgy. Valencia, Virac, Catanduanes</p>
+                                <div class="appointment-heading-instructions">
+                                    <?php echo get_field('sidebar_text') ?>
+                                </div>
                             </div>
                             <div class="col-sm-12">
                                 <div class="map-container">
