@@ -5,8 +5,7 @@
 
 get_header();
 $content = get_field('content');
-$imageFull = get_field('introduction_image')['url'];
-$image = get_field('introduction_image')['sizes'];
+$imageGallery = get_field('introduction_image');
 /**
  * DOCTORS PER DEPARTMENT LIST
  */
@@ -51,12 +50,34 @@ endforeach;
                     <div class="intro-content">
                         <?php echo $content; ?>
                     </div>
-                    <picture>
-                        <source srcset="<?php echo $imageFull ?>" media="(min-width: 1200px)" />
-                        <source srcset="<?php echo $image['large'] ?>" media="(min-width: 768px)" />
-                        <source srcset="<?php echo $image['medium_large'] ?>" media="(min-width: 0px)" />
-                        <img src="<?php echo $imageFull ?>" />
-                    </picture>
+                    <div class="page-slider">
+                        <div class="page-glide__track" data-glide-el="track">
+                            <div class="glide__slides">
+                                <?php
+                                    foreach($imageGallery as $gallery):
+                                ?>
+                                    <picture>
+                                        <source srcset="<?php echo $gallery['url'] ?>" media="(min-width: 1200px)" />
+                                        <source srcset="<?php echo $gallery['sizes']['large'] ?>" media="(min-width: 768px)" />
+                                        <source srcset="<?php echo $gallery['sizes']['medium_large'] ?>" media="(min-width: 0px)" />
+                                        <img src="<?php echo $gallery['url'] ?>" />
+                                    </picture>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                        <div class="page-slider-controls" data-glide-el="controls">
+                            <button data-glide-dir="&lt;" class="page-prev">
+                                <svg role="img" title="previous" class="page-btn-slide-svg">
+                                <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#back"/>
+                                </svg>
+                            </button>
+                            <button data-glide-dir="&gt;" class="page-next">
+                                <svg role="img" title="next" class="page-btn-slide-svg">
+                                <use xlink:href="<?php echo get_template_directory_uri() ?>/assets/svg/stack/svg/sprite.stack.svg#next"/>
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
                 </div>
                 <div class="col"></div>
                 <div class="col-md-7 col-sm-12 doctors-list-content">
