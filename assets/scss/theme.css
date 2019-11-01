@@ -1340,18 +1340,32 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   letter-spacing: 1.2px;
   margin-bottom: 1.5rem;
 }
+/* line 242, styles/_homepage.scss */
+.video-teaser p {
+  color: #4a4a4a;
+  font-family: 'Barlow', sans-serif;
+  letter-spacing: .3px;
+  font-size: 16px;
+  text-align: justify;
+}
+@media (min-width: 768px) {
+  /* line 242, styles/_homepage.scss */
+  .video-teaser p {
+    text-align: center;
+  }
+}
 
-/* line 244, styles/_homepage.scss */
+/* line 254, styles/_homepage.scss */
 .partners-section {
   margin-bottom: 50px;
 }
 @media (min-width: 768px) {
-  /* line 244, styles/_homepage.scss */
+  /* line 254, styles/_homepage.scss */
   .partners-section {
     margin-bottom: 80px;
   }
 }
-/* line 250, styles/_homepage.scss */
+/* line 260, styles/_homepage.scss */
 .partners-section .container h3 {
   text-align: center;
   font-family: 'BarlowMedium', sans-serif;
@@ -1362,41 +1376,41 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   margin-bottom: 40px;
 }
 @media (min-width: 768px) {
-  /* line 250, styles/_homepage.scss */
+  /* line 260, styles/_homepage.scss */
   .partners-section .container h3 {
     margin-bottom: 25px;
   }
 }
-/* line 262, styles/_homepage.scss */
+/* line 272, styles/_homepage.scss */
 .partners-section .container .partner-images-desktop {
   display: none;
 }
 @media (min-width: 768px) {
-  /* line 262, styles/_homepage.scss */
+  /* line 272, styles/_homepage.scss */
   .partners-section .container .partner-images-desktop {
     display: block;
   }
 }
-/* line 267, styles/_homepage.scss */
+/* line 277, styles/_homepage.scss */
 .partners-section .container .partner-images-desktop img {
   width: 90%;
   margin: 15px auto;
   display: block;
 }
 @media (min-width: 768px) {
-  /* line 273, styles/_homepage.scss */
+  /* line 283, styles/_homepage.scss */
   .partners-section .container .partner-images-mobile {
     display: none;
   }
 }
-/* line 277, styles/_homepage.scss */
+/* line 287, styles/_homepage.scss */
 .partners-section .container .partner-images-mobile img {
   display: block;
   margin: 10px auto;
   width: 100%;
 }
 
-/* line 289, styles/_homepage.scss */
+/* line 299, styles/_homepage.scss */
 .news-schedule-guide .container h4.title {
   letter-spacing: .6px;
   color: #4a4a4a;
@@ -1405,36 +1419,36 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   text-transform: uppercase;
   margin-bottom: 20px;
 }
-/* line 297, styles/_homepage.scss */
+/* line 307, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-news {
   margin-bottom: 30px;
   order: 2;
 }
 @media (min-width: 768px) {
-  /* line 297, styles/_homepage.scss */
+  /* line 307, styles/_homepage.scss */
   .news-schedule-guide .container .cdhi-news {
     order: 1;
   }
 }
-/* line 303, styles/_homepage.scss */
+/* line 313, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-news a {
   text-decoration: none;
 }
-/* line 307, styles/_homepage.scss */
+/* line 317, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-news a:hover .news-summary .title {
   color: #0e5b02;
 }
-/* line 310, styles/_homepage.scss */
+/* line 320, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-news a:hover .news-summary .date {
   color: #0e5b02;
 }
-/* line 315, styles/_homepage.scss */
+/* line 325, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-news a .news-container {
   margin-bottom: 23px;
   display: flex;
   flex-direction: row;
 }
-/* line 319, styles/_homepage.scss */
+/* line 329, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-news a .news-container .news-thumbnail {
   border: solid 2px #358500;
   width: 95px;
@@ -1443,29 +1457,29 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   margin-right: 15px;
   flex: 0 0 auto;
 }
-/* line 326, styles/_homepage.scss */
+/* line 336, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-news a .news-container .news-thumbnail img {
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
-/* line 332, styles/_homepage.scss */
+/* line 342, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-news a .news-container .news-summary {
   font-family: 'BarlowSemiBold', sans-serif;
   color: #4a4a4a;
 }
-/* line 335, styles/_homepage.scss */
+/* line 345, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-news a .news-container .news-summary .title {
   font-size: 16px;
   margin-bottom: 7px;
   line-height: 1.3;
 }
-/* line 340, styles/_homepage.scss */
+/* line 350, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-news a .news-container .news-summary .date {
   font-size: 12px;
   font-family: 'BarlowMedium', sans-serif;
 }
-/* line 347, styles/_homepage.scss */
+/* line 357, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-news a.view-all {
   color: #358500;
   text-decoration: none;
@@ -1474,24 +1488,24 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   margin-bottom: 23px;
   margin-top: 5px;
 }
-/* line 356, styles/_homepage.scss */
+/* line 366, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-schedule {
   margin-bottom: 30px;
   order: 1;
 }
 @media (min-width: 768px) {
-  /* line 356, styles/_homepage.scss */
+  /* line 366, styles/_homepage.scss */
   .news-schedule-guide .container .cdhi-schedule {
     order: 2;
   }
 }
-/* line 362, styles/_homepage.scss */
+/* line 372, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-schedule .schedule-container {
   margin-bottom: 10px;
   display: flex;
   flex-direction: row;
 }
-/* line 366, styles/_homepage.scss */
+/* line 376, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-schedule .schedule-container .doctor-thumbnail {
   border: solid 2px #358500;
   width: 75px;
@@ -1501,18 +1515,18 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   flex: 0 0 auto;
   border-radius: 50%;
 }
-/* line 374, styles/_homepage.scss */
+/* line 384, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-schedule .schedule-container .doctor-thumbnail img {
   object-fit: cover;
   height: 100%;
   width: 100%;
 }
-/* line 380, styles/_homepage.scss */
+/* line 390, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-schedule .schedule-container .doctor-summary {
   color: #4a4a4a;
   font-family: 'BarlowSemiBold', sans-serif;
 }
-/* line 383, styles/_homepage.scss */
+/* line 393, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-schedule .schedule-container .doctor-summary .doctor-ln {
   font-size: 18px;
   text-transform: uppercase;
@@ -1521,14 +1535,14 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   line-height: .6;
   font-family: 'BarlowMedium', sans-serif;
 }
-/* line 391, styles/_homepage.scss */
+/* line 401, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-schedule .schedule-container .doctor-summary .doctor-fn {
   font-size: 18px;
   letter-spacing: .6px;
   margin-bottom: 5px;
   font-family: 'BarlowMedium', sans-serif;
 }
-/* line 397, styles/_homepage.scss */
+/* line 407, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-schedule .schedule-container .doctor-summary .doctor-specialty {
   color: #3a5147;
   text-transform: uppercase;
@@ -1538,7 +1552,7 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   line-height: 1.1;
   font-family: 'BarlowMedium', sans-serif;
 }
-/* line 406, styles/_homepage.scss */
+/* line 416, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-schedule .schedule-container .doctor-summary .services {
   font-family: "BarlowMedium", sans-serif;
   text-transform: uppercase;
@@ -1546,7 +1560,7 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   letter-spacing: 1.4px;
   margin-bottom: -1px;
 }
-/* line 413, styles/_homepage.scss */
+/* line 423, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-schedule .schedule-container .doctor-summary .service-list {
   margin: 0;
   padding: 0;
@@ -1556,7 +1570,7 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   line-height: 1.2;
   margin-bottom: 12px;
 }
-/* line 422, styles/_homepage.scss */
+/* line 432, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-schedule .schedule-container .doctor-summary .doctor-schedule {
   color: #358500;
   display: flex;
@@ -1567,14 +1581,14 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   flex-wrap: wrap;
   flex-direction: column;
 }
-/* line 431, styles/_homepage.scss */
+/* line 441, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-schedule .schedule-container .doctor-summary .doctor-schedule-container {
   display: flex;
   margin-bottom: 3px;
   width: 100%;
   font-family: 'BarlowMedium', sans-serif;
 }
-/* line 436, styles/_homepage.scss */
+/* line 446, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-schedule .schedule-container .doctor-summary .doctor-schedule-container .ds-svg {
   fill: #358500;
   width: 13px;
@@ -1582,7 +1596,7 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   margin-right: 10px;
   flex-shrink: 0;
 }
-/* line 443, styles/_homepage.scss */
+/* line 453, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-schedule .schedule-container .doctor-summary .doctor-schedule-container ul {
   list-style: none;
   margin: 0;
@@ -1590,16 +1604,16 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   margin-top: -3px;
   text-transform: uppercase;
 }
-/* line 455, styles/_homepage.scss */
+/* line 465, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-guide {
   order: 3;
   margin-bottom: 30px;
 }
-/* line 458, styles/_homepage.scss */
+/* line 468, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-guide a {
   text-decoration: none;
 }
-/* line 460, styles/_homepage.scss */
+/* line 470, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-guide a .guide-container {
   display: flex;
   flex-direction: row;
@@ -1607,31 +1621,31 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   max-height: 95px;
   margin-bottom: 30px;
 }
-/* line 466, styles/_homepage.scss */
+/* line 476, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-guide a .guide-container .thumbnail {
   flex: 0 0 auto;
   width: 55%;
 }
 @media (min-width: 768px) {
-  /* line 466, styles/_homepage.scss */
+  /* line 476, styles/_homepage.scss */
   .news-schedule-guide .container .cdhi-guide a .guide-container .thumbnail {
     width: 50%;
   }
 }
 @media (min-width: 992px) {
-  /* line 466, styles/_homepage.scss */
+  /* line 476, styles/_homepage.scss */
   .news-schedule-guide .container .cdhi-guide a .guide-container .thumbnail {
     width: 55%;
   }
 }
-/* line 475, styles/_homepage.scss */
+/* line 485, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-guide a .guide-container .thumbnail img {
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center center;
 }
-/* line 482, styles/_homepage.scss */
+/* line 492, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-guide a .guide-container .guide-text {
   background: linear-gradient(to top, #0e5b02 0%, #65c733 100%);
   display: flex;
@@ -1642,18 +1656,18 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   padding: 0px 25px;
 }
 @media (min-width: 768px) {
-  /* line 482, styles/_homepage.scss */
+  /* line 492, styles/_homepage.scss */
   .news-schedule-guide .container .cdhi-guide a .guide-container .guide-text {
     width: 50%;
   }
 }
 @media (min-width: 992px) {
-  /* line 482, styles/_homepage.scss */
+  /* line 492, styles/_homepage.scss */
   .news-schedule-guide .container .cdhi-guide a .guide-container .guide-text {
     width: 45%;
   }
 }
-/* line 496, styles/_homepage.scss */
+/* line 506, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-guide a .guide-container .guide-text p {
   font-family: 'BarlowMedium', sans-serif;
   color: #fff;
@@ -1662,16 +1676,16 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   letter-spacing: 1.1px;
   font-size: 18px;
 }
-/* line 505, styles/_homepage.scss */
+/* line 515, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-guide a .guide-container:hover {
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
 }
-/* line 508, styles/_homepage.scss */
+/* line 518, styles/_homepage.scss */
 .news-schedule-guide .container .cdhi-guide a .guide-container:hover .guide-text {
   text-shadow: 0px 0px 3px #101010;
 }
 
-/* line 521, styles/_homepage.scss */
+/* line 531, styles/_homepage.scss */
 .social-map .container h4.title {
   letter-spacing: .6px;
   color: #4a4a4a;
@@ -1680,36 +1694,36 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   text-transform: uppercase;
   margin-bottom: 20px;
 }
-/* line 529, styles/_homepage.scss */
+/* line 539, styles/_homepage.scss */
 .social-map .container .social-container {
   margin-bottom: 30px;
 }
-/* line 531, styles/_homepage.scss */
+/* line 541, styles/_homepage.scss */
 .social-map .container .social-container .social-fb {
   width: 100%;
   height: 500px;
 }
-/* line 534, styles/_homepage.scss */
+/* line 544, styles/_homepage.scss */
 .social-map .container .social-container .social-fb iframe {
   border: none;
   overflow: hidden;
   width: 100%;
   height: 500px;
 }
-/* line 539, styles/_homepage.scss */
+/* line 549, styles/_homepage.scss */
 .social-map .container .social-container .social-fb iframe div {
   min-width: 100%;
 }
-/* line 545, styles/_homepage.scss */
+/* line 555, styles/_homepage.scss */
 .social-map .container .map-container {
   margin-bottom: 30px;
 }
-/* line 547, styles/_homepage.scss */
+/* line 557, styles/_homepage.scss */
 .social-map .container .map-container #map {
   height: 400px;
   border: solid 5px #358500;
 }
-/* line 551, styles/_homepage.scss */
+/* line 561, styles/_homepage.scss */
 .social-map .container .map-container .map-address {
   padding: 5px 15px 10px 15px;
   background: #358500;
@@ -1718,14 +1732,14 @@ footer .cdhi-footer .row .footer-col-4 .footer-emails a {
   flex-wrap: wrap;
   align-items: center;
 }
-/* line 558, styles/_homepage.scss */
+/* line 568, styles/_homepage.scss */
 .social-map .container .map-container .map-address .map-svg {
   fill: #fff;
   margin-right: 5px;
   width: 13px;
   height: 13px;
 }
-/* line 564, styles/_homepage.scss */
+/* line 574, styles/_homepage.scss */
 .social-map .container .map-container .map-address p {
   margin-bottom: 0;
   color: #fff;
