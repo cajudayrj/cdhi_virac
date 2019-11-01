@@ -184,6 +184,13 @@ usage:
   overflow: hidden;
   margin-top: 20px;
 }
+/* line 138, styles/_global.scss */
+.trustsiteseal img {
+  display: block;
+  margin: 0 auto;
+  width: 137px;
+  height: 112px;
+}
 
 /* line 1, styles/_404.scss */
 .page-404-container {

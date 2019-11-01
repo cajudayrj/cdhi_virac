@@ -23,7 +23,7 @@
 				<div class="row">
 					<div class="col-md-3 col-sm-12">
 						<a href="<?php echo home_url(); ?>">
-							<img class="footer-img-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/cdhi-logo.png" alt="">
+							<img class="footer-img-logo" src="<?php echo get_template_directory_uri(); ?>/assets/images/cdhi-logo-bordered.png" alt="">
 						</a>
 					</div>
 				</div>
@@ -119,7 +119,7 @@
                                                                 document.write(unescape("%3Cscript src='" + tlJsHost + "trustlogo/javascript/trustlogo.js' type='text/javascript'%3E%3C/script%3E"));
                                                               //]]></script>
                                                               <script language="JavaScript" type="text/javascript">
-                                                                TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_md_167x42.png", "POSDV", "none");
+                                                                TrustLogo("https://www.positivessl.com/images/seals/positivessl_trust_seal_lg_222x54.png", "POSDV", "none");
                                                             </script>
                                                         </div>
 						</div>
