@@ -132,7 +132,7 @@ function cdhi_theme_scripts() {
 
 	wp_enqueue_script( 'cdhi_theme-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 	wp_enqueue_script( 'cdhi_glide-js', get_template_directory_uri() . '/assets/glidejs/glide.min.js', array(), false );
-	wp_enqueue_script( 'cdhi_jquery', get_template_directory_uri() . '/assets/bootstrap/jquery.min.js', array(), false );
+	// wp_enqueue_script( 'cdhi_jquery', get_template_directory_uri() . '/assets/bootstrap/jquery.min.js', array(), false );
 	wp_enqueue_script( 'cdhi_popper-js', get_template_directory_uri() . '/assets/bootstrap/popper.min.js', array(), false, true );
 	wp_enqueue_script( 'cdhi_bootstrap-js', get_template_directory_uri() . '/assets/bootstrap/bootstrap.min.js', array(), false, true );
 	wp_enqueue_script( 'cdhi_bootstrap-select-js', get_template_directory_uri() . '/assets/bootstrap/bootstrap-select.js', array(), false, true );
@@ -274,7 +274,8 @@ function create_cpt_tax() {
 			'labels' => array(
 				'add_new_item' => __('Add New Category'),
 				'edit_item' => __('Edit Category')
-			)
+			),
+			'supports' => array('comments')
 		)
 	);
 
@@ -447,3 +448,16 @@ function filter_wpcf7_posted_data( $posted_data ) {
 	return $posted_data;
 };
 add_filter( 'wpcf7_posted_data', 'filter_wpcf7_posted_data', 10, 1 );
+
+
+function switch_on_comments_automatically(){
+	global $wpdb;
+	$wpdb->query( $wpdb->prepare("UPDATE $wpdb->posts SET comment_status = %s",'open')); 
+}
+switch_on_comments_automatically();
+
+
+function comment_support_for_my_custom_post_type() {
+	add_post_type_support( 'news-and-blog', 'comments' );
+}
+add_action( 'init', 'comment_support_for_my_custom_post_type' );

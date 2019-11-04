@@ -89,6 +89,11 @@ endforeach;
                         </div>
                     </div>
                 </div>
+                <div class="row">
+                    <div class="col-12">
+                        <?php comments_template(); ?>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

@@ -119,6 +119,11 @@ $category_name = get_the_terms(the_post(), 'news-category');
                             </div>
                         </div>
                     </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <?php comments_template(); ?>
+                        </div>
+                    </div>
                 </div>
             </section>
         <?php

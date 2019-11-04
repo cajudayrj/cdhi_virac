@@ -1,3 +1,4 @@
+const $ = jQuery;
 $(document).ready(function () {
     const doctors = document.querySelectorAll('.schedule-container');
 
