@@ -9,7 +9,6 @@ const sliderOptions = {
 }
 
 if (pageSlider) {
-  console.log('hsssilder')
   const slide = new Glide(pageSlider, sliderOptions);
   slide.mount();
 }

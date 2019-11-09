@@ -134,6 +134,8 @@ function cdhi_theme_scripts() {
 	wp_enqueue_script( 'cdhi_glide-js', get_template_directory_uri() . '/assets/glidejs/glide.min.js', array(), false );
 	// wp_enqueue_script( 'cdhi_jquery', get_template_directory_uri() . '/assets/bootstrap/jquery.min.js', array(), false );
 	wp_enqueue_script( 'cdhi_popper-js', get_template_directory_uri() . '/assets/bootstrap/popper.min.js', array(), false, true );
+	// wp_enqueue_script( 'cdhi_page-about-js', get_template_directory_uri() . '/assets/priorityjs/about.js', array('jquery'), false, true );
+	wp_enqueue_script( 'cdhi_page-service-js', get_template_directory_uri() . '/assets/priorityjs/services.js', array(), false, false );
 	wp_enqueue_script( 'cdhi_bootstrap-js', get_template_directory_uri() . '/assets/bootstrap/bootstrap.min.js', array(), false, true );
 	wp_enqueue_script( 'cdhi_bootstrap-select-js', get_template_directory_uri() . '/assets/bootstrap/bootstrap-select.js', array(), false, true );
 	wp_enqueue_script( 'cdhi_ps-js', get_template_directory_uri() . '/assets/photoswipe/photoswipe.min.js', array(), false, true );

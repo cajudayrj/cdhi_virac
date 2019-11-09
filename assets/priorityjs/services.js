@@ -1,5 +1,4 @@
-const $ = jQuery;
-$(document).ready(function () {
+jQuery(document).ready(function () {
 
     const serviceSection = document.querySelector('.services-section-container');
 
